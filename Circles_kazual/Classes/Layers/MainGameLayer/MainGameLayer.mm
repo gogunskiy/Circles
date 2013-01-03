@@ -7,7 +7,7 @@
 //
 
 // Import the interfaces
-#import "HelloWorldLayer.h"
+#import "MainGameLayer.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
@@ -21,28 +21,40 @@ enum {
 };
 
 
+@interface LinePoint : NSObject
+@property(nonatomic, assign) CGPoint pos;
+@property(nonatomic, assign) float width;
+@end
+
+
+@implementation LinePoint
+@synthesize pos;
+@synthesize width;
+
+- (NSString *)description {
+    return NSStringFromCGPoint(pos);
+}
+@end
+
 #pragma mark - HelloWorldLayer
 
-@interface HelloWorldLayer()
+@interface MainGameLayer()
 -(void) initPhysics;
 -(void) addNewSpriteAtPosition:(CGPoint)p;
 -(void) createMenu;
 @end
 
-@implementation HelloWorldLayer
+@implementation MainGameLayer
 
 +(CCScene *) scene
 {
-	// 'scene' is an autorelease object.
+
 	CCScene *scene = [CCScene node];
+
+	MainGameLayer *layer = [MainGameLayer node];
 	
-	// 'layer' is an autorelease object.
-	HelloWorldLayer *layer = [HelloWorldLayer node];
-	
-	// add layer as a child to scene
 	[scene addChild: layer];
-	
-	// return the scene
+
 	return scene;
 }
 
@@ -50,6 +62,9 @@ enum {
 {
 	if( (self=[super init])) {
 		
+        
+        points = [[NSMutableArray alloc] init];
+        
 		// enable events
 		
 		self.isTouchEnabled = YES;
@@ -115,6 +130,8 @@ enum {
 	delete m_debugDraw;
 	m_debugDraw = NULL;
 	
+    [points release];
+    
 	[super dealloc];
 }	
 
@@ -161,7 +178,7 @@ enum {
 	}];
 	
 	CCMenuItemLabel *reset = [CCMenuItemFont itemWithString:@"Reset" block:^(id sender){
-		[[CCDirector sharedDirector] replaceScene: [HelloWorldLayer scene]];
+		[[CCDirector sharedDirector] replaceScene: [MainGameLayer scene]];
         
       	}];
 	
@@ -198,8 +215,7 @@ enum {
 	CCMenu *menu = [CCMenu menuWithItems:start, reset, nil];
 	
 	[menu alignItemsVerticallyWithPadding:30];
-	
-	CGSize size = [[CCDirector sharedDirector] winSize];
+
 	[menu setPosition:ccp( 960,700)];
 	
 	
@@ -227,10 +243,10 @@ enum {
 	uint32 flags = 0;
 	flags += b2Draw::e_shapeBit;
 	//		flags += b2Draw::e_jointBit;
-			flags += b2Draw::e_aabbBit;
-			flags += b2Draw::e_pairBit;
+	//		flags += b2Draw::e_aabbBit;
+	//		flags += b2Draw::e_pairBit;
 //			flags += b2Draw::e_centerOfMassBit;
-	m_debugDraw->SetFlags(flags);		
+//	m_debugDraw->SetFlags(flags);
 	
 	
 	// Define the ground body.
@@ -269,13 +285,15 @@ enum {
 	CCLOG(@"Add sprite %0.2f x %02.f",p.x,p.y);
     
     
-    PhysicsObject * ball = [[PhysicsObject alloc] initWithPosition:p
-                                                          filename:nil
+    PhysicsObject * point = [[PhysicsObject alloc] initWithPosition:p
+                                                          filename:@"mask.png"
                                                         indefiener:12];
-    [ball setWorld:world];
-    [ball generateSquareBodyWithWidth:2 height:2 bodyType:b2_staticBody];
+    [point setWorld:world];
+    [point generateSquareBodyWithWidth:10 height:10 bodyType:b2_staticBody];
     
-    [self addChild:ball z:10];
+    [self addChild:point z:10];
+    
+    
     
     /*
 	CCNode *parent = [self getChildByTag:kTagParentNode];
@@ -327,6 +345,9 @@ enum {
 }
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [points removeAllObjects];
+    
     CGPoint location;
     
     for( UITouch *touch in touches ) {
@@ -335,6 +356,16 @@ enum {
 		location = [[CCDirector sharedDirector] convertToGL: location];
     }
      previousPoint_ = location;
+    
+    [self addPoint:location];
+}
+
+- (void)addPoint:(CGPoint)newPoint
+{
+    LinePoint *point = [[LinePoint alloc] init];
+    point.pos = newPoint;
+    point.width = 30;
+    [points addObject:point];
 }
 
 - (void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -346,16 +377,65 @@ enum {
 		
 		location = [[CCDirector sharedDirector] convertToGL: location];
 	
-		[self addNewSpriteAtPosition: location];
 	}
     
+    
+    [self addPoint:location];
+    
+    NSMutableArray *smoothedPoints = [self calculateSmoothLinePoints];
+
+    for (LinePoint *point in smoothedPoints) {
+        [self addNewSpriteAtPosition:[point pos]];
+    }
+
+
     previousPoint_ = location; 
 }
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-
 }
+
+
+- (NSMutableArray *)calculateSmoothLinePoints
+{
+    if ([points count] > 2) {
+        NSMutableArray *smoothedPoints = [NSMutableArray array];
+        for (unsigned int i = 2; i < [points count]; ++i) {
+            LinePoint *prev2 = [points objectAtIndex:i - 2];
+            LinePoint *prev1 = [points objectAtIndex:i - 1];
+            LinePoint *cur = [points objectAtIndex:i];
+            
+            CGPoint midPoint1 = ccpMult(ccpAdd(prev1.pos, prev2.pos), 0.5f);
+            CGPoint midPoint2 = ccpMult(ccpAdd(cur.pos, prev1.pos), 0.5f);
+            
+            int segmentDistance = 2;
+            float distance = ccpDistance(midPoint1, midPoint2);
+            int numberOfSegments = MIN(128, MAX(floorf(distance / segmentDistance), 32));
+            
+            float t = 0.0f;
+            float step = 1.0f / 10;
+            for (NSUInteger j = 0; j < 10; j++) {
+                LinePoint *newPoint = [[LinePoint alloc] init];
+                newPoint.pos = ccpAdd(ccpAdd(ccpMult(midPoint1, powf(1 - t, 2)), ccpMult(prev1.pos, 2.0f * (1 - t) * t)), ccpMult(midPoint2, t * t));
+                newPoint.width = powf(1 - t, 2) * ((prev1.width + prev2.width) * 0.5f) + 2.0f * (1 - t) * t * prev1.width + t * t * ((cur.width + prev1.width) * 0.5f);
+                
+                [smoothedPoints addObject:newPoint];
+                t += step;
+            }
+            LinePoint *finalPoint = [[LinePoint alloc] init];
+            finalPoint.pos = midPoint2;
+            finalPoint.width = (cur.width + prev1.width) * 0.5f;
+            [smoothedPoints addObject:finalPoint];
+        }
+        //! we need to leave last 2 points for next draw
+        [points removeObjectsInRange:NSMakeRange(0, [points count] - 2)];
+        return smoothedPoints;
+    } else {
+        return nil;
+    }
+}
+
 
 #pragma mark GameKit delegate
 

@@ -23,7 +23,7 @@
 #define PTM_RATIO 32
 
 // HelloWorldLayer
-@interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
+@interface MainGameLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
 	CCTexture2D *spriteTexture_;	// weak ref
 	b2World* world;					// strong ref
@@ -33,6 +33,8 @@
 
     PhysicsObject * ball;
     PhysicsObject * ball2;
+    
+    NSMutableArray * points;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
