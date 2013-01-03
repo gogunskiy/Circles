@@ -165,6 +165,7 @@
 		63D0A791169615ED00C028D7 /* CCNode+SFGestureRecognizers.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A790169615ED00C028D7 /* CCNode+SFGestureRecognizers.m */; };
 		63D0A795169616A300C028D7 /* MainGameLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A794169616A300C028D7 /* MainGameLayer.mm */; };
 		63D0A797169627F000C028D7 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A796169627F000C028D7 /* mask.png */; };
+		63D0A7A116962DAB00C028D7 /* hero.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A7A016962DAB00C028D7 /* hero.png */; };
 		63EF8DDA164EF1CC00374B27 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 63EF8DCC164EF1CC00374B27 /* AppDelegate.mm */; };
 		63EF8DDC164EF1CC00374B27 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 63EF8DD4164EF1CC00374B27 /* GLES-Render.mm */; };
 		63EF8DDD164EF1CC00374B27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF8DD5164EF1CC00374B27 /* main.m */; };
@@ -523,6 +524,7 @@
 		63D0A793169616A300C028D7 /* MainGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameLayer.h; sourceTree = "<group>"; };
 		63D0A794169616A300C028D7 /* MainGameLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainGameLayer.mm; sourceTree = "<group>"; };
 		63D0A796169627F000C028D7 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
+		63D0A7A016962DAB00C028D7 /* hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero.png; sourceTree = "<group>"; };
 		63EF8DCB164EF1CC00374B27 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63EF8DCC164EF1CC00374B27 /* AppDelegate.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = AppDelegate.mm; sourceTree = "<group>"; };
 		63EF8DD3164EF1CC00374B27 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
@@ -1213,6 +1215,7 @@
 		63EF8DE2164EF24900374B27 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				63D0A7A016962DAB00C028D7 /* hero.png */,
 				63D0A796169627F000C028D7 /* mask.png */,
 				63EF8DE3164EF24900374B27 /* TEstImages */,
 			);
@@ -1315,6 +1318,7 @@
 				63EF8DFB164EF24900374B27 /* Icon.png in Resources */,
 				63EF8DFC164EF24900374B27 /* Icon@2x.png in Resources */,
 				63D0A797169627F000C028D7 /* mask.png in Resources */,
+				63D0A7A116962DAB00C028D7 /* hero.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -53,7 +53,7 @@ enum {
 
 	MainGameLayer *layer = [MainGameLayer node];
 	
-	[scene addChild: layer];
+	[scene addChild:layer];
 
 	return scene;
 }
@@ -67,6 +67,10 @@ enum {
         
 		// enable events
 		
+        CCLayerColor * color = [[CCLayerColor alloc] initWithColor:ccc4(255,255,255,255) width:900 height:768];
+        [self addChild:color z:-1];
+        [color release];
+        
 		self.isTouchEnabled = YES;
 		self.isAccelerometerEnabled = YES;
 		CGSize s = [CCDirector sharedDirector].winSize;
@@ -77,23 +81,23 @@ enum {
 		// create reset button
 		[self createMenu];
 		
-        ball = [[PhysicsObject alloc] initWithPosition:ccp(300, 550)
-                                                              filename:nil
-                                                            indefiener:12];
+        ball = [[PhysicsObject alloc] initWithPosition:ccp(260, 550)
+                                              filename:@"hero.png"
+                                            indefiener:12];
         [ball setWorld:world];
-        [ball generateCirlceBodyWithRadius:40 bodyType:b2_staticBody];
+        [ball generateCirlceBodyWithRadius:50 bodyType:b2_staticBody];
         
-        [self addChild:ball z:10];
+        [self addChild:ball z:12];
         
         
         
-         ball2 = [[PhysicsObject alloc] initWithPosition:ccp(700, 550)
-                                                               filename:nil
+         ball2 = [[PhysicsObject alloc] initWithPosition:ccp(640, 550)
+                                                               filename:@"hero.png"
                                                              indefiener:13];
         [ball2 setWorld:world];
-        [ball2 generateCirlceBodyWithRadius:40  bodyType:b2_staticBody];
+        [ball2 generateCirlceBodyWithRadius:50  bodyType:b2_staticBody];
         
-        [self addChild:ball2 z:10];
+        [self addChild:ball2 z:12];
 
 
 		//Set up sprite
@@ -114,7 +118,7 @@ enum {
 		
 		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Tap screen" fontName:@"Marker Felt" fontSize:32];
 		[self addChild:label z:0];
-		[label setColor:ccc3(0,0,255)];
+		[label setColor:ccc3(127,127,127)];
 		label.position = ccp( s.width/2, s.height-50);
 		
 		[self scheduleUpdate];
