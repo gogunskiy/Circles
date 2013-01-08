@@ -6,14 +6,7 @@
 //  Copyright __MyCompanyName__ 2012. All rights reserved.
 //
 
-// Import the interfaces
 #import "MainGameLayer.h"
-
-// Needed to obtain the Navigation Controller
-#import "AppDelegate.h"
-
-
-
 #import "PhysicsObject.h"
 
 enum {
@@ -21,20 +14,8 @@ enum {
 };
 
 
-@interface LinePoint : NSObject
-@property(nonatomic, assign) CGPoint pos;
-@property(nonatomic, assign) float width;
-@end
 
 
-@implementation LinePoint
-@synthesize pos;
-@synthesize width;
-
-- (NSString *)description {
-    return NSStringFromCGPoint(pos);
-}
-@end
 
 #pragma mark - HelloWorldLayer
 
@@ -42,6 +23,8 @@ enum {
 -(void) initPhysics;
 -(void) addNewSpriteAtPosition:(CGPoint)p;
 -(void) createMenu;
+-(void) createDrawingLayer;
+    
 @end
 
 @implementation MainGameLayer
@@ -62,14 +45,13 @@ enum {
 {
 	if( (self=[super init])) {
 		
-        
-        points = [[NSMutableArray alloc] init];
-        
+       
 		// enable events
-		
+		/*
         CCLayerColor * color = [[CCLayerColor alloc] initWithColor:ccc4(255,255,255,255) width:900 height:768];
         [self addChild:color z:-1];
         [color release];
+        */
         
 		self.isTouchEnabled = YES;
 		self.isAccelerometerEnabled = YES;
@@ -80,6 +62,8 @@ enum {
 		
 		// create reset button
 		[self createMenu];
+        
+        [self createDrawingLayer];
 		
         ball = [[PhysicsObject alloc] initWithPosition:ccp(260, 550)
                                               filename:@"hero.png"
@@ -92,7 +76,7 @@ enum {
         
         
          ball2 = [[PhysicsObject alloc] initWithPosition:ccp(640, 550)
-                                                               filename:@"hero.png"
+                                                               filename:@"hero2.png"
                                                              indefiener:13];
         [ball2 setWorld:world];
         [ball2 generateCirlceBodyWithRadius:50  bodyType:b2_staticBody];
@@ -134,7 +118,8 @@ enum {
 	delete m_debugDraw;
 	m_debugDraw = NULL;
 	
-    [points release];
+    
+    [drawingLayer_ release];
     
 	[super dealloc];
 }	
@@ -186,36 +171,6 @@ enum {
         
       	}];
 	
-    /*
-	// Achievement Menu Item using blocks
-	CCMenuItem *itemAchievement = [CCMenuItemFont itemWithString:@"Achievements" block:^(id sender) {
-		
-		
-		GKAchievementViewController *achivementViewController = [[GKAchievementViewController alloc] init];
-		achivementViewController.achievementDelegate = self;
-		
-		AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-		
-		[[app navController] presentModalViewController:achivementViewController animated:YES];
-		
-		[achivementViewController release];
-	}];
-	
-	// Leaderboard Menu Item using blocks
-	CCMenuItem *itemLeaderboard = [CCMenuItemFont itemWithString:@"Leaderboard" block:^(id sender) {
-		
-		
-		GKLeaderboardViewController *leaderboardViewController = [[GKLeaderboardViewController alloc] init];
-		leaderboardViewController.leaderboardDelegate = self;
-		
-		AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-		
-		[[app navController] presentModalViewController:leaderboardViewController animated:YES];
-		
-		[leaderboardViewController release];
-	}];
-	
-    */
 	CCMenu *menu = [CCMenu menuWithItems:start, reset, nil];
 	
 	[menu alignItemsVerticallyWithPadding:30];
@@ -226,10 +181,16 @@ enum {
 	[self addChild: menu z:-1];	
 }
 
+-(void) createDrawingLayer {
+    drawingLayer_ = [[DrawingLayer alloc] init];
+    [drawingLayer_ setDelegate:self];
+    [self addChild:drawingLayer_];
+}
+
 -(void) initPhysics
 {
 	
-	CGSize s = [[CCDirector sharedDirector] winSize];
+	//CGSize s = [[CCDirector sharedDirector] winSize];
 	
 	b2Vec2 gravity;
 	gravity.Set(0.0f, -10.0f);
@@ -260,7 +221,7 @@ enum {
 	// Call the body factory which allocates memory for the ground body
 	// from a pool and creates the ground box shape (also from a pool).
 	// The body is also added to the world.
-	b2Body* groundBody = world->CreateBody(&groundBodyDef);
+//	b2Body* groundBody = world->CreateBody(&groundBodyDef);
 	
 	// Define the ground box shape.
 
@@ -268,11 +229,6 @@ enum {
 
 -(void) draw
 {
-	//
-	// IMPORTANT:
-	// This is only for debug purposes
-	// It is recommend to disable it
-	//
 	[super draw];
 	
 	ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
@@ -286,7 +242,7 @@ enum {
 
 -(void) addNewSpriteAtPosition:(CGPoint)p
 {
-	CCLOG(@"Add sprite %0.2f x %02.f",p.x,p.y);
+	//CCLOG(@"Add sprite %0.2f x %02.f",p.x,p.y);
     
     
     PhysicsObject * point = [[PhysicsObject alloc] initWithPosition:p
@@ -348,111 +304,15 @@ enum {
 	world->Step(dt, velocityIterations, positionIterations);	
 }
 
-- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    [points removeAllObjects];
-    
-    CGPoint location;
-    
-    for( UITouch *touch in touches ) {
-        location = [touch locationInView: [touch view]];
-		
-		location = [[CCDirector sharedDirector] convertToGL: location];
-    }
-     previousPoint_ = location;
-    
-    [self addPoint:location];
-}
+#pragma mark ====  DRAWING LAYER DELEGATE  ====
 
-- (void)addPoint:(CGPoint)newPoint
-{
-    LinePoint *point = [[LinePoint alloc] init];
-    point.pos = newPoint;
-    point.width = 30;
-    [points addObject:point];
-}
-
-- (void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)drawingLayer:(DrawingLayer *)DrawingLayer endDrawingWithPoints:(NSArray *)points {
+  //  NSLog(@"%@", points);
     
-    CGPoint location;
-    
-    for( UITouch *touch in touches ) {
-        location = [touch locationInView: [touch view]];
-		
-		location = [[CCDirector sharedDirector] convertToGL: location];
-	
-	}
-    
-    
-    [self addPoint:location];
-    
-    NSMutableArray *smoothedPoints = [self calculateSmoothLinePoints];
-
-    for (LinePoint *point in smoothedPoints) {
-        [self addNewSpriteAtPosition:[point pos]];
-    }
-
-
-    previousPoint_ = location; 
-}
-
-- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-}
-
-
-- (NSMutableArray *)calculateSmoothLinePoints
-{
-    if ([points count] > 2) {
-        NSMutableArray *smoothedPoints = [NSMutableArray array];
-        for (unsigned int i = 2; i < [points count]; ++i) {
-            LinePoint *prev2 = [points objectAtIndex:i - 2];
-            LinePoint *prev1 = [points objectAtIndex:i - 1];
-            LinePoint *cur = [points objectAtIndex:i];
-            
-            CGPoint midPoint1 = ccpMult(ccpAdd(prev1.pos, prev2.pos), 0.5f);
-            CGPoint midPoint2 = ccpMult(ccpAdd(cur.pos, prev1.pos), 0.5f);
-            
-            int segmentDistance = 2;
-            float distance = ccpDistance(midPoint1, midPoint2);
-            int numberOfSegments = MIN(128, MAX(floorf(distance / segmentDistance), 32));
-            
-            float t = 0.0f;
-            float step = 1.0f / 10;
-            for (NSUInteger j = 0; j < 10; j++) {
-                LinePoint *newPoint = [[LinePoint alloc] init];
-                newPoint.pos = ccpAdd(ccpAdd(ccpMult(midPoint1, powf(1 - t, 2)), ccpMult(prev1.pos, 2.0f * (1 - t) * t)), ccpMult(midPoint2, t * t));
-                newPoint.width = powf(1 - t, 2) * ((prev1.width + prev2.width) * 0.5f) + 2.0f * (1 - t) * t * prev1.width + t * t * ((cur.width + prev1.width) * 0.5f);
-                
-                [smoothedPoints addObject:newPoint];
-                t += step;
-            }
-            LinePoint *finalPoint = [[LinePoint alloc] init];
-            finalPoint.pos = midPoint2;
-            finalPoint.width = (cur.width + prev1.width) * 0.5f;
-            [smoothedPoints addObject:finalPoint];
-        }
-        //! we need to leave last 2 points for next draw
-        [points removeObjectsInRange:NSMakeRange(0, [points count] - 2)];
-        return smoothedPoints;
-    } else {
-        return nil;
+    for (NSString * point in points) {
+        [self addNewSpriteAtPosition:CGPointFromString(point)];
     }
 }
 
-
-#pragma mark GameKit delegate
-
--(void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController
-{
-	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-	[[app navController] dismissModalViewControllerAnimated:YES];
-}
-
--(void) leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
-{
-	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-	[[app navController] dismissModalViewControllerAnimated:YES];
-}
 
 @end

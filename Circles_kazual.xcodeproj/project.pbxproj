@@ -162,6 +162,8 @@
 		63372DBC164588CD00BEF0FA /* b2WeldJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63372DBB164588CD00BEF0FA /* b2WeldJoint.cpp */; };
 		63372DBF164588CD00BEF0FA /* b2WheelJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63372DBE164588CD00BEF0FA /* b2WheelJoint.cpp */; };
 		63372DC3164588CD00BEF0FA /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63372DC2164588CD00BEF0FA /* b2Rope.cpp */; };
+		636A2AA7169CA2ED00299BAF /* DrawingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A2AA6169CA2ED00299BAF /* DrawingLayer.m */; };
+		636A2AA9169CCCED00299BAF /* hero2.png in Resources */ = {isa = PBXBuildFile; fileRef = 636A2AA8169CCCED00299BAF /* hero2.png */; };
 		63D0A791169615ED00C028D7 /* CCNode+SFGestureRecognizers.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A790169615ED00C028D7 /* CCNode+SFGestureRecognizers.m */; };
 		63D0A795169616A300C028D7 /* MainGameLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A794169616A300C028D7 /* MainGameLayer.mm */; };
 		63D0A797169627F000C028D7 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A796169627F000C028D7 /* mask.png */; };
@@ -519,6 +521,9 @@
 		63372DC2164588CD00BEF0FA /* b2Rope.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = b2Rope.cpp; path = libs/Box2D/Rope/b2Rope.cpp; sourceTree = "<group>"; };
 		63372DC4164588CD00BEF0FA /* b2Rope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = b2Rope.h; path = libs/Box2D/Rope/b2Rope.h; sourceTree = "<group>"; };
 		63372DC5164588CD00BEF0FA /* LICENSE_Box2D.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Box2D.txt; path = libs/LICENSE_Box2D.txt; sourceTree = "<group>"; };
+		636A2AA5169CA2ED00299BAF /* DrawingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingLayer.h; sourceTree = "<group>"; };
+		636A2AA6169CA2ED00299BAF /* DrawingLayer.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; path = DrawingLayer.m; sourceTree = "<group>"; };
+		636A2AA8169CCCED00299BAF /* hero2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero2.png; sourceTree = "<group>"; };
 		63D0A78F169615ED00C028D7 /* CCNode+SFGestureRecognizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+SFGestureRecognizers.h"; sourceTree = "<group>"; };
 		63D0A790169615ED00C028D7 /* CCNode+SFGestureRecognizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+SFGestureRecognizers.m"; sourceTree = "<group>"; };
 		63D0A793169616A300C028D7 /* MainGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameLayer.h; sourceTree = "<group>"; };
@@ -1103,6 +1108,15 @@
 			name = Rope;
 			sourceTree = "<group>";
 		};
+		636A2AA3169CA2D000299BAF /* DrawingLayer */ = {
+			isa = PBXGroup;
+			children = (
+				636A2AA5169CA2ED00299BAF /* DrawingLayer.h */,
+				636A2AA6169CA2ED00299BAF /* DrawingLayer.m */,
+			);
+			path = DrawingLayer;
+			sourceTree = "<group>";
+		};
 		63D0A78E169615ED00C028D7 /* CCNode+SFGestureRecognizers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1148,6 +1162,7 @@
 		63EF8DCD164EF1CC00374B27 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				636A2AA3169CA2D000299BAF /* DrawingLayer */,
 				63D0A792169616A300C028D7 /* MainGameLayer */,
 				63EF8DCE164EF1CC00374B27 /* Test layer */,
 			);
@@ -1215,6 +1230,7 @@
 		63EF8DE2164EF24900374B27 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				636A2AA8169CCCED00299BAF /* hero2.png */,
 				63D0A7A016962DAB00C028D7 /* hero.png */,
 				63D0A796169627F000C028D7 /* mask.png */,
 				63EF8DE3164EF24900374B27 /* TEstImages */,
@@ -1319,6 +1335,7 @@
 				63EF8DFC164EF24900374B27 /* Icon@2x.png in Resources */,
 				63D0A797169627F000C028D7 /* mask.png in Resources */,
 				63D0A7A116962DAB00C028D7 /* hero.png in Resources */,
+				636A2AA9169CCCED00299BAF /* hero2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1480,6 +1497,7 @@
 				63EF8DDE164EF1CC00374B27 /* PhysicsObject.m in Sources */,
 				63D0A791169615ED00C028D7 /* CCNode+SFGestureRecognizers.m in Sources */,
 				63D0A795169616A300C028D7 /* MainGameLayer.mm in Sources */,
+				636A2AA7169CA2ED00299BAF /* DrawingLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1536,6 +1554,7 @@
 				GCC_PREFIX_HEADER = Circles_kazual/Classes/Other/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"Circles_kazual/libs/kazmath/include\"";
 				INFOPLIST_FILE = Circles_kazual/Resources/Plist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
@@ -1555,6 +1574,7 @@
 				GCC_PREFIX_HEADER = Circles_kazual/Classes/Other/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"Circles_kazual/libs/kazmath/include\"";
 				INFOPLIST_FILE = Circles_kazual/Resources/Plist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
