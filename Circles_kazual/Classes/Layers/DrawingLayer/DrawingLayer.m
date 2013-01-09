@@ -69,68 +69,8 @@
 
 
 - (NSArray *) approximateValuesForPoints:(NSArray *)points {
-    
-    NSMutableArray * approximatePoints = [[NSMutableArray alloc] initWithArray:points];
-    
-    if ([approximatePoints count] <= 4) {
-        return [approximatePoints autorelease];
-    }
 
-    NSMutableArray * pointsToAdd    = [[NSMutableArray alloc] init];
-    NSMutableArray * pointsToDelete = [[NSMutableArray alloc] init];
-    
-    
-    for (int i=1; i < [points count] - 5; i+=4) {
-        CGPoint point = CGPointFromString([points objectAtIndex:i]);
-        
-        for (int j=1; j <4; j++) {
-            
-            NSString * pointValue = [points objectAtIndex:i+j];
-            CGPoint nextPoint = CGPointFromString(pointValue);
-            
-            CGFloat distance = ccpDistance(point, nextPoint);
-            
-            if (distance > 50) {
-                
-                NSInteger numberOfPoints = distance/25;
-                
-                CGFloat deltaX = (nextPoint.x - point.x) / numberOfPoints ;
-                CGFloat deltaY = (nextPoint.y - point.y) / numberOfPoints ;
-                
-                
-                for (int k = 0; k < numberOfPoints; k++) {
-                    CGPoint newPoint = ccp((point.x + k * deltaX), (point.y + k * deltaY));
-                    
-                    [pointsToAdd addObject:NSStringFromCGPoint(newPoint)];
-                    
-                }
-            }
-        }
-    }
-    
-    for (int i=1; i < [points count] - 5; i+=4) {
-        CGPoint point = CGPointFromString([points objectAtIndex:i]);
-        
-        for (int j=1; j <4; j++) {
-            
-            NSString * pointValue = [points objectAtIndex:i+j];
-            CGPoint nextPoint = CGPointFromString(pointValue);
-            
-            CGFloat distance = ccpDistance(point, nextPoint);
-            
-            if (distance < 2) {
-                [pointsToDelete addObject:pointValue];
-            }
-        }
-    }
-    
-    [approximatePoints removeObjectsInArray:pointsToDelete];
-    [approximatePoints addObjectsFromArray:pointsToAdd];
-
-    [pointsToAdd release];
-    [pointsToDelete release];
-    
-    return [approximatePoints autorelease];
+    return points;
 }
 
 

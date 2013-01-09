@@ -212,8 +212,8 @@
 	// Define another box shape for our dynamic body_.
 	b2PolygonShape square;
     
-    // FIX !!!∫
-	b2Vec2 verts[20] ;
+    // FIX !!!
+	b2Vec2 verts[2000] ;
 	for (unsigned int i=0; i < [verticles count]; i++) 
 	{
 		b2Vec2 vect ;

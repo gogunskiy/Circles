@@ -175,7 +175,7 @@ enum {
 	
 	[menu alignItemsVerticallyWithPadding:30];
 
-	[menu setPosition:ccp( 960,700)];
+	[menu setPosition:ccp(960,700)];
 	
 	
 	[self addChild: menu z:-1];	
@@ -210,21 +210,8 @@ enum {
 	//		flags += b2Draw::e_jointBit;
 	//		flags += b2Draw::e_aabbBit;
 	//		flags += b2Draw::e_pairBit;
-//			flags += b2Draw::e_centerOfMassBit;
-//	m_debugDraw->SetFlags(flags);
-	
-	
-	// Define the ground body.
-	b2BodyDef groundBodyDef;
-	groundBodyDef.position.Set(0, 0); // bottom-left corner
-	
-	// Call the body factory which allocates memory for the ground body
-	// from a pool and creates the ground box shape (also from a pool).
-	// The body is also added to the world.
-//	b2Body* groundBody = world->CreateBody(&groundBodyDef);
-	
-	// Define the ground box shape.
-
+	//		flags += b2Draw::e_centerOfMassBit;
+	m_debugDraw->SetFlags(flags);
 }
 
 -(void) draw
@@ -246,7 +233,7 @@ enum {
     
     
     PhysicsObject * point = [[PhysicsObject alloc] initWithPosition:p
-                                                          filename:@"mask.png"
+                                                          filename:nil
                                                         indefiener:12];
     [point setWorld:world];
     [point generateSquareBodyWithWidth:10 height:10 bodyType:b2_staticBody];
@@ -307,11 +294,24 @@ enum {
 #pragma mark ====  DRAWING LAYER DELEGATE  ====
 
 - (void)drawingLayer:(DrawingLayer *)DrawingLayer endDrawingWithPoints:(NSArray *)points {
-  //  NSLog(@"%@", points);
     
-    for (NSString * point in points) {
-        [self addNewSpriteAtPosition:CGPointFromString(point)];
+    b2BodyDef groundBodyDef;
+	groundBodyDef.position.Set(0, 0);
+    
+    b2Body* groundBody = world->CreateBody(&groundBodyDef);
+	
+	b2EdgeShape groundBox;
+
+    for (int i = 1; i < [points count]; i++) {
+    
+        CGPoint point1 = CGPointFromString([points objectAtIndex:i-1]);
+        CGPoint point2 = CGPointFromString([points objectAtIndex:i]);
+        
+        groundBox.Set(b2Vec2(point1.x/PTM_RATIO,point1.y/PTM_RATIO), b2Vec2(point2.x/PTM_RATIO,point2.y/PTM_RATIO));
+        groundBody->CreateFixture(&groundBox,0);
+        
     }
+    
 }
 
 
