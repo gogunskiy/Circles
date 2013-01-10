@@ -9,11 +9,12 @@
 #import "MainGameLayer.h"
 #import "PhysicsObject.h"
 #import "MainGameLayer+Initialization.h"
+#import "Character.h"
 
 
 @interface MainGameLayer()
 
--(void) addNewSpriteAtPosition:(CGPoint)p;
+
 -(void) createMenu;
 -(void) initDrawingLayer;
     
@@ -46,22 +47,20 @@
         
         [self initDrawingLayer];
 		
-        ball = [[PhysicsObject alloc] initWithPosition:ccp(300, 550)
+        ball = [[Character alloc] initWithPosition:ccp(300, 550)
                                               filename:@"hero.png"
                                             indefiener:12];
         [ball setWorld:world_];
-        [ball generateSquareBodyWithWidth:50 height:50 bodyType:b2_staticBody];
         
         [self addChild:ball z:12];
         
         
         
-         ball2 = [[PhysicsObject alloc] initWithPosition:ccp(700, 550)
+         ball2 = [[Character alloc] initWithPosition:ccp(700, 550)
                                                                filename:@"hero2.png"
                                                              indefiener:13];
         [ball2 setWorld:world_];
-        [ball2 generateSquareBodyWithWidth:50 height:50 bodyType:b2_staticBody];
-        
+         
         [self addChild:ball2 z:12];
 
 		[self scheduleUpdate];
@@ -92,28 +91,13 @@
     
     CCMenuItemLabel *start = [CCMenuItemFont itemWithString:@"Start" block:^(id sender){
         
-        world_->DestroyBody([ball body]);
-        [ball release];
-        ball = [[PhysicsObject alloc] initWithPosition:ccp(300, 550)
-                                              filename:nil
-                                            indefiener:12];
-        [ball setWorld:world_];
+        [ball disablePhysics];
         [ball generateSquareBodyWithWidth:50 height:50];
         
-        [self addChild:ball z:10];
-        
-        
-        
-        world_->DestroyBody([ball2 body]);
-        [ball2 release];
-        ball2 = [[PhysicsObject alloc] initWithPosition:ccp(700, 550)
-                                               filename:nil
-                                             indefiener:13];
-        [ball2 setWorld:world_];
+
+        [ball2 disablePhysics];
         [ball2 generateSquareBodyWithWidth:50 height:50];
         
-        [self addChild:ball2 z:10];
-
        [ball body]->ApplyForce( [ball body]->GetMass() * -world_->GetGravity(), [ball body]->GetWorldCenter() );
        
         [ball body]->SetGravityScale(-10);
@@ -144,18 +128,6 @@
 }
 
 
-
--(void) addNewSpriteAtPosition:(CGPoint)p
-{
-    PhysicsObject * point = [[PhysicsObject alloc] initWithPosition:p
-                                                          filename:nil
-                                                        indefiener:12];
-    [point setWorld:world_];
-    [point generateSquareBodyWithWidth:10 height:10 bodyType:b2_staticBody];
-    
-    [self addChild:point z:10];
-    
-}
 
 
 #pragma mark ====  DRAWING LAYER DELEGATE  ====

@@ -14,7 +14,7 @@
 #import "GLES-Render.h"
 #import "DrawingLayer.h"
 
-@class PhysicsObject;
+@class Character;
 
 
 #define PTM_RATIO 32
@@ -28,8 +28,8 @@
     
     DrawingLayer * drawingLayer_;
    
-    PhysicsObject * ball;
-    PhysicsObject * ball2;
+    Character * ball;
+    Character * ball2;
 
 }
 

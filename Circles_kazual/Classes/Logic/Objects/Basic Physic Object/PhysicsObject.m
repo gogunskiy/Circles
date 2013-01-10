@@ -19,6 +19,8 @@
 {
 	self = [super init];
 
+    physicsBodyExist_ = FALSE;
+
 	return self;
 }
 
@@ -26,7 +28,7 @@
 {
 	self = [super initWithFile:filename];
     
-	
+    physicsBodyExist_ = FALSE;
     
 	return self;
 }
@@ -150,6 +152,9 @@
 		fixtureDef.friction = friction;
 		
 		body_->CreateFixture(&fixtureDef);
+        
+        
+        physicsBodyExist_ = TRUE;
 }
 
 - (void) initSquareBodyWithPosition:(CGPoint)position
@@ -186,6 +191,8 @@
 	fixtureDef.friction = friction;
 	
 	body_->CreateFixture(&fixtureDef);
+    
+    physicsBodyExist_ = TRUE;
 	
 }
 
@@ -235,6 +242,7 @@
 	
 	body_->CreateFixture(&fixtureDef);
 	
+    physicsBodyExist_ = TRUE;
 }
 
 -(BOOL) dirty
@@ -245,6 +253,9 @@
 // returns the transform matrix according the Chipmunk Body values
 -(CGAffineTransform) nodeToParentTransform
 {
+    if (body_ == NULL) {
+        return [super nodeToParentTransform];
+    }
 	b2Vec2 pos  = body_->GetPosition();
 	
 	float x = pos.x * PTM_RATIO;

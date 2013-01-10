@@ -14,6 +14,8 @@
 	float			restitution_ ;
 	float			density_ ;
 	float			friction_ ;
+    
+    BOOL            physicsBodyExist_;
 }
 
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		63175230169F670400343EE9 /* MainGameLayer+Initialization.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6317522F169F670300343EE9 /* MainGameLayer+Initialization.mm */; };
+		63260EDD169F6A2A000383B0 /* PhysicsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63260EDC169F6A2A000383B0 /* PhysicsObject.m */; };
+		63260EE7169F6C21000383B0 /* Character.mm in Sources */ = {isa = PBXBuildFile; fileRef = 63260EE6169F6C21000383B0 /* Character.mm */; };
 		63372BAE164588CA00BEF0FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63372BAD164588CA00BEF0FA /* QuartzCore.framework */; };
 		63372BB0164588CA00BEF0FA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63372BAF164588CA00BEF0FA /* OpenGLES.framework */; };
 		63372BB2164588CA00BEF0FA /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63372BB1164588CA00BEF0FA /* OpenAL.framework */; };
@@ -172,7 +174,6 @@
 		63EF8DDA164EF1CC00374B27 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 63EF8DCC164EF1CC00374B27 /* AppDelegate.mm */; };
 		63EF8DDC164EF1CC00374B27 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 63EF8DD4164EF1CC00374B27 /* GLES-Render.mm */; };
 		63EF8DDD164EF1CC00374B27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF8DD5164EF1CC00374B27 /* main.m */; };
-		63EF8DDE164EF1CC00374B27 /* PhysicsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF8DD8164EF1CC00374B27 /* PhysicsObject.m */; };
 		63EF8DF2164EF24900374B27 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EF8DE4164EF24900374B27 /* Default-Landscape~ipad.png */; };
 		63EF8DF3164EF24900374B27 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EF8DE5164EF24900374B27 /* Default.png */; };
 		63EF8DF4164EF24900374B27 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EF8DE6164EF24900374B27 /* fps_images-hd.png */; };
@@ -189,6 +190,10 @@
 /* Begin PBXFileReference section */
 		6317522E169F670300343EE9 /* MainGameLayer+Initialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainGameLayer+Initialization.h"; sourceTree = "<group>"; };
 		6317522F169F670300343EE9 /* MainGameLayer+Initialization.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; path = "MainGameLayer+Initialization.mm"; sourceTree = "<group>"; };
+		63260EDB169F6A2A000383B0 /* PhysicsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsObject.h; sourceTree = "<group>"; };
+		63260EDC169F6A2A000383B0 /* PhysicsObject.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; path = PhysicsObject.m; sourceTree = "<group>"; };
+		63260EE5169F6C21000383B0 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
+		63260EE6169F6C21000383B0 /* Character.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; path = Character.mm; sourceTree = "<group>"; };
 		63372BA9164588CA00BEF0FA /* Circles_kazual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circles_kazual.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63372BAD164588CA00BEF0FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		63372BAF164588CA00BEF0FA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -539,8 +544,6 @@
 		63EF8DD4164EF1CC00374B27 /* GLES-Render.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		63EF8DD5164EF1CC00374B27 /* main.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = main.m; sourceTree = "<group>"; };
 		63EF8DD6164EF1CC00374B27 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		63EF8DD7164EF1CC00374B27 /* PhysicsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsObject.h; sourceTree = "<group>"; };
-		63EF8DD8164EF1CC00374B27 /* PhysicsObject.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = PhysicsObject.m; sourceTree = "<group>"; };
 		63EF8DE4164EF24900374B27 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		63EF8DE5164EF24900374B27 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		63EF8DE6164EF24900374B27 /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fps_images-hd.png"; sourceTree = "<group>"; };
@@ -575,6 +578,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63260ED8169F69F1000383B0 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				63260EDE169F6A55000383B0 /* Character Object */,
+				63260EDA169F6A2A000383B0 /* Basic Physic Object */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		63260EDA169F6A2A000383B0 /* Basic Physic Object */ = {
+			isa = PBXGroup;
+			children = (
+				63260EDB169F6A2A000383B0 /* PhysicsObject.h */,
+				63260EDC169F6A2A000383B0 /* PhysicsObject.m */,
+			);
+			path = "Basic Physic Object";
+			sourceTree = "<group>";
+		};
+		63260EDE169F6A55000383B0 /* Character Object */ = {
+			isa = PBXGroup;
+			children = (
+				63260EE5169F6C21000383B0 /* Character.h */,
+				63260EE6169F6C21000383B0 /* Character.mm */,
+			);
+			path = "Character Object";
+			sourceTree = "<group>";
+		};
 		63372B9E164588CA00BEF0FA = {
 			isa = PBXGroup;
 			children = (
@@ -1148,8 +1178,6 @@
 				63EF8DCD164EF1CC00374B27 /* Layers */,
 				63EF8DD1164EF1CC00374B27 /* Logic */,
 				63EF8DD2164EF1CC00374B27 /* Other */,
-				63EF8DD7164EF1CC00374B27 /* PhysicsObject.h */,
-				63EF8DD8164EF1CC00374B27 /* PhysicsObject.m */,
 				63EF8DD9164EF1CC00374B27 /* Support */,
 			);
 			path = Classes;
@@ -1169,21 +1197,14 @@
 			children = (
 				636A2AA3169CA2D000299BAF /* DrawingLayer */,
 				63D0A792169616A300C028D7 /* MainGameLayer */,
-				63EF8DCE164EF1CC00374B27 /* Test layer */,
 			);
 			path = Layers;
-			sourceTree = "<group>";
-		};
-		63EF8DCE164EF1CC00374B27 /* Test layer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Test layer";
 			sourceTree = "<group>";
 		};
 		63EF8DD1164EF1CC00374B27 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				63260ED8169F69F1000383B0 /* Objects */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -1499,11 +1520,12 @@
 				63EF8DDA164EF1CC00374B27 /* AppDelegate.mm in Sources */,
 				63EF8DDC164EF1CC00374B27 /* GLES-Render.mm in Sources */,
 				63EF8DDD164EF1CC00374B27 /* main.m in Sources */,
-				63EF8DDE164EF1CC00374B27 /* PhysicsObject.m in Sources */,
 				63D0A791169615ED00C028D7 /* CCNode+SFGestureRecognizers.m in Sources */,
 				63D0A795169616A300C028D7 /* MainGameLayer.mm in Sources */,
 				636A2AA7169CA2ED00299BAF /* DrawingLayer.m in Sources */,
 				63175230169F670400343EE9 /* MainGameLayer+Initialization.mm in Sources */,
+				63260EDD169F6A2A000383B0 /* PhysicsObject.m in Sources */,
+				63260EE7169F6C21000383B0 /* Character.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
