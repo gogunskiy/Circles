@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63175230169F670400343EE9 /* MainGameLayer+Initialization.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6317522F169F670300343EE9 /* MainGameLayer+Initialization.mm */; };
 		63372BAE164588CA00BEF0FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63372BAD164588CA00BEF0FA /* QuartzCore.framework */; };
 		63372BB0164588CA00BEF0FA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63372BAF164588CA00BEF0FA /* OpenGLES.framework */; };
 		63372BB2164588CA00BEF0FA /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63372BB1164588CA00BEF0FA /* OpenAL.framework */; };
@@ -186,6 +187,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6317522E169F670300343EE9 /* MainGameLayer+Initialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainGameLayer+Initialization.h"; sourceTree = "<group>"; };
+		6317522F169F670300343EE9 /* MainGameLayer+Initialization.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; path = "MainGameLayer+Initialization.mm"; sourceTree = "<group>"; };
 		63372BA9164588CA00BEF0FA /* Circles_kazual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circles_kazual.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63372BAD164588CA00BEF0FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		63372BAF164588CA00BEF0FA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1132,6 +1135,8 @@
 			children = (
 				63D0A793169616A300C028D7 /* MainGameLayer.h */,
 				63D0A794169616A300C028D7 /* MainGameLayer.mm */,
+				6317522E169F670300343EE9 /* MainGameLayer+Initialization.h */,
+				6317522F169F670300343EE9 /* MainGameLayer+Initialization.mm */,
 			);
 			path = MainGameLayer;
 			sourceTree = "<group>";
@@ -1498,6 +1503,7 @@
 				63D0A791169615ED00C028D7 /* CCNode+SFGestureRecognizers.m in Sources */,
 				63D0A795169616A300C028D7 /* MainGameLayer.mm in Sources */,
 				636A2AA7169CA2ED00299BAF /* DrawingLayer.m in Sources */,
+				63175230169F670400343EE9 /* MainGameLayer+Initialization.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

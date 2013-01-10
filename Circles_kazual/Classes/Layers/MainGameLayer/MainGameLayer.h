@@ -21,10 +21,9 @@
 
 @interface MainGameLayer : CCLayer <DrawingLayerDelegate>
 {
-    // basic physics engine ivars
-	CCTexture2D *spriteTexture_;	// weak ref
-	b2World* world;					// strong ref
-	GLESDebugDraw *m_debugDraw;		// strong ref
+ 	CCTexture2D *spriteTexture_;	
+	b2World* world_;				
+	GLESDebugDraw *mdebugDraw_;		
     
     
     DrawingLayer * drawingLayer_;

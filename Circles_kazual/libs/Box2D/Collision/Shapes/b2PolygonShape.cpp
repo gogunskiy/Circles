@@ -168,7 +168,7 @@ void b2PolygonShape::Set(const b2Vec2* vertices, int32 count)
 
 	// Compute the polygon centroid.
 	m_centroid = ComputeCentroid(m_vertices, m_vertexCount);
-}
+} 
 
 bool b2PolygonShape::TestPoint(const b2Transform& xf, const b2Vec2& p) const
 {
