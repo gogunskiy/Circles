@@ -25,7 +25,7 @@
 	world_->SetDebugDraw(mdebugDraw_);
 	
 	uint32 flags = 0;
-	flags += b2Draw::e_shapeBit;
+//	flags += b2Draw::e_shapeBit;
 	//		flags += b2Draw::e_jointBit;
 	//		flags += b2Draw::e_aabbBit;
 	//		flags += b2Draw::e_pairBit;
@@ -34,25 +34,19 @@
 }
 
 
--(void) draw
-{
-	[super draw];
-	
-	ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
-	
-	kmGLPushMatrix();
-	
-	world_->DrawDebugData();
-	
-	kmGLPopMatrix();
+-(void) initDrawingLayer {
+    drawingLayer_ = [[DrawingLayer alloc] init];
+    [drawingLayer_ setDelegate:self];
+    [self addChild:drawingLayer_];
 }
 
--(void) update: (ccTime) dt
-{
-	int32 velocityIterations = 8;
-	int32 positionIterations = 1;
-	
-	world_->Step(dt, velocityIterations, positionIterations);	
+
+
+-(void) initEntertainmentLayer {
+    entertainmentLayer_ = [[EntertainmentLayer alloc] init];
+    [self addChild:entertainmentLayer_];
 }
+
+
 
 @end

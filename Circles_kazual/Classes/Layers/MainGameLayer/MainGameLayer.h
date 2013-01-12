@@ -13,13 +13,14 @@
 #import "Box2D.h"
 #import "GLES-Render.h"
 #import "DrawingLayer.h"
+#import "EntertainmentLayer.h"
 
 @class Character;
 
 
 #define PTM_RATIO 32
 
-@interface MainGameLayer : CCLayer <DrawingLayerDelegate>
+@interface MainGameLayer : BaseLayer <DrawingLayerDelegate>
 {
  	CCTexture2D *spriteTexture_;	
 	b2World* world_;				
@@ -27,9 +28,9 @@
     
     
     DrawingLayer * drawingLayer_;
-   
-    Character * ball;
-    Character * ball2;
+    EntertainmentLayer * entertainmentLayer_;
+    
+    Character * brain;
 
 }
 

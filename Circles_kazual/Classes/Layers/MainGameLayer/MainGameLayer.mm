@@ -16,7 +16,7 @@
 
 
 -(void) createMenu;
--(void) initDrawingLayer;
+
     
 @end
 
@@ -46,22 +46,22 @@
 		[self createMenu];
         
         [self initDrawingLayer];
+        
+        [self initEntertainmentLayer];
 		
-        ball = [[Character alloc] initWithPosition:ccp(300, 550)
-                                              filename:@"hero.png"
-                                            indefiener:12];
-        [ball setWorld:world_];
-        
-        [self addChild:ball z:12];
         
         
+        NSMutableDictionary * characterData = [Character characterDataByType:CHARACTER_TYPE_BRAIN];
+        [characterData setObject:@"10" forKey:CHARACTER_GRAVITYSCALE];
         
-         ball2 = [[Character alloc] initWithPosition:ccp(700, 550)
-                                                               filename:@"hero2.png"
-                                                             indefiener:13];
-        [ball2 setWorld:world_];
-         
-        [self addChild:ball2 z:12];
+        brain = [[Character alloc] initWithPosition:ccp(400,600) indefiener:1 data:characterData];
+        
+        [brain setWorld:world_];
+        
+        [self addChild:brain z:12];
+        
+        
+
 
 		[self scheduleUpdate];
 	}
@@ -91,18 +91,7 @@
     
     CCMenuItemLabel *start = [CCMenuItemFont itemWithString:@"Start" block:^(id sender){
         
-        [ball disablePhysics];
-        [ball generateSquareBodyWithWidth:50 height:50];
-        
-
-        [ball2 disablePhysics];
-        [ball2 generateSquareBodyWithWidth:50 height:50];
-        
-       [ball body]->ApplyForce( [ball body]->GetMass() * -world_->GetGravity(), [ball body]->GetWorldCenter() );
-       
-        [ball body]->SetGravityScale(-10);
-        
-        [ball2 body]->SetGravityScale(10);
+        [brain enablePhysics];
         
 	}];
 	
@@ -121,12 +110,28 @@
 	[self addChild: menu z:-1];	
 }
 
--(void) initDrawingLayer {
-    drawingLayer_ = [[DrawingLayer alloc] init];
-    [drawingLayer_ setDelegate:self];
-    [self addChild:drawingLayer_];
+
+
+-(void) draw
+{
+	[super draw];
+	
+	ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
+	
+	kmGLPushMatrix();
+	
+	world_->DrawDebugData();
+	
+	kmGLPopMatrix();
 }
 
+-(void) update: (ccTime) dt
+{
+	int32 velocityIterations = 8;
+	int32 positionIterations = 1;
+	
+	world_->Step(dt, velocityIterations, positionIterations);
+}
 
 
 

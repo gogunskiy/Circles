@@ -39,6 +39,15 @@
 
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+  
+    UITouch *touch = [ touches anyObject];
+    CGPoint new_location = [touch locationInView: [touch view]];
+    new_location = [[CCDirector sharedDirector] convertToGL:new_location];
+    
+    if (!CGRectContainsPoint(CGRectMake(60, 60, 904, 648), new_location)) {
+        return;
+    }
+    
     [touchesArray_ removeAllObjects];
     
 }
@@ -50,6 +59,10 @@
     CGPoint new_location = [touch locationInView: [touch view]];
     new_location = [[CCDirector sharedDirector] convertToGL:new_location];
     
+    if (!CGRectContainsPoint(CGRectMake(60, 60, 904, 648), new_location)) {
+        return;
+    }
+    
     CGPoint oldTouchLocation = [touch previousLocationInView:touch.view];
     oldTouchLocation = [[CCDirector sharedDirector] convertToGL:oldTouchLocation];
     oldTouchLocation = [self convertToNodeSpace:oldTouchLocation];
@@ -59,6 +72,14 @@
 }
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [ touches anyObject];
+    CGPoint new_location = [touch locationInView: [touch view]];
+    new_location = [[CCDirector sharedDirector] convertToGL:new_location];
+    
+    if (!CGRectContainsPoint(CGRectMake(60, 60, 904, 648), new_location)) {
+        return;
+    }
     
     NSArray * points = [self approximateValuesForPoints:touchesArray_];
     
@@ -76,7 +97,7 @@
 
 -(void)draw
 {
-	glLineWidth(2.5);
+	glLineWidth(7);
     
     for(int i = 0; i < [touchesArray_ count]; i+=2)
     {

@@ -6,6 +6,8 @@
 
 @implementation PhysicsObject
 
+@synthesize gravityScale;
+
 - (b2Body *) body {
     return body_;
 }
@@ -35,7 +37,7 @@
 
 - (id) initWithPosition:(CGPoint) position filename:(NSString*)filename indefiener:(int)indefiener
 {
-    if (filename) {
+    if (filename && ![filename isEqualToString:@""]) {
         self = [self initWithFileName:filename];
     } else {
         self = [super init];
@@ -45,6 +47,7 @@
 	friction_ = 1.0 ;
 	position_ = position ;
 	
+    [self setAnchorPoint:ccp(0,0)];
 	[self setTag:indefiener];
 	
 	return self;
@@ -220,7 +223,7 @@
 	b2PolygonShape square;
     
     // FIX !!!
-	b2Vec2 verts[20] ;
+	b2Vec2 verts[8] ;
 	for (unsigned int i=0; i < [verticles count]; i++) 
 	{
 		b2Vec2 vect ;

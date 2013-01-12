@@ -17,7 +17,7 @@
 
 @end
 
-@interface DrawingLayer : CCLayer {
+@interface DrawingLayer : BaseLayer {
         NSMutableArray * touchesArray_;
 }
 

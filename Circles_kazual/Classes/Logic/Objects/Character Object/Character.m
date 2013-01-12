@@ -10,20 +10,46 @@
 
 @implementation Character
 
+@synthesize data;
 
-- (id) initWithPosition:(CGPoint)position filename:(NSString *)filename indefiener:(int)indefiener {
+- (id) initWithPosition:(CGPoint)position indefiener:(int)indefiener data:(NSDictionary *)theData {
+    
+    self = [super initWithPosition:position filename:[theData objectForKey:CHARACTER_SPRITE] indefiener:indefiener];
 
-    self = [super initWithPosition:position filename:filename indefiener:indefiener];
+    [self setData:theData];
+    
+    [self setGravityScale:[[theData objectForKey:CHARACTER_GRAVITYSCALE] floatValue]];
     
     return self;
+}
+
+- (void) enablePhysics {
+    
+    [self disablePhysics];
+    
+    if ([[[[self data] objectForKey:CHARACTER_GEOMETRY] objectForKey:CHARACTER_GEOMETRY_TYPE] isEqualToString:CHARACTER_GEOMETRY_TYPE_POLYGON]) {
+        
+        NSArray * points = [[[self data] objectForKey:CHARACTER_GEOMETRY] objectForKey:CHARACTER_GEOMETRY_POINTS];
+    
+        [self generatePolygonBodyWithVerticles:points bodyType:b2_dynamicBody];
+        
+        [self body]->SetGravityScale([self gravityScale]);
+    }
 }
 
 
 - (void) disablePhysics {
     if (physicsBodyExist_) {
         world_->DestroyBody([self body]);
+      
+        body_ = NULL;
+        
         physicsBodyExist_ = FALSE;
     }
+}
+
++ (NSMutableDictionary *) characterDataByType:(NSString *)characterType {
+    return [NSMutableDictionary dictionaryWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:characterType]];
 }
 
 @end

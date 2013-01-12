@@ -8,8 +8,12 @@
 
 #import "MainGameLayer.h"
 
+
+
 @interface MainGameLayer (Initialization)
 
--(void) initPhysics;;
+-(void) initPhysics;
+-(void) initDrawingLayer;
+-(void) initEntertainmentLayer;
 
 @end
