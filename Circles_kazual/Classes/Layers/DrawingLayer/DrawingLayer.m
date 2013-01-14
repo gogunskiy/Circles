@@ -8,9 +8,10 @@
 
 #import "DrawingLayer.h"
 
+static NSString * DRAW_MORE_THAN_ONE_LINE_ERROR  =  @"Cannot draw more than one line per level";
+
 @interface DrawingLayer()
 
-- (NSArray *) approximateValuesForPoints:(NSArray *)points;
 
 @end
 
@@ -18,6 +19,7 @@
 
 @synthesize touchesArray = touchesArray_;
 @synthesize delegate;
+@synthesize drawingState;
 
 -(id) init {
     if((self = [super init])) {
@@ -36,61 +38,55 @@
     [super dealloc];
 }
 
+- (void) reset {
+    
+    [touchesArray_ removeAllObjects];
+    [self setDrawingState:DrawingStateInitialized];
+    drawingEnabled_ = TRUE;
+}
 
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
   
-    UITouch *touch = [ touches anyObject];
-    CGPoint new_location = [touch locationInView: [touch view]];
-    new_location = [[CCDirector sharedDirector] convertToGL:new_location];
+    drawingEnabled_ = ([self drawingState] == DrawingStateInitialized);
     
-    if (!CGRectContainsPoint(CGRectMake(60, 60, 904, 648), new_location)) {
-        return;
+    [self setDrawingState:DrawingStateProccesing];
+    
+    if (!drawingEnabled_) {
+
+        if ([[self delegate] respondsToSelector:@selector(drawingLayer:drawingCanceledWithResoution:)]) {
+            [[self delegate] drawingLayer:self drawingCanceledWithResoution:DRAW_MORE_THAN_ONE_LINE_ERROR];
+        }
     }
-    
-    [touchesArray_ removeAllObjects];
-    
 }
 
 
 -(void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event  {
     
-    UITouch *touch = [ touches anyObject];
-    CGPoint new_location = [touch locationInView: [touch view]];
-    new_location = [[CCDirector sharedDirector] convertToGL:new_location];
-    
-    if (!CGRectContainsPoint(CGRectMake(60, 60, 904, 648), new_location)) {
-        return;
+    if (drawingEnabled_) {
+        UITouch *touch = [ touches anyObject];
+        CGPoint new_location = [touch locationInView: [touch view]];
+        new_location = [[CCDirector sharedDirector] convertToGL:new_location];
+        
+        
+        CGPoint oldTouchLocation = [touch previousLocationInView:touch.view];
+        oldTouchLocation = [[CCDirector sharedDirector] convertToGL:oldTouchLocation];
+        oldTouchLocation = [self convertToNodeSpace:oldTouchLocation];
+        
+        [touchesArray_ addObject:NSStringFromCGPoint(new_location)];
+        [touchesArray_ addObject:NSStringFromCGPoint(oldTouchLocation)];
     }
-    
-    CGPoint oldTouchLocation = [touch previousLocationInView:touch.view];
-    oldTouchLocation = [[CCDirector sharedDirector] convertToGL:oldTouchLocation];
-    oldTouchLocation = [self convertToNodeSpace:oldTouchLocation];
-    // add my touches to the naughty touch array
-    [touchesArray_ addObject:NSStringFromCGPoint(new_location)];
-    [touchesArray_ addObject:NSStringFromCGPoint(oldTouchLocation)];
 }
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    UITouch *touch = [ touches anyObject];
-    CGPoint new_location = [touch locationInView: [touch view]];
-    new_location = [[CCDirector sharedDirector] convertToGL:new_location];
-    
-    if (!CGRectContainsPoint(CGRectMake(60, 60, 904, 648), new_location)) {
-        return;
-    }
-    
-    NSArray * points = [self approximateValuesForPoints:touchesArray_];
-    
-    if ([delegate respondsToSelector:@selector(drawingLayer:endDrawingWithPoints:)]) {
-        [delegate drawingLayer:self endDrawingWithPoints:points];
-    }
+
 }
 
 
-- (NSArray *) approximateValuesForPoints:(NSArray *)points {
+- (NSArray *) points {
 
+    NSArray * points = [NSArray arrayWithArray:touchesArray_];
+    
     return points;
 }
 
@@ -99,7 +95,7 @@
 {
 	glLineWidth(7);
     
-    for(int i = 0; i < [touchesArray_ count]; i+=2)
+    for(int i = 0; i < [touchesArray_ count] / 2 * 2; i+=2)
     {
         CGPoint start = CGPointFromString([touchesArray_ objectAtIndex:i]);
         CGPoint end = CGPointFromString([touchesArray_ objectAtIndex:i+1]);

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630C433E16A4B62F0032DAE2 /* ErrorSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 630C433D16A4B62F0032DAE2 /* ErrorSound.wav */; };
 		6313623116A1CBA90011795C /* BaseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6313623016A1CBA90011795C /* BaseLayer.m */; };
 		6313623416A1CBC20011795C /* EntertainmentLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6313623316A1CBC20011795C /* EntertainmentLayer.m */; };
-		6313623A16A1DF6B0011795C /* pig_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6313623916A1DF6B0011795C /* pig_sound.wav */; };
 		63175230169F670400343EE9 /* MainGameLayer+Initialization.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6317522F169F670300343EE9 /* MainGameLayer+Initialization.mm */; };
 		63260EDD169F6A2A000383B0 /* PhysicsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63260EDC169F6A2A000383B0 /* PhysicsObject.m */; };
 		63260EE7169F6C21000383B0 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 63260EE6169F6C21000383B0 /* Character.m */; };
@@ -192,11 +192,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		630C433D16A4B62F0032DAE2 /* ErrorSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ErrorSound.wav; sourceTree = "<group>"; };
 		6313622F16A1CBA90011795C /* BaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLayer.h; sourceTree = "<group>"; };
 		6313623016A1CBA90011795C /* BaseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLayer.m; sourceTree = "<group>"; };
 		6313623216A1CBC20011795C /* EntertainmentLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntertainmentLayer.h; sourceTree = "<group>"; };
-		6313623316A1CBC20011795C /* EntertainmentLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntertainmentLayer.m; sourceTree = "<group>"; };
-		6313623916A1DF6B0011795C /* pig_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pig_sound.wav; sourceTree = "<group>"; };
+		6313623316A1CBC20011795C /* EntertainmentLayer.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = EntertainmentLayer.m; sourceTree = "<group>"; };
 		6317522E169F670300343EE9 /* MainGameLayer+Initialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainGameLayer+Initialization.h"; sourceTree = "<group>"; };
 		6317522F169F670300343EE9 /* MainGameLayer+Initialization.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = "MainGameLayer+Initialization.mm"; sourceTree = "<group>"; };
 		63260EDB169F6A2A000383B0 /* PhysicsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsObject.h; sourceTree = "<group>"; };
@@ -541,7 +541,7 @@
 		634E397916A1BB4600322F10 /* brain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = brain.plist; sourceTree = "<group>"; };
 		634E397A16A1BB4600322F10 /* brain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brain.png; sourceTree = "<group>"; };
 		636A2AA5169CA2ED00299BAF /* DrawingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingLayer.h; sourceTree = "<group>"; };
-		636A2AA6169CA2ED00299BAF /* DrawingLayer.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; path = DrawingLayer.m; sourceTree = "<group>"; };
+		636A2AA6169CA2ED00299BAF /* DrawingLayer.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = DrawingLayer.m; sourceTree = "<group>"; };
 		63D0A78F169615ED00C028D7 /* CCNode+SFGestureRecognizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+SFGestureRecognizers.h"; sourceTree = "<group>"; };
 		63D0A790169615ED00C028D7 /* CCNode+SFGestureRecognizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+SFGestureRecognizers.m"; sourceTree = "<group>"; };
 		63D0A793169616A300C028D7 /* MainGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameLayer.h; sourceTree = "<group>"; };
@@ -1340,7 +1340,7 @@
 		63EF8DF1164EF24900374B27 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				6313623916A1DF6B0011795C /* pig_sound.wav */,
+				630C433D16A4B62F0032DAE2 /* ErrorSound.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -1411,7 +1411,7 @@
 				63D0A7A116962DAB00C028D7 /* hero.png in Resources */,
 				634E397B16A1BB4600322F10 /* brain.plist in Resources */,
 				634E397C16A1BB4600322F10 /* brain.png in Resources */,
-				6313623A16A1DF6B0011795C /* pig_sound.wav in Resources */,
+				630C433E16A4B62F0032DAE2 /* ErrorSound.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

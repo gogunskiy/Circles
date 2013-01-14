@@ -16,6 +16,7 @@
 
 
 -(void) createMenu;
+-(void) drawPathLineWithPoints:(NSArray *) points;
 
     
 @end
@@ -84,14 +85,13 @@
 
 -(void) createMenu
 {
-	// Default font size will be 22 points.
 	[CCMenuItemFont setFontSize:22];
 	
-	// Reset Button]
-    
     CCMenuItemLabel *start = [CCMenuItemFont itemWithString:@"Start" block:^(id sender){
         
         [brain enablePhysics];
+        
+        [self drawPathLineWithPoints:[drawingLayer_ points]];
         
 	}];
 	
@@ -134,10 +134,7 @@
 }
 
 
-
-#pragma mark ====  DRAWING LAYER DELEGATE  ====
-
-- (void)drawingLayer:(DrawingLayer *)DrawingLayer endDrawingWithPoints:(NSArray *)points {
+-(void) drawPathLineWithPoints:(NSArray *) points {
     
     b2BodyDef groundBodyDef;
 	groundBodyDef.position.Set(0, 0);
@@ -145,9 +142,9 @@
     b2Body* groundBody = world_->CreateBody(&groundBodyDef);
 	
 	b2EdgeShape groundBox;
-
-    for (int i = 1; i < [points count]; i++) {
     
+    for (int i = 1; i < [points count]; i++) {
+        
         CGPoint point1 = CGPointFromString([points objectAtIndex:i-1]);
         CGPoint point2 = CGPointFromString([points objectAtIndex:i]);
         
@@ -155,10 +152,18 @@
         groundBody->CreateFixture(&groundBox,0);
         
     }
+}
+
+#pragma mark ====  DRAWING LAYER DELEGATE  ====
+
+-(void)drawingLayer:(DrawingLayer *)DrawingLayer endDrawingWithPoints:(NSArray *)points {
+
     
 }
 
-
+- (void)drawingLayer:(DrawingLayer *)DrawingLayer drawingCanceledWithResoution:(NSString *)resolution {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"ErrorSound.wav"];
+}
 
 
 @end

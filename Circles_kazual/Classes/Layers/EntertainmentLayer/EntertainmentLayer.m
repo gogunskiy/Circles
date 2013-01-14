@@ -42,18 +42,7 @@ static CGFloat const ENTERTAIMENT_SHOWING_CHARACTER_HEIGHT = 90.0;
 }
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)eventt {
-    
-    UITouch *touch = [ touches anyObject];
-    CGPoint new_location = [touch locationInView: [touch view]];
-    new_location = [[CCDirector sharedDirector] convertToGL:new_location];
-    
-    for (CCSprite * sprite in [self children]) {
-        if (CGRectContainsPoint(CGRectMake(sprite.position.x - 50, sprite.position.y - 50, 100, 100), new_location)) {
-            [sprite stopAllActions];
-            [sprite runAction:[CCSequence actions:[CCDelayTime actionWithDuration:1.5],[CCFadeOut actionWithDuration:1.],[CCCallFunc actionWithTarget:self selector:@selector(removeFromParentAndCleanup:)], nil]];
-            [[SimpleAudioEngine sharedEngine] playEffect:@"pig_sound.wav"];
-        }
-    }
+
 }
 
 
