@@ -47,7 +47,6 @@
 	friction_ = 1.0 ;
 	position_ = position ;
 	
-    [self setAnchorPoint:ccp(0,0)];
 	[self setTag:indefiener];
 	
 	return self;
@@ -130,34 +129,36 @@
 						   friction:(float) friction
 							bodyType:(b2BodyType)bodyType
 {							
-		
-		b2BodyDef bodyDef;
-		bodyDef.type = bodyType;
-		bodyDef.linearDamping = 0.5;
-		bodyDef.angularDamping = 0.5;
-		bodyDef.position.Set(position.x/PTM_RATIO, position.y/PTM_RATIO);
-		
-		self.position = ccp( position.x, position.y);
-		
-		bodyDef.userData = self;
 	
-		body_ = world_->CreateBody(&bodyDef);
-			
-		// Define another box shape for our dynamic body_.
-		b2CircleShape circle;
-		circle.m_radius = radius/PTM_RATIO;	
-		// Define the dynamic body_ fixture.
-		b2FixtureDef fixtureDef;
-		fixtureDef.shape = &circle;	
-		
-		fixtureDef.restitution = restitution;
-		fixtureDef.density = density;
-		fixtureDef.friction = friction;
-		
-		body_->CreateFixture(&fixtureDef);
-        
-        
-        physicsBodyExist_ = TRUE;
+    [self setAnchorPoint:ccp(0.5,0.5)];
+    
+    b2BodyDef bodyDef;
+    bodyDef.type = bodyType;
+    bodyDef.linearDamping = 0.5;
+    bodyDef.angularDamping = 0.5;
+    bodyDef.position.Set(position.x/PTM_RATIO, position.y/PTM_RATIO);
+    
+    self.position = ccp( position.x, position.y);
+    
+    bodyDef.userData = self;
+	
+    body_ = world_->CreateBody(&bodyDef);
+    
+    // Define another box shape for our dynamic body_.
+    b2CircleShape circle;
+    circle.m_radius = radius/PTM_RATIO;
+    // Define the dynamic body_ fixture.
+    b2FixtureDef fixtureDef;
+    fixtureDef.shape = &circle;
+    
+    fixtureDef.restitution = restitution;
+    fixtureDef.density = density;
+    fixtureDef.friction = friction;
+    
+    body_->CreateFixture(&fixtureDef);
+    
+    
+    physicsBodyExist_ = TRUE;
 }
 
 - (void) initSquareBodyWithPosition:(CGPoint)position
@@ -168,7 +169,8 @@
 						   friction:(float) friction
 						   bodyType:(b2BodyType)bodyType
 {							
-	
+	[self setAnchorPoint:ccp(0.5,0.5)];
+    
 	b2BodyDef bodyDef;
 	bodyDef.type = bodyType;
 	bodyDef.linearDamping = 0.5;
@@ -207,6 +209,8 @@
 						   bodyType:(b2BodyType)bodyType
 {							
 	
+    [self setAnchorPoint:ccp(0,0)];
+    
 	b2BodyDef bodyDef;
 	bodyDef.type = bodyType;
 	bodyDef.linearDamping = 0.5;

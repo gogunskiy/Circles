@@ -22,7 +22,7 @@ static NSString * const CHARACTER_GEOMETRY_TYPE_SQUARE  = @"Square";
 static NSString * const CHARACTER_GEOMETRY_TYPE_CIRCLE  = @"Circle";
 static NSString * const CHARACTER_GEOMETRY_TYPE_POLYGON = @"Polygon";
 static NSString * const CHARACTER_GEOMETRY_POINTS       = @"Points";
-
+static NSString * const CHARACTER_GEOMETRY_RADIUS       = @"Radius";
 @interface Character : PhysicsObject
 
 @property (nonatomic, retain) NSDictionary * data;

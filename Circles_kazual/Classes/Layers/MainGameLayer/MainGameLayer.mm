@@ -53,7 +53,7 @@
         
         
         NSMutableDictionary * characterData = [Character characterDataByType:CHARACTER_TYPE_BRAIN];
-        [characterData setObject:@"10" forKey:CHARACTER_GRAVITYSCALE];
+        [characterData setObject:@"20" forKey:CHARACTER_GRAVITYSCALE];
         
         brain = [[Character alloc] initWithPosition:ccp(400,600) indefiener:1 data:characterData];
         

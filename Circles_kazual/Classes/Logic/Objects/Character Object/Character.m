@@ -20,6 +20,9 @@
     
     [self setGravityScale:[[theData objectForKey:CHARACTER_GRAVITYSCALE] floatValue]];
     
+    if ([[[[self data] objectForKey:CHARACTER_GEOMETRY] objectForKey:CHARACTER_GEOMETRY_TYPE] isEqualToString:CHARACTER_GEOMETRY_TYPE_POLYGON]) {
+        [self setAnchorPoint:ccp(0, 0)];
+    }
     return self;
 }
 
@@ -34,6 +37,11 @@
         [self generatePolygonBodyWithVerticles:points bodyType:b2_dynamicBody];
         
         [self body]->SetGravityScale([self gravityScale]);
+    } else  if ([[[[self data] objectForKey:CHARACTER_GEOMETRY] objectForKey:CHARACTER_GEOMETRY_TYPE] isEqualToString:CHARACTER_GEOMETRY_TYPE_CIRCLE]) {
+        CGFloat radius =  [[[[self data] objectForKey:CHARACTER_GEOMETRY] objectForKey:CHARACTER_GEOMETRY_RADIUS] floatValue];
+        
+        [self generateCirlceBodyWithRadius:radius];
+        
     }
 }
 
