@@ -7,15 +7,18 @@
 //
 
 #import "MainGameLayer+Initialization.h"
+#import "LevelContainer.h"
+#import "Character.h"
+
 
 @implementation MainGameLayer (Initialization)
 
 
--(void) initPhysics
+- (void) initPhysics
 {
 
 	b2Vec2 gravity;
-	gravity.Set(0.0f, -10.0f);
+	gravity.Set(0.0f, 0.0f);
 	world_ = new b2World(gravity);
 	
     world_->SetAllowSleeping(true);
@@ -34,7 +37,42 @@
 }
 
 
--(void) initDrawingLayer {
+- (void) initLevel {
+    [self initBackground];
+    [self initCharacters];
+    [self initBonuses];
+}
+
+- (void) initBackground {
+    
+}
+
+- (void) initCharacters {
+    
+    characters_ = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary * characterInfo in [currentLevel_ characters]) {
+        NSMutableDictionary * characterData = [Character characterDataByType:[characterInfo objectForKey:CHARACTER_FILE]];
+        
+        CGPoint characterPosition = CGPointFromString([characterInfo objectForKey:CHARACTER_POSITION]);
+        
+        [characterData setObject:[characterInfo objectForKey:CHARACTER_GRAVITYSCALE] forKey:CHARACTER_GRAVITYSCALE];
+        
+        Character * character = [[Character alloc] initWithPosition:characterPosition indefiener:1 data:characterData];
+        [character setWorld:world_];
+        [self addChild:character];
+        
+        [characters_ addObject:character];
+        
+        [character release];
+    }
+}
+
+- (void) initBonuses {
+    
+}
+
+- (void) initDrawingLayer {
     drawingLayer_ = [[DrawingLayer alloc] init];
     [drawingLayer_ setDelegate:self];
     [drawingLayer_ reset];
@@ -43,7 +81,7 @@
 
 
 
--(void) initEntertainmentLayer {
+- (void) initEntertainmentLayer {
     entertainmentLayer_ = [[EntertainmentLayer alloc] init];
     [self addChild:entertainmentLayer_];
 }

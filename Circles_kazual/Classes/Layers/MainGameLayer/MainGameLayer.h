@@ -16,7 +16,7 @@
 #import "EntertainmentLayer.h"
 
 @class Character;
-
+@class LevelContainer;
 
 #define PTM_RATIO 32
 
@@ -30,11 +30,10 @@
     DrawingLayer * drawingLayer_;
     EntertainmentLayer * entertainmentLayer_;
     
-    Character * brain;
-
+    LevelContainer * currentLevel_;
+    
+    NSMutableArray * characters_;
 }
 
-// returns a CCScene that contains the HelloWorldLayer as the only child
-+(CCScene *) scene;
 
 @end

@@ -18,7 +18,7 @@
     BOOL            physicsBodyExist_;
 }
 
-@property (nonatomic, assign) CGFloat gravityScale;
+@property (nonatomic, assign) CGPoint gravityScale;
 
 - (b2Body *) body ;
 

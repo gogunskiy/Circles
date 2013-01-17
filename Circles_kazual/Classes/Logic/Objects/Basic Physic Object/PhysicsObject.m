@@ -263,6 +263,7 @@
     if (body_ == NULL) {
         return [super nodeToParentTransform];
     }
+    
 	b2Vec2 pos  = body_->GetPosition();
 	
 	float x = pos.x * PTM_RATIO;

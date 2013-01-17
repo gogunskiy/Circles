@@ -10,7 +10,7 @@
 #import "PhysicsObject.h"
 #import "MainGameLayer+Initialization.h"
 #import "Character.h"
-
+#import "LevelContainer.h"
 
 @interface MainGameLayer()
 
@@ -18,22 +18,13 @@
 -(void) createMenu;
 -(void) drawPathLineWithPoints:(NSArray *) points;
 
+- (void) enablePhysics ;
+- (void) disablePhysics ;
+
     
 @end
 
 @implementation MainGameLayer
-
-+(CCScene *) scene
-{
-
-	CCScene *scene = [CCScene node];
-
-	MainGameLayer *layer = [MainGameLayer node];
-	
-	[scene addChild:layer];
-
-	return scene;
-}
 
 -(id) init
 {
@@ -50,19 +41,9 @@
         
         [self initEntertainmentLayer];
 		
+        currentLevel_ = [GAME currentLevel];
         
-        
-        NSMutableDictionary * characterData = [Character characterDataByType:CHARACTER_TYPE_BRAIN];
-        [characterData setObject:@"20" forKey:CHARACTER_GRAVITYSCALE];
-        
-        brain = [[Character alloc] initWithPosition:ccp(400,600) indefiener:1 data:characterData];
-        
-        [brain setWorld:world_];
-        
-        [self addChild:brain z:12];
-        
-        
-
+        [self initLevel];
 
 		[self scheduleUpdate];
 	}
@@ -77,7 +58,9 @@
 	delete mdebugDraw_;
 	mdebugDraw_ = NULL;
 	
+    [characters_ release];
     
+    [entertainmentLayer_ release];
     [drawingLayer_ release];
     
 	[super dealloc];
@@ -89,7 +72,7 @@
 	
     CCMenuItemLabel *start = [CCMenuItemFont itemWithString:@"Start" block:^(id sender){
         
-        [brain enablePhysics];
+        [self enablePhysics];
         
         [self drawPathLineWithPoints:[drawingLayer_ points]];
         
@@ -110,7 +93,28 @@
 	[self addChild: menu z:-1];	
 }
 
+- (void) enablePhysics {
+    
+    for (Character * character in characters_) {
+        [character enablePhysics];
+    }
+}
 
+- (void) disablePhysics  {
+    for (Character * character in characters_) {
+        [character disablePhysics];
+    }
+}
+
+- (void) updateObjects {
+    for (Character * character in characters_) {
+        
+        if ([character body] != NULL) {
+            b2Vec2 customGravity = b2Vec2(character.gravityScale.x, character.gravityScale.y);
+            [character body]->ApplyForce(customGravity , [character body]->GetPosition());
+        }
+    }
+}
 
 -(void) draw
 {
@@ -129,7 +133,9 @@
 {
 	int32 velocityIterations = 8;
 	int32 positionIterations = 1;
-	
+    
+    [self updateObjects];
+
 	world_->Step(dt, velocityIterations, positionIterations);
 }
 

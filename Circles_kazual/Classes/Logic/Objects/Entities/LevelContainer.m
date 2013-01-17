@@ -8,7 +8,11 @@
 
 #import "LevelContainer.h"
 
+static NSString * const CHARACTERS = @"Characters";
+
 @implementation LevelContainer
+
+@synthesize characters;
 
 - (id) init {
     
@@ -18,8 +22,15 @@
     return self;
 }
 
+- (void)dealloc {
+    
+    [self setCharacters:nil];
+    [super dealloc];
+}
+
 - (void) setWithInfo:(NSDictionary *)info {
     
+    [self setCharacters:[info objectForKey:CHARACTERS]];
 }
 
 @end

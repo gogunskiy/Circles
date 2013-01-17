@@ -12,8 +12,14 @@
 
 @interface MainGameLayer (Initialization)
 
--(void) initPhysics;
--(void) initDrawingLayer;
--(void) initEntertainmentLayer;
+- (void) initPhysics;
+
+- (void) initLevel;
+- (void) initBackground;
+- (void) initCharacters;
+- (void) initBonuses;
+
+- (void) initDrawingLayer;
+- (void) initEntertainmentLayer;
 
 @end

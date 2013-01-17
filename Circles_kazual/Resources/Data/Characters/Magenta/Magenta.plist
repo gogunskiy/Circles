@@ -9,7 +9,9 @@
 	<key>Geometry</key>
 	<dict>
 		<key>Type</key>
-		<string>Polygon</string>
+		<string>Circle</string>
+		<key>Radius</key>
+		<string>50</string>
 		<key>Points</key>
 		<array>
 			<string>{0,25}</string>

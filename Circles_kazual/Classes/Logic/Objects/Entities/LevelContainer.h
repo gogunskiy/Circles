@@ -10,7 +10,10 @@
 
 @interface LevelContainer : NSObject
 
+@property (nonatomic, retain) NSArray * characters;
+
 - (void) setWithInfo:(NSDictionary *)info ;
+
 
 
 @end
