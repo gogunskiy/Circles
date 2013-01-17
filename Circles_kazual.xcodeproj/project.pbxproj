@@ -168,9 +168,21 @@
 		63372DBC164588CD00BEF0FA /* b2WeldJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63372DBB164588CD00BEF0FA /* b2WeldJoint.cpp */; };
 		63372DBF164588CD00BEF0FA /* b2WheelJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63372DBE164588CD00BEF0FA /* b2WheelJoint.cpp */; };
 		63372DC3164588CD00BEF0FA /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63372DC2164588CD00BEF0FA /* b2Rope.cpp */; };
-		634E397B16A1BB4600322F10 /* brain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 634E397916A1BB4600322F10 /* brain.plist */; };
-		634E397C16A1BB4600322F10 /* brain.png in Resources */ = {isa = PBXBuildFile; fileRef = 634E397A16A1BB4600322F10 /* brain.png */; };
 		636A2AA7169CA2ED00299BAF /* DrawingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A2AA6169CA2ED00299BAF /* DrawingLayer.m */; };
+		63CCA21816A8A0EE009C89A2 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCA21716A8A0EE009C89A2 /* GameManager.m */; };
+		63CCA21C16A8A29E009C89A2 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCA21B16A8A29E009C89A2 /* MainMenuLayer.m */; };
+		63CCA21F16A8A320009C89A2 /* GameManager+SceneManagment.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCA21E16A8A320009C89A2 /* GameManager+SceneManagment.m */; };
+		63CCA22916A8A5D9009C89A2 /* brain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA22616A8A5D9009C89A2 /* brain.plist */; };
+		63CCA22A16A8A5D9009C89A2 /* brain.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA22716A8A5D9009C89A2 /* brain.png */; };
+		63CCA22C16A8A60E009C89A2 /* 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA22B16A8A60E009C89A2 /* 1.plist */; };
+		63CCA23316A8A882009C89A2 /* Foureyes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA22E16A8A882009C89A2 /* Foureyes.plist */; };
+		63CCA23416A8A882009C89A2 /* Foureyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA22F16A8A882009C89A2 /* Foureyes.png */; };
+		63CCA23516A8A882009C89A2 /* Magenta.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA23116A8A882009C89A2 /* Magenta.plist */; };
+		63CCA23616A8A882009C89A2 /* Magenta.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA23216A8A882009C89A2 /* Magenta.png */; };
+		63CCA23A16A8A956009C89A2 /* GoodSoul.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA23816A8A956009C89A2 /* GoodSoul.plist */; };
+		63CCA23B16A8A956009C89A2 /* GoodSoul.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA23916A8A956009C89A2 /* GoodSoul.png */; };
+		63CCA23D16A8AA37009C89A2 /* Levels_List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA23C16A8AA37009C89A2 /* Levels_List.plist */; };
+		63CCA24116A8AB94009C89A2 /* LevelContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCA24016A8AB94009C89A2 /* LevelContainer.m */; };
 		63D0A791169615ED00C028D7 /* CCNode+SFGestureRecognizers.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A790169615ED00C028D7 /* CCNode+SFGestureRecognizers.m */; };
 		63D0A795169616A300C028D7 /* MainGameLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A794169616A300C028D7 /* MainGameLayer.mm */; };
 		63D0A797169627F000C028D7 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A796169627F000C028D7 /* mask.png */; };
@@ -538,10 +550,26 @@
 		63372DC2164588CD00BEF0FA /* b2Rope.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = b2Rope.cpp; path = libs/Box2D/Rope/b2Rope.cpp; sourceTree = "<group>"; };
 		63372DC4164588CD00BEF0FA /* b2Rope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = b2Rope.h; path = libs/Box2D/Rope/b2Rope.h; sourceTree = "<group>"; };
 		63372DC5164588CD00BEF0FA /* LICENSE_Box2D.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Box2D.txt; path = libs/LICENSE_Box2D.txt; sourceTree = "<group>"; };
-		634E397916A1BB4600322F10 /* brain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = brain.plist; sourceTree = "<group>"; };
-		634E397A16A1BB4600322F10 /* brain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brain.png; sourceTree = "<group>"; };
 		636A2AA5169CA2ED00299BAF /* DrawingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingLayer.h; sourceTree = "<group>"; };
 		636A2AA6169CA2ED00299BAF /* DrawingLayer.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = DrawingLayer.m; sourceTree = "<group>"; };
+		63CCA21616A8A0EE009C89A2 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
+		63CCA21716A8A0EE009C89A2 /* GameManager.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GameManager.m; sourceTree = "<group>"; };
+		63CCA21A16A8A29E009C89A2 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
+		63CCA21B16A8A29E009C89A2 /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
+		63CCA21D16A8A320009C89A2 /* GameManager+SceneManagment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GameManager+SceneManagment.h"; sourceTree = "<group>"; };
+		63CCA21E16A8A320009C89A2 /* GameManager+SceneManagment.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = "GameManager+SceneManagment.m"; sourceTree = "<group>"; };
+		63CCA22616A8A5D9009C89A2 /* brain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = brain.plist; sourceTree = "<group>"; };
+		63CCA22716A8A5D9009C89A2 /* brain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brain.png; sourceTree = "<group>"; };
+		63CCA22B16A8A60E009C89A2 /* 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1.plist; sourceTree = "<group>"; };
+		63CCA22E16A8A882009C89A2 /* Foureyes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Foureyes.plist; sourceTree = "<group>"; };
+		63CCA22F16A8A882009C89A2 /* Foureyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Foureyes.png; sourceTree = "<group>"; };
+		63CCA23116A8A882009C89A2 /* Magenta.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Magenta.plist; sourceTree = "<group>"; };
+		63CCA23216A8A882009C89A2 /* Magenta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Magenta.png; sourceTree = "<group>"; };
+		63CCA23816A8A956009C89A2 /* GoodSoul.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoodSoul.plist; sourceTree = "<group>"; };
+		63CCA23916A8A956009C89A2 /* GoodSoul.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoodSoul.png; sourceTree = "<group>"; };
+		63CCA23C16A8AA37009C89A2 /* Levels_List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels_List.plist; sourceTree = "<group>"; };
+		63CCA23F16A8AB94009C89A2 /* LevelContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelContainer.h; sourceTree = "<group>"; };
+		63CCA24016A8AB94009C89A2 /* LevelContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelContainer.m; sourceTree = "<group>"; };
 		63D0A78F169615ED00C028D7 /* CCNode+SFGestureRecognizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+SFGestureRecognizers.h"; sourceTree = "<group>"; };
 		63D0A790169615ED00C028D7 /* CCNode+SFGestureRecognizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+SFGestureRecognizers.m"; sourceTree = "<group>"; };
 		63D0A793169616A300C028D7 /* MainGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameLayer.h; sourceTree = "<group>"; };
@@ -609,6 +637,7 @@
 		63260ED8169F69F1000383B0 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				63CCA23E16A8AB71009C89A2 /* Entities */,
 				63260EDE169F6A55000383B0 /* Character Object */,
 				63260EDA169F6A2A000383B0 /* Basic Physic Object */,
 			);
@@ -1169,23 +1198,6 @@
 			name = Rope;
 			sourceTree = "<group>";
 		};
-		634E397716A1BB4600322F10 /* Characters */ = {
-			isa = PBXGroup;
-			children = (
-				634E397816A1BB4600322F10 /* Brain */,
-			);
-			path = Characters;
-			sourceTree = "<group>";
-		};
-		634E397816A1BB4600322F10 /* Brain */ = {
-			isa = PBXGroup;
-			children = (
-				634E397916A1BB4600322F10 /* brain.plist */,
-				634E397A16A1BB4600322F10 /* brain.png */,
-			);
-			path = Brain;
-			sourceTree = "<group>";
-		};
 		636A2AA3169CA2D000299BAF /* DrawingLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1193,6 +1205,91 @@
 				636A2AA6169CA2ED00299BAF /* DrawingLayer.m */,
 			);
 			path = DrawingLayer;
+			sourceTree = "<group>";
+		};
+		63CCA21416A8A0D9009C89A2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				63CCA21616A8A0EE009C89A2 /* GameManager.h */,
+				63CCA21716A8A0EE009C89A2 /* GameManager.m */,
+				63CCA21D16A8A320009C89A2 /* GameManager+SceneManagment.h */,
+				63CCA21E16A8A320009C89A2 /* GameManager+SceneManagment.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		63CCA21916A8A28A009C89A2 /* MainMenuLayer */ = {
+			isa = PBXGroup;
+			children = (
+				63CCA21A16A8A29E009C89A2 /* MainMenuLayer.h */,
+				63CCA21B16A8A29E009C89A2 /* MainMenuLayer.m */,
+			);
+			path = MainMenuLayer;
+			sourceTree = "<group>";
+		};
+		63CCA22416A8A5D9009C89A2 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				63CCA23716A8A956009C89A2 /* GoodSoul */,
+				63CCA22D16A8A882009C89A2 /* Foureyes */,
+				63CCA23016A8A882009C89A2 /* Magenta */,
+				63CCA22516A8A5D9009C89A2 /* Brain */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		63CCA22516A8A5D9009C89A2 /* Brain */ = {
+			isa = PBXGroup;
+			children = (
+				63CCA22616A8A5D9009C89A2 /* brain.plist */,
+				63CCA22716A8A5D9009C89A2 /* brain.png */,
+			);
+			path = Brain;
+			sourceTree = "<group>";
+		};
+		63CCA22816A8A5D9009C89A2 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				63CCA23C16A8AA37009C89A2 /* Levels_List.plist */,
+				63CCA22B16A8A60E009C89A2 /* 1.plist */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
+		63CCA22D16A8A882009C89A2 /* Foureyes */ = {
+			isa = PBXGroup;
+			children = (
+				63CCA22E16A8A882009C89A2 /* Foureyes.plist */,
+				63CCA22F16A8A882009C89A2 /* Foureyes.png */,
+			);
+			path = Foureyes;
+			sourceTree = "<group>";
+		};
+		63CCA23016A8A882009C89A2 /* Magenta */ = {
+			isa = PBXGroup;
+			children = (
+				63CCA23116A8A882009C89A2 /* Magenta.plist */,
+				63CCA23216A8A882009C89A2 /* Magenta.png */,
+			);
+			path = Magenta;
+			sourceTree = "<group>";
+		};
+		63CCA23716A8A956009C89A2 /* GoodSoul */ = {
+			isa = PBXGroup;
+			children = (
+				63CCA23816A8A956009C89A2 /* GoodSoul.plist */,
+				63CCA23916A8A956009C89A2 /* GoodSoul.png */,
+			);
+			path = GoodSoul;
+			sourceTree = "<group>";
+		};
+		63CCA23E16A8AB71009C89A2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				63CCA23F16A8AB94009C89A2 /* LevelContainer.h */,
+				63CCA24016A8AB94009C89A2 /* LevelContainer.m */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		63D0A78E169615ED00C028D7 /* CCNode+SFGestureRecognizers */ = {
@@ -1240,6 +1337,7 @@
 		63EF8DCD164EF1CC00374B27 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				63CCA21916A8A28A009C89A2 /* MainMenuLayer */,
 				6313622E16A1CB940011795C /* BaseLayer */,
 				6313622C16A1CB4A0011795C /* EntertainmentLayer */,
 				636A2AA3169CA2D000299BAF /* DrawingLayer */,
@@ -1251,6 +1349,7 @@
 		63EF8DD1164EF1CC00374B27 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				63CCA21416A8A0D9009C89A2 /* Managers */,
 				63260ED8169F69F1000383B0 /* Objects */,
 			);
 			path = Logic;
@@ -1277,7 +1376,6 @@
 		63EF8DDF164EF24900374B27 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				634E397716A1BB4600322F10 /* Characters */,
 				63EF8DE0164EF24900374B27 /* Animations */,
 				63EF8DE1164EF24900374B27 /* Data */,
 				63EF8DE2164EF24900374B27 /* Images */,
@@ -1297,6 +1395,8 @@
 		63EF8DE1164EF24900374B27 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				63CCA22416A8A5D9009C89A2 /* Characters */,
+				63CCA22816A8A5D9009C89A2 /* Levels */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1409,9 +1509,17 @@
 				63EF8DFC164EF24900374B27 /* Icon@2x.png in Resources */,
 				63D0A797169627F000C028D7 /* mask.png in Resources */,
 				63D0A7A116962DAB00C028D7 /* hero.png in Resources */,
-				634E397B16A1BB4600322F10 /* brain.plist in Resources */,
-				634E397C16A1BB4600322F10 /* brain.png in Resources */,
 				630C433E16A4B62F0032DAE2 /* ErrorSound.wav in Resources */,
+				63CCA22916A8A5D9009C89A2 /* brain.plist in Resources */,
+				63CCA22A16A8A5D9009C89A2 /* brain.png in Resources */,
+				63CCA22C16A8A60E009C89A2 /* 1.plist in Resources */,
+				63CCA23316A8A882009C89A2 /* Foureyes.plist in Resources */,
+				63CCA23416A8A882009C89A2 /* Foureyes.png in Resources */,
+				63CCA23516A8A882009C89A2 /* Magenta.plist in Resources */,
+				63CCA23616A8A882009C89A2 /* Magenta.png in Resources */,
+				63CCA23A16A8A956009C89A2 /* GoodSoul.plist in Resources */,
+				63CCA23B16A8A956009C89A2 /* GoodSoul.png in Resources */,
+				63CCA23D16A8AA37009C89A2 /* Levels_List.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1578,6 +1686,10 @@
 				63260EE7169F6C21000383B0 /* Character.m in Sources */,
 				6313623116A1CBA90011795C /* BaseLayer.m in Sources */,
 				6313623416A1CBC20011795C /* EntertainmentLayer.m in Sources */,
+				63CCA21816A8A0EE009C89A2 /* GameManager.m in Sources */,
+				63CCA21C16A8A29E009C89A2 /* MainMenuLayer.m in Sources */,
+				63CCA21F16A8A320009C89A2 /* GameManager+SceneManagment.m in Sources */,
+				63CCA24116A8AB94009C89A2 /* LevelContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

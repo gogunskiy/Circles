@@ -14,5 +14,7 @@
 #import "cocos2d.h"
 #import "SimpleAudioEngine.h"
 #import "BaseLayer.h"
+#import "GameManager.h"
+#import "GameManager+SceneManagment.h"
 
 #endif
