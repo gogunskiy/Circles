@@ -8,7 +8,9 @@
 
 #import "PhysicsObject.h"
 
-static NSString * const CHARACTER_TYPE = @"CharacterType";
+static NSString * const CHARACTER_TYPE                  = @"CharacterType";
+
+static NSString * const CHARACTER_NAME                  = @"Name";
 
 static NSString * const CHARACTER_SPRITE                = @"SpriteName";
 static NSString * const CHARACTER_GEOMETRY              = @"Geometry";
@@ -27,6 +29,7 @@ static NSString * const CHARACTER_POSITION              = @"Position";
 
 @interface Character : PhysicsObject
 
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSDictionary * data;
 
 - (id) initWithPosition:(CGPoint)position indefiener:(int)indefiener data:(NSDictionary *)theData;

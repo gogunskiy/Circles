@@ -7,6 +7,7 @@
 @implementation PhysicsObject
 
 @synthesize gravityScale;
+@synthesize state;
 
 - (b2Body *) body {
     return body_;

@@ -5,6 +5,13 @@
 
 #define PTM_RATIO 32
 
+typedef enum BODY_STATE {
+    JUST_CREATED,
+    SLEEPING,
+    MOVING,
+    TO_DELETE
+    
+} BODY_STATE;
 
 @interface PhysicsObject : CCSprite
 {
@@ -16,8 +23,11 @@
 	float			friction_ ;
     
     BOOL            physicsBodyExist_;
+    
+    b2Vec2 previousPosition_;
 }
 
+@property (nonatomic, assign) BODY_STATE state;
 @property (nonatomic, assign) CGPoint gravityScale;
 
 - (b2Body *) body ;

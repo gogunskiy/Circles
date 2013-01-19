@@ -33,6 +33,8 @@
 		self.isTouchEnabled = YES;
 		self.isAccelerometerEnabled = YES;
 		
+        gameRunning_ = FALSE;
+        
 		[self initPhysics];
 		
 		[self createMenu];
@@ -98,22 +100,41 @@
     for (Character * character in characters_) {
         [character enablePhysics];
     }
+    
+    gameRunning_ = TRUE;
 }
 
 - (void) disablePhysics  {
+    
+    gameRunning_ = FALSE;
+    
     for (Character * character in characters_) {
         [character disablePhysics];
     }
 }
 
 - (void) updateObjects {
+    
+    int sleepObjects = 0;
+    
     for (Character * character in characters_) {
         
         if ([character body] != NULL) {
             b2Vec2 customGravity = b2Vec2(character.gravityScale.x, character.gravityScale.y);
             [character body]->ApplyForce(customGravity , [character body]->GetPosition());
+            
+            if ([character state] == SLEEPING) {
+                sleepObjects ++;
+            }
         }
     }
+        if (sleepObjects == [characters_ count] && gameRunning_) {
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"END GAME" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            [alert release];
+        }
+        
+      //  NSLog(@"%@ SLEEP STATE = %d", [character name], [character sleep]);
 }
 
 -(void) draw

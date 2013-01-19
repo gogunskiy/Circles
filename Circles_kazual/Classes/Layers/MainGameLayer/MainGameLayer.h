@@ -33,6 +33,8 @@
     LevelContainer * currentLevel_;
     
     NSMutableArray * characters_;
+    
+    BOOL gameRunning_;
 }
 
 

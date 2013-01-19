@@ -10,14 +10,18 @@
 
 @implementation Character
 
+
 @synthesize data;
+@synthesize name;
 
 - (id) initWithPosition:(CGPoint)position indefiener:(int)indefiener data:(NSDictionary *)theData {
     
     self = [super initWithPosition:position filename:[theData objectForKey:CHARACTER_SPRITE] indefiener:indefiener];
 
     [self setData:theData];
+    [self setState:JUST_CREATED];
     
+    [self setName:[theData objectForKey:CHARACTER_NAME]];
     [self setGravityScale:CGPointFromString([theData objectForKey:CHARACTER_GRAVITYSCALE])];
     
     if ([[[[self data] objectForKey:CHARACTER_GEOMETRY] objectForKey:CHARACTER_GEOMETRY_TYPE] isEqualToString:CHARACTER_GEOMETRY_TYPE_POLYGON]) {
@@ -58,5 +62,30 @@
 + (NSMutableDictionary *) characterDataByType:(NSString *)characterType {
     return [NSMutableDictionary dictionaryWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:characterType]];
 }
+
+
+-(CGAffineTransform) nodeToParentTransform
+{
+    if (body_ == NULL) {
+        return [super nodeToParentTransform];
+    }
+    
+	b2Vec2 pos  = body_->GetPosition();
+	
+    b2Vec2 initialPosition = b2Vec2(CGPointFromString([[self data] objectForKey:CHARACTER_POSITION]).x, CGPointFromString([[self data] objectForKey:CHARACTER_POSITION]).y);
+    
+    if (fabs(pos.x*PTM_RATIO - initialPosition.x) < 0.01 && fabs(pos.y*PTM_RATIO == initialPosition.y) < 0.01) {
+        [self setState:JUST_CREATED];
+    } else {
+        [self setState:(ccpDistance(ccp(pos.x,pos.y), ccp(previousPosition_.x,previousPosition_.y)) < .01) ? SLEEPING : MOVING];
+    }
+    
+    
+    previousPosition_ = pos;
+    
+	
+	return [super nodeToParentTransform];
+}
+
 
 @end
