@@ -50,7 +50,9 @@ static GameManager * shared = nil;
     [GAME loadMainGameLayer];
 }
 
-
+- (void) finishGameWithResult:(NSDictionary *)result {
+    NSLog(@"%@", result);
+}
 
 
 @end

@@ -58,6 +58,7 @@
         
         [characterData setObject:[characterInfo objectForKey:CHARACTER_GRAVITYSCALE] forKey:CHARACTER_GRAVITYSCALE];
         [characterData setObject:[characterInfo objectForKey:CHARACTER_POSITION]     forKey:CHARACTER_POSITION];
+        [characterData setObject:[characterInfo objectForKey:CHARACTER_ROLE]         forKey:CHARACTER_ROLE];
         
         Character * character = [[Character alloc] initWithPosition:characterPosition indefiener:1 data:characterData];
         [character setWorld:world_];

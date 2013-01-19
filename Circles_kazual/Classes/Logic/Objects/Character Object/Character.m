@@ -8,11 +8,14 @@
 
 #import "Character.h"
 
+#define OUT_THE_SCREEN(x) !CGRectContainsPoint(CGRectMake(-200, -200, 1224,968), x)
+
 @implementation Character
 
 
 @synthesize data;
 @synthesize name;
+@synthesize role;
 
 - (id) initWithPosition:(CGPoint)position indefiener:(int)indefiener data:(NSDictionary *)theData {
     
@@ -22,11 +25,13 @@
     [self setState:JUST_CREATED];
     
     [self setName:[theData objectForKey:CHARACTER_NAME]];
+    [self setRole:[theData objectForKey:CHARACTER_ROLE]];
     [self setGravityScale:CGPointFromString([theData objectForKey:CHARACTER_GRAVITYSCALE])];
     
     if ([[[[self data] objectForKey:CHARACTER_GEOMETRY] objectForKey:CHARACTER_GEOMETRY_TYPE] isEqualToString:CHARACTER_GEOMETRY_TYPE_POLYGON]) {
         [self setAnchorPoint:ccp(0, 0)];
     }
+    
     return self;
 }
 
@@ -59,6 +64,19 @@
     }
 }
 
+- (BOOL) intersectWithCharacter:(Character *) character {
+    
+    if (self == character) {
+        return FALSE;
+    }
+
+    b2Vec2 pos   = body_->GetPosition();
+    b2Vec2 pos2  = [character body]->GetPosition();
+
+    return CGRectIntersectsRect(CGRectMake((pos.x*PTM_RATIO)-55, (pos.y*PTM_RATIO)-55, 110, 110), CGRectMake((pos2.x*PTM_RATIO)-55, (pos2.y*PTM_RATIO)-55, 110, 110));
+}
+
+
 + (NSMutableDictionary *) characterDataByType:(NSString *)characterType {
     return [NSMutableDictionary dictionaryWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:characterType]];
 }
@@ -80,6 +98,9 @@
         [self setState:(ccpDistance(ccp(pos.x,pos.y), ccp(previousPosition_.x,previousPosition_.y)) < .01) ? SLEEPING : MOVING];
     }
     
+    if (OUT_THE_SCREEN(ccp(pos.x * PTM_RATIO, pos.y * PTM_RATIO))) {
+        [self setState:OUT];
+    }
     
     previousPosition_ = pos;
     

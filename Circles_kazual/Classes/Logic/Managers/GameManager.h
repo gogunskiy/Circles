@@ -20,4 +20,7 @@
 
 - (void) startGameWithInfo:(NSDictionary *)info;
 
+- (void) finishGameWithResult:(NSDictionary *)result;
+
+
 @end

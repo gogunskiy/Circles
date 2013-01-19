@@ -9,7 +9,7 @@ typedef enum BODY_STATE {
     JUST_CREATED,
     SLEEPING,
     MOVING,
-    TO_DELETE
+    OUT
     
 } BODY_STATE;
 

@@ -21,7 +21,10 @@
 - (void) enablePhysics ;
 - (void) disablePhysics ;
 
-    
+- (void) finishLevel ;
+
+- (void) calculateLevelResult;
+
 @end
 
 @implementation MainGameLayer
@@ -46,9 +49,11 @@
         currentLevel_ = [GAME currentLevel];
         
         [self initLevel];
-
-		[self scheduleUpdate];
+        
+        
+        [self scheduleUpdate];
 	}
+    
 	return self;
 }
 
@@ -115,26 +120,63 @@
 
 - (void) updateObjects {
     
-    int sleepObjects = 0;
+    int notInGameObjects = 0;
     
     for (Character * character in characters_) {
         
         if ([character body] != NULL) {
             b2Vec2 customGravity = b2Vec2(character.gravityScale.x, character.gravityScale.y);
             [character body]->ApplyForce(customGravity , [character body]->GetPosition());
-            
-            if ([character state] == SLEEPING) {
-                sleepObjects ++;
+
+            if (([character state] == SLEEPING ) || ([character state] ==  OUT)) {
+                notInGameObjects ++;
             }
         }
     }
-        if (sleepObjects == [characters_ count] && gameRunning_) {
-            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"END GAME" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
-            [alert release];
+        if (notInGameObjects == [characters_ count] && gameRunning_) {
+            [self performSelector:@selector(finishLevel) withObject:nil afterDelay:0.3];
+          }        
+}
+
+- (void) finishLevel {
+    [self unscheduleUpdate];
+    [self calculateLevelResult];
+    
+}
+
+- (void) calculateLevelResult {
+    
+    NSInteger countOfMatch = 0;
+    
+    for (Character * character in characters_) {
+        
+        NSLog(@"%@ %@ %d", [character name], [character role], [character state]);
+        
+        if ((([[character role] isEqualToString:CHARACTER_ROLE_POSITIVE]) && ([character state] == SLEEPING))) {
+            countOfMatch ++;
+            
+            continue;
         }
         
-      //  NSLog(@"%@ SLEEP STATE = %d", [character name], [character sleep]);
+        if (([[character role] isEqualToString:CHARACTER_ROLE_NEGATIVE]) && ([character state] == OUT)) {
+            countOfMatch ++;
+            
+            continue;
+        }
+
+        if ([[character role] isEqualToString:CHARACTER_ROLE_LONELY]) {
+            for (Character * lonelyCharacter in characters_) {
+                if ([[lonelyCharacter role] isEqualToString:CHARACTER_ROLE_LONELY]) {
+                    if ([character intersectWithCharacter:lonelyCharacter] && [character state] == SLEEPING) {
+                        countOfMatch ++;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+        
+    [GAME finishGameWithResult:@{@"charactersCount" : [NSString stringWithFormat:@"%d",[characters_ count]], @"countOfMatches" : [NSString stringWithFormat:@"%d", countOfMatch]}];
 }
 
 -(void) draw

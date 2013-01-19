@@ -12,6 +12,13 @@ static NSString * const CHARACTER_TYPE                  = @"CharacterType";
 
 static NSString * const CHARACTER_NAME                  = @"Name";
 
+static NSString * const CHARACTER_ROLE                  = @"Role";
+
+static NSString * const CHARACTER_ROLE_POSITIVE         = @"Positive";
+static NSString * const CHARACTER_ROLE_NEGATIVE         = @"Negative";
+static NSString * const CHARACTER_ROLE_LONELY           = @"Lonely";
+
+
 static NSString * const CHARACTER_SPRITE                = @"SpriteName";
 static NSString * const CHARACTER_GEOMETRY              = @"Geometry";
 static NSString * const CHARACTER_GRAVITYSCALE          = @"Gravity";
@@ -30,6 +37,7 @@ static NSString * const CHARACTER_POSITION              = @"Position";
 @interface Character : PhysicsObject
 
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * role;
 @property (nonatomic, retain) NSDictionary * data;
 
 - (id) initWithPosition:(CGPoint)position indefiener:(int)indefiener data:(NSDictionary *)theData;
@@ -37,7 +45,7 @@ static NSString * const CHARACTER_POSITION              = @"Position";
 - (void) enablePhysics;
 - (void) disablePhysics;
 
-
+- (BOOL) intersectWithCharacter:(Character *) character;
 
 + (NSMutableDictionary *) characterDataByType:(NSString *)characterType;
 
