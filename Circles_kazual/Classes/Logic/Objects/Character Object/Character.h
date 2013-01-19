@@ -10,9 +10,6 @@
 
 static NSString * const CHARACTER_TYPE = @"CharacterType";
 
-static NSString * const CHARACTER_TYPE_BRAIN = @"brain.plist";
-
-
 static NSString * const CHARACTER_SPRITE                = @"SpriteName";
 static NSString * const CHARACTER_GEOMETRY              = @"Geometry";
 static NSString * const CHARACTER_GRAVITYSCALE          = @"Gravity";

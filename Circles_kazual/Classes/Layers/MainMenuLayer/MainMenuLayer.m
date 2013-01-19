@@ -24,7 +24,7 @@
 	
 	[menu alignItemsVerticallyWithPadding:30];
     
-	[menu setPosition:ccp(512,700)];
+	[menu setPosition:ccp(512,400)];
 	
 	[self addChild: menu z:-1];
     

@@ -42,9 +42,9 @@
     } else {
         self = [super init];
     }
-	restitution_ = 0.2 ;
+	restitution_ = .5 ;
 	density_ = 0.2 ;
-	friction_ = 1.0 ;
+	friction_ = 0.1 ;
 	position_ = position ;
 	
 	[self setTag:indefiener];

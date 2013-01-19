@@ -13,6 +13,8 @@
 		63175230169F670400343EE9 /* MainGameLayer+Initialization.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6317522F169F670300343EE9 /* MainGameLayer+Initialization.mm */; };
 		63260EDD169F6A2A000383B0 /* PhysicsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63260EDC169F6A2A000383B0 /* PhysicsObject.m */; };
 		63260EE7169F6C21000383B0 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 63260EE6169F6C21000383B0 /* Character.m */; };
+		6329FFE616A9E754009F068D /* Brain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6329FFE416A9E754009F068D /* Brain.plist */; };
+		6329FFE716A9E754009F068D /* Brain.png in Resources */ = {isa = PBXBuildFile; fileRef = 6329FFE516A9E754009F068D /* Brain.png */; };
 		63372BAE164588CA00BEF0FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63372BAD164588CA00BEF0FA /* QuartzCore.framework */; };
 		63372BB0164588CA00BEF0FA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63372BAF164588CA00BEF0FA /* OpenGLES.framework */; };
 		63372BB2164588CA00BEF0FA /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63372BB1164588CA00BEF0FA /* OpenAL.framework */; };
@@ -172,8 +174,6 @@
 		63CCA21816A8A0EE009C89A2 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCA21716A8A0EE009C89A2 /* GameManager.m */; };
 		63CCA21C16A8A29E009C89A2 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCA21B16A8A29E009C89A2 /* MainMenuLayer.m */; };
 		63CCA21F16A8A320009C89A2 /* GameManager+SceneManagment.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCA21E16A8A320009C89A2 /* GameManager+SceneManagment.m */; };
-		63CCA22916A8A5D9009C89A2 /* brain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA22616A8A5D9009C89A2 /* brain.plist */; };
-		63CCA22A16A8A5D9009C89A2 /* brain.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA22716A8A5D9009C89A2 /* brain.png */; };
 		63CCA22C16A8A60E009C89A2 /* 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA22B16A8A60E009C89A2 /* 1.plist */; };
 		63CCA23316A8A882009C89A2 /* Foureyes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA22E16A8A882009C89A2 /* Foureyes.plist */; };
 		63CCA23416A8A882009C89A2 /* Foureyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA22F16A8A882009C89A2 /* Foureyes.png */; };
@@ -215,6 +215,8 @@
 		63260EDC169F6A2A000383B0 /* PhysicsObject.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = PhysicsObject.m; sourceTree = "<group>"; };
 		63260EE5169F6C21000383B0 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
 		63260EE6169F6C21000383B0 /* Character.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Character.m; sourceTree = "<group>"; };
+		6329FFE416A9E754009F068D /* Brain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Brain.plist; sourceTree = "<group>"; };
+		6329FFE516A9E754009F068D /* Brain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brain.png; sourceTree = "<group>"; };
 		63372BA9164588CA00BEF0FA /* Circles_kazual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circles_kazual.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63372BAD164588CA00BEF0FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		63372BAF164588CA00BEF0FA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -558,8 +560,6 @@
 		63CCA21B16A8A29E009C89A2 /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
 		63CCA21D16A8A320009C89A2 /* GameManager+SceneManagment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GameManager+SceneManagment.h"; sourceTree = "<group>"; };
 		63CCA21E16A8A320009C89A2 /* GameManager+SceneManagment.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = "GameManager+SceneManagment.m"; sourceTree = "<group>"; };
-		63CCA22616A8A5D9009C89A2 /* brain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = brain.plist; sourceTree = "<group>"; };
-		63CCA22716A8A5D9009C89A2 /* brain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brain.png; sourceTree = "<group>"; };
 		63CCA22B16A8A60E009C89A2 /* 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1.plist; sourceTree = "<group>"; };
 		63CCA22E16A8A882009C89A2 /* Foureyes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Foureyes.plist; sourceTree = "<group>"; };
 		63CCA22F16A8A882009C89A2 /* Foureyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Foureyes.png; sourceTree = "<group>"; };
@@ -1241,8 +1241,8 @@
 		63CCA22516A8A5D9009C89A2 /* Brain */ = {
 			isa = PBXGroup;
 			children = (
-				63CCA22616A8A5D9009C89A2 /* brain.plist */,
-				63CCA22716A8A5D9009C89A2 /* brain.png */,
+				6329FFE416A9E754009F068D /* Brain.plist */,
+				6329FFE516A9E754009F068D /* Brain.png */,
 			);
 			path = Brain;
 			sourceTree = "<group>";
@@ -1510,8 +1510,6 @@
 				63D0A797169627F000C028D7 /* mask.png in Resources */,
 				63D0A7A116962DAB00C028D7 /* hero.png in Resources */,
 				630C433E16A4B62F0032DAE2 /* ErrorSound.wav in Resources */,
-				63CCA22916A8A5D9009C89A2 /* brain.plist in Resources */,
-				63CCA22A16A8A5D9009C89A2 /* brain.png in Resources */,
 				63CCA22C16A8A60E009C89A2 /* 1.plist in Resources */,
 				63CCA23316A8A882009C89A2 /* Foureyes.plist in Resources */,
 				63CCA23416A8A882009C89A2 /* Foureyes.png in Resources */,
@@ -1520,6 +1518,8 @@
 				63CCA23A16A8A956009C89A2 /* GoodSoul.plist in Resources */,
 				63CCA23B16A8A956009C89A2 /* GoodSoul.png in Resources */,
 				63CCA23D16A8AA37009C89A2 /* Levels_List.plist in Resources */,
+				6329FFE616A9E754009F068D /* Brain.plist in Resources */,
+				6329FFE716A9E754009F068D /* Brain.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

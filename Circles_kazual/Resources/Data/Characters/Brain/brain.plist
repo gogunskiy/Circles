@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Name</key>
-	<string>brain</string>
+	<string>Brain</string>
 	<key>SpriteName</key>
-	<string>brain.png</string>
+	<string>Brain.png</string>
 	<key>Geometry</key>
 	<dict>
 		<key>Type</key>
