@@ -18,6 +18,7 @@
 - (void) initBackground;
 - (void) initCharacters;
 - (void) initBonuses;
+- (void) initInfoLayer;
 
 - (void) initDrawingLayer;
 - (void) initEntertainmentLayer;

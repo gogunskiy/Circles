@@ -12,6 +12,11 @@
 #import "Character.h"
 #import "LevelContainer.h"
 
+
+static NSString * const RESULT_COUNT_OF_MATCHES = @"CountOfMatches";
+static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
+
+
 @interface MainGameLayer()
 
 
@@ -42,6 +47,8 @@
 		
 		[self createMenu];
         
+        [self initInfoLayer];
+        
         [self initDrawingLayer];
         
         [self initEntertainmentLayer];
@@ -71,35 +78,14 @@
     
     [entertainmentLayer_ release];
     [drawingLayer_ release];
+    [infoLayer_ release];
     
 	[super dealloc];
 }	
 
 -(void) createMenu
 {
-	[CCMenuItemFont setFontSize:22];
-	
-    CCMenuItemLabel *start = [CCMenuItemFont itemWithString:@"Start" block:^(id sender){
-        
-        [self enablePhysics];
-        
-        [self drawPathLineWithPoints:[drawingLayer_ points]];
-        
-	}];
-	
-	CCMenuItemLabel *reset = [CCMenuItemFont itemWithString:@"Reset" block:^(id sender){
-		[[CCDirector sharedDirector] replaceScene: [MainGameLayer scene]];
-        
-      	}];
-	
-	CCMenu *menu = [CCMenu menuWithItems:start, reset, nil];
-	
-	[menu alignItemsVerticallyWithPadding:30];
 
-	[menu setPosition:ccp(960,700)];
-	
-	
-	[self addChild: menu z:-1];	
 }
 
 - (void) enablePhysics {
@@ -184,7 +170,7 @@
         }
     }
         
-    [GAME finishGameWithResult:@{@"charactersCount" : [NSString stringWithFormat:@"%d",[characters_ count]], @"countOfMatches" : [NSString stringWithFormat:@"%d", countOfMatch]}];
+    [GAME finishGameWithResult:@{RESULT_COUNT_CHARACTERS : [NSString stringWithFormat:@"%d",[characters_ count]], RESULT_COUNT_OF_MATCHES : [NSString stringWithFormat:@"%d", countOfMatch]}];
 }
 
 -(void) draw
@@ -242,5 +228,20 @@
     [[SimpleAudioEngine sharedEngine] playEffect:@"ErrorSound.wav"];
 }
 
+
+#pragma mark ====  GAMEINFO LAYER DELEGATE  ====
+
+- (void) startButtonWasClicked; {
+    [self enablePhysics];
+    [self drawPathLineWithPoints:[drawingLayer_ points]];
+}
+
+- (void) restartButtonWasClicked {
+    [GAME loadMainGameLayer];
+}
+
+- (void) chooseLevelButtonWasClicked {
+    [GAME loadMainMenuScene];
+}
 
 @end

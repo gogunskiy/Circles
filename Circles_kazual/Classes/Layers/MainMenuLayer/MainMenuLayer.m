@@ -14,7 +14,7 @@
     self = [super init];
     
     
-    CCMenuItemLabel *start = [CCMenuItemFont itemWithString:@"Start" block:^(id sender){
+    CCMenuItemLabel *start = [CCMenuItemImage itemWithNormalImage:@"play-button.png" selectedImage:@"play-button.png" block:^(id sender) {
         
         [GAME startGameWithInfo:@{@"Level":@"1.plist"}];
         

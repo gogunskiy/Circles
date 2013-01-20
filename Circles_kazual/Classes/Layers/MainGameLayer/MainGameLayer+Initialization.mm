@@ -78,16 +78,22 @@
     drawingLayer_ = [[DrawingLayer alloc] init];
     [drawingLayer_ setDelegate:self];
     [drawingLayer_ reset];
-    [self addChild:drawingLayer_];
+    [self addChild:drawingLayer_ z:1];
 }
 
 
 
 - (void) initEntertainmentLayer {
     entertainmentLayer_ = [[EntertainmentLayer alloc] init];
-    [self addChild:entertainmentLayer_];
+    [self addChild:entertainmentLayer_ z:3];
 }
 
+
+- (void) initInfoLayer {
+    infoLayer_ = [[GameInfoLayer alloc] init];
+    [infoLayer_ setDelegate:self];
+    [self addChild:infoLayer_ z:2];
+}
 
 
 @end

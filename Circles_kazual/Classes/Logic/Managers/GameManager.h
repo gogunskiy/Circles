@@ -22,5 +22,4 @@
 
 - (void) finishGameWithResult:(NSDictionary *)result;
 
-
 @end

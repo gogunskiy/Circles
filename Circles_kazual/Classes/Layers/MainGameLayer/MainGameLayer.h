@@ -14,13 +14,14 @@
 #import "GLES-Render.h"
 #import "DrawingLayer.h"
 #import "EntertainmentLayer.h"
+#import "GameInfoLayer.h"
 
 @class Character;
 @class LevelContainer;
 
 #define PTM_RATIO 32
 
-@interface MainGameLayer : BaseLayer <DrawingLayerDelegate>
+@interface MainGameLayer : BaseLayer <DrawingLayerDelegate, GameInfoLayerDelegate>
 {
  	CCTexture2D *spriteTexture_;	
 	b2World* world_;				
@@ -29,6 +30,7 @@
     
     DrawingLayer * drawingLayer_;
     EntertainmentLayer * entertainmentLayer_;
+    GameInfoLayer * infoLayer_;
     
     LevelContainer * currentLevel_;
     

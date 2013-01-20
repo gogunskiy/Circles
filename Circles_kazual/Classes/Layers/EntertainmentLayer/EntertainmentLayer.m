@@ -85,7 +85,7 @@ static CGFloat const ENTERTAIMENT_SHOWING_CHARACTER_HEIGHT = 90.0;
     
     CGSize size = [[CCDirector sharedDirector] winSize];
     
-    CGFloat rotation = (arc4random() % 4) * 90;
+    CGFloat rotation = (arc4random() % 2) * 90;
     
     CGFloat offset = arc4random() % 600 + 100;
     

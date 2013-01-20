@@ -170,6 +170,14 @@
 		63372DBC164588CD00BEF0FA /* b2WeldJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63372DBB164588CD00BEF0FA /* b2WeldJoint.cpp */; };
 		63372DBF164588CD00BEF0FA /* b2WheelJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63372DBE164588CD00BEF0FA /* b2WheelJoint.cpp */; };
 		63372DC3164588CD00BEF0FA /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63372DC2164588CD00BEF0FA /* b2Rope.cpp */; };
+		634FCFD016AC091000E395DC /* BasePopupLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 634FCFCF16AC091000E395DC /* BasePopupLayer.m */; };
+		634FCFD316AC105E00E395DC /* GameResultLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 634FCFD216AC105E00E395DC /* GameResultLayer.m */; };
+		634FCFDE16AC127800E395DC /* chooselevel-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 634FCFDA16AC127800E395DC /* chooselevel-button.png */; };
+		634FCFDF16AC127800E395DC /* play-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 634FCFDB16AC127800E395DC /* play-button.png */; };
+		634FCFE016AC127800E395DC /* restart-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 634FCFDC16AC127800E395DC /* restart-button.png */; };
+		634FCFE216AC153400E395DC /* resultlayer_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 634FCFE116AC153400E395DC /* resultlayer_background.png */; };
+		634FCFE516AC155000E395DC /* infolayer_bacground.png in Resources */ = {isa = PBXBuildFile; fileRef = 634FCFE416AC155000E395DC /* infolayer_bacground.png */; };
+		634FCFE816AC159300E395DC /* GameInfoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 634FCFE716AC159300E395DC /* GameInfoLayer.m */; };
 		636A2AA7169CA2ED00299BAF /* DrawingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A2AA6169CA2ED00299BAF /* DrawingLayer.m */; };
 		63CCA21816A8A0EE009C89A2 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCA21716A8A0EE009C89A2 /* GameManager.m */; };
 		63CCA21C16A8A29E009C89A2 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCA21B16A8A29E009C89A2 /* MainMenuLayer.m */; };
@@ -552,6 +560,17 @@
 		63372DC2164588CD00BEF0FA /* b2Rope.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = b2Rope.cpp; path = libs/Box2D/Rope/b2Rope.cpp; sourceTree = "<group>"; };
 		63372DC4164588CD00BEF0FA /* b2Rope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = b2Rope.h; path = libs/Box2D/Rope/b2Rope.h; sourceTree = "<group>"; };
 		63372DC5164588CD00BEF0FA /* LICENSE_Box2D.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Box2D.txt; path = libs/LICENSE_Box2D.txt; sourceTree = "<group>"; };
+		634FCFCE16AC091000E395DC /* BasePopupLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePopupLayer.h; sourceTree = "<group>"; };
+		634FCFCF16AC091000E395DC /* BasePopupLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePopupLayer.m; sourceTree = "<group>"; };
+		634FCFD116AC105E00E395DC /* GameResultLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResultLayer.h; sourceTree = "<group>"; };
+		634FCFD216AC105E00E395DC /* GameResultLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResultLayer.m; sourceTree = "<group>"; };
+		634FCFDA16AC127800E395DC /* chooselevel-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooselevel-button.png"; sourceTree = "<group>"; };
+		634FCFDB16AC127800E395DC /* play-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-button.png"; sourceTree = "<group>"; };
+		634FCFDC16AC127800E395DC /* restart-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restart-button.png"; sourceTree = "<group>"; };
+		634FCFE116AC153400E395DC /* resultlayer_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resultlayer_background.png; sourceTree = "<group>"; };
+		634FCFE416AC155000E395DC /* infolayer_bacground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infolayer_bacground.png; sourceTree = "<group>"; };
+		634FCFE616AC159300E395DC /* GameInfoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInfoLayer.h; sourceTree = "<group>"; };
+		634FCFE716AC159300E395DC /* GameInfoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInfoLayer.m; sourceTree = "<group>"; };
 		636A2AA5169CA2ED00299BAF /* DrawingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingLayer.h; sourceTree = "<group>"; };
 		636A2AA6169CA2ED00299BAF /* DrawingLayer.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = DrawingLayer.m; sourceTree = "<group>"; };
 		63CCA21616A8A0EE009C89A2 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
@@ -1198,6 +1217,69 @@
 			name = Rope;
 			sourceTree = "<group>";
 		};
+		634FCFCA16AC068000E395DC /* BasePopupLayer */ = {
+			isa = PBXGroup;
+			children = (
+				634FCFCE16AC091000E395DC /* BasePopupLayer.h */,
+				634FCFCF16AC091000E395DC /* BasePopupLayer.m */,
+			);
+			path = BasePopupLayer;
+			sourceTree = "<group>";
+		};
+		634FCFCC16AC06A100E395DC /* GameInfoLayer */ = {
+			isa = PBXGroup;
+			children = (
+				634FCFE616AC159300E395DC /* GameInfoLayer.h */,
+				634FCFE716AC159300E395DC /* GameInfoLayer.m */,
+			);
+			path = GameInfoLayer;
+			sourceTree = "<group>";
+		};
+		634FCFCD16AC06A100E395DC /* GameResultLayer */ = {
+			isa = PBXGroup;
+			children = (
+				634FCFD116AC105E00E395DC /* GameResultLayer.h */,
+				634FCFD216AC105E00E395DC /* GameResultLayer.m */,
+			);
+			path = GameResultLayer;
+			sourceTree = "<group>";
+		};
+		634FCFD816AC127800E395DC /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				634FCFE316AC155000E395DC /* GameInfoLayer */,
+				634FCFD916AC127800E395DC /* Buttons */,
+				634FCFDD16AC127800E395DC /* GameResultLayer */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		634FCFD916AC127800E395DC /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				634FCFDA16AC127800E395DC /* chooselevel-button.png */,
+				634FCFDB16AC127800E395DC /* play-button.png */,
+				634FCFDC16AC127800E395DC /* restart-button.png */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		634FCFDD16AC127800E395DC /* GameResultLayer */ = {
+			isa = PBXGroup;
+			children = (
+				634FCFE116AC153400E395DC /* resultlayer_background.png */,
+			);
+			path = GameResultLayer;
+			sourceTree = "<group>";
+		};
+		634FCFE316AC155000E395DC /* GameInfoLayer */ = {
+			isa = PBXGroup;
+			children = (
+				634FCFE416AC155000E395DC /* infolayer_bacground.png */,
+			);
+			path = GameInfoLayer;
+			sourceTree = "<group>";
+		};
 		636A2AA3169CA2D000299BAF /* DrawingLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1337,6 +1419,9 @@
 		63EF8DCD164EF1CC00374B27 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				634FCFCC16AC06A100E395DC /* GameInfoLayer */,
+				634FCFCD16AC06A100E395DC /* GameResultLayer */,
+				634FCFCA16AC068000E395DC /* BasePopupLayer */,
 				63CCA21916A8A28A009C89A2 /* MainMenuLayer */,
 				6313622E16A1CB940011795C /* BaseLayer */,
 				6313622C16A1CB4A0011795C /* EntertainmentLayer */,
@@ -1404,6 +1489,7 @@
 		63EF8DE2164EF24900374B27 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				634FCFD816AC127800E395DC /* Layers */,
 				63D0A7A016962DAB00C028D7 /* hero.png */,
 				63D0A796169627F000C028D7 /* mask.png */,
 				63EF8DE3164EF24900374B27 /* TEstImages */,
@@ -1520,6 +1606,11 @@
 				63CCA23D16A8AA37009C89A2 /* Levels_List.plist in Resources */,
 				6329FFE616A9E754009F068D /* Brain.plist in Resources */,
 				6329FFE716A9E754009F068D /* Brain.png in Resources */,
+				634FCFDE16AC127800E395DC /* chooselevel-button.png in Resources */,
+				634FCFDF16AC127800E395DC /* play-button.png in Resources */,
+				634FCFE016AC127800E395DC /* restart-button.png in Resources */,
+				634FCFE216AC153400E395DC /* resultlayer_background.png in Resources */,
+				634FCFE516AC155000E395DC /* infolayer_bacground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1690,6 +1781,9 @@
 				63CCA21C16A8A29E009C89A2 /* MainMenuLayer.m in Sources */,
 				63CCA21F16A8A320009C89A2 /* GameManager+SceneManagment.m in Sources */,
 				63CCA24116A8AB94009C89A2 /* LevelContainer.m in Sources */,
+				634FCFD016AC091000E395DC /* BasePopupLayer.m in Sources */,
+				634FCFD316AC105E00E395DC /* GameResultLayer.m in Sources */,
+				634FCFE816AC159300E395DC /* GameInfoLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

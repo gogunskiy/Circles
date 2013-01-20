@@ -8,6 +8,8 @@
 
 #import "BaseLayer.h"
 
+static NSInteger const TAG_BACKGROUND = 1;
+
 @implementation BaseLayer
 
 
@@ -21,6 +23,27 @@
     [layer release];
     
     return scene;
+}
+
+- (id)init {
+    
+    self = [super init];
+    
+    [self addElements];
+    
+    return self;
+}
+
+- (void) setBackgroundImage:(NSString *)imageName {
+    
+    CCSprite * background = [CCSprite spriteWithFile:imageName];
+    [background setAnchorPoint:ccp(0,0)];
+    [background setPosition:ccp(0,0)];
+    [self addChild:background z:-1 tag:TAG_BACKGROUND];
+}
+
+- (void) addElements {
+    
 }
 
 

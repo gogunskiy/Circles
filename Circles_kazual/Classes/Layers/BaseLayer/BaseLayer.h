@@ -13,5 +13,8 @@
 
 + (CCScene *) scene;
 
+- (void) setBackgroundImage:(NSString *)imageName;
+
+- (void) addElements ;
 
 @end
