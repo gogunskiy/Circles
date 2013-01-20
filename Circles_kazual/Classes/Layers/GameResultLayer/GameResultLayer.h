@@ -7,7 +7,29 @@
 //
 
 #import "BasePopupLayer.h"
+#import "CCLabelFX.h"
 
-@interface GameResultLayer : BasePopupLayer
+@protocol GameResultLayerDelegate;
+
+@interface GameResultLayer : BasePopupLayer {
+    CCLabelFX * resulLabel_;
+}
+
+@property (nonatomic, assign) id <GameResultLayerDelegate> delegate;
+@property (nonatomic, copy) NSString * result;
+
+- (void) setResult:(NSString *)result ;
 
 @end
+
+
+
+
+@protocol GameResultLayerDelegate
+
+- (void) restartButtonWasClicked;
+- (void) chooseLevelButtonWasClicked;
+- (void) hidePauseMenuButtonClicked;
+
+
+@end;

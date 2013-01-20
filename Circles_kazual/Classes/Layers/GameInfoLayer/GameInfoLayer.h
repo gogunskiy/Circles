@@ -25,10 +25,8 @@
 
 @protocol GameInfoLayerDelegate
 
-- (void) startButtonWasClicked;
 - (void) restartButtonWasClicked;
 - (void) chooseLevelButtonWasClicked;
-- (void) showPauseMenuButtonClicked;
 - (void) hidePauseMenuButtonClicked;
 
 @end

@@ -10,8 +10,6 @@
 
 @interface BasePopupLayer ()
 
-- (void) hideAllElements;
-
 - (void) showAllElementsWithDuration:(CGFloat)duration;
 - (void) hideAllElementsWithDuration:(CGFloat)duration;
 
@@ -27,10 +25,17 @@
     if (self) {
         
         [self hideAllElements];
-        [self showAllElementsWithDuration:fadeDuration];
     }
     
     return self;
+}
+
+- (void) show {
+    [self showAllElementsWithDuration:fadeDuration];
+}
+
+- (void) hide {
+    [self hideAllElementsWithDuration:fadeDuration];
 }
 
 - (void)removeFromParentAndCleanup:(BOOL)cleanup {
@@ -45,7 +50,7 @@
 - (void) hideAllElements {
     
     for (CCSprite *sprite in [self children]) {
-        [sprite setVisible:FALSE];
+        [sprite runAction:[CCFadeOut actionWithDuration:0.01]];
     }
 }
 

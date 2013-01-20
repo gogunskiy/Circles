@@ -15,22 +15,26 @@
 #import "DrawingLayer.h"
 #import "EntertainmentLayer.h"
 #import "GameInfoLayer.h"
+#import "GamePauseLayer.h"
+#import "GameResultLayer.h"
 
 @class Character;
 @class LevelContainer;
 
 #define PTM_RATIO 32
 
-@interface MainGameLayer : BaseLayer <DrawingLayerDelegate, GameInfoLayerDelegate>
+@interface MainGameLayer : BaseLayer <DrawingLayerDelegate, GameInfoLayerDelegate, GamePauseLayerDelegate, GameResultLayerDelegate>
 {
  	CCTexture2D *spriteTexture_;	
 	b2World* world_;				
 	GLESDebugDraw *mdebugDraw_;		
     
     
-    DrawingLayer * drawingLayer_;
-    EntertainmentLayer * entertainmentLayer_;
-    GameInfoLayer * infoLayer_;
+    DrawingLayer        * drawingLayer_;
+    EntertainmentLayer  * entertainmentLayer_;
+    GameInfoLayer       * infoLayer_;
+    GamePauseLayer      * pauseLayer_;
+    GameResultLayer     * resultLayer_;
     
     LevelContainer * currentLevel_;
     

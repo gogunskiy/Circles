@@ -95,24 +95,26 @@
     [self addChild:infoLayer_ z:4];
 }
 
-
--(void) initPauseMenu
-{
-    CCMenuItemLabel *start = [CCMenuItemImage itemWithNormalImage:@"play-button.png" selectedImage:@"play-button.png" block:^(id sender) {
-        [self startButtonWasClicked];
-        
-	}];
-    
-    CCMenuItemLabel *pause = [CCMenuItemImage itemWithNormalImage:@"pause-button.png" selectedImage:@"pause-button.png" block:^(id sender) {
-        [self showPauseMenuButtonClicked];
-        
-	}];
-    
-    CCMenu *pauseMenu = [CCMenu menuWithItems:start, pause, nil];
-    [pauseMenu alignItemsVerticallyWithPadding:500];
-	[pauseMenu setPosition:ccp(960,384)];
-	[self addChild: pauseMenu z:2];
+- (void) initPauseLayer {
+    pauseLayer_ = [[GamePauseLayer alloc] init];
+    [pauseLayer_ setDelegate:self];
+    [self addChild:pauseLayer_ z:2];
 }
 
+
+- (void) initResultLayer {
+    resultLayer_ = [[GameResultLayer alloc] init];
+    [resultLayer_ setDelegate:self];
+}
+
+- (void) showResultLayer {
+    [self addChild:resultLayer_ z:5];
+    [resultLayer_ show];
+}
+
+
+- (void) hideResultLayer {
+    [resultLayer_ hide];
+}
 
 @end

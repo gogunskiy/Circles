@@ -43,21 +43,17 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
         
 		[self initPhysics];
 		
-		[self initPauseMenu];
-        
+		[self initPauseLayer];
         [self initInfoLayer];
-        
         [self initDrawingLayer];
-        
         [self initEntertainmentLayer];
-		
+		[self initResultLayer];
+        
         currentLevel_ = [GAME currentLevel];
         
         [self initLevel];
         
-        
         [self scheduleUpdate];
-        
         [self schedule:@selector(update) interval:0.1];
 	}
     
@@ -77,6 +73,8 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
     [entertainmentLayer_ release];
     [drawingLayer_ release];
     [infoLayer_ release];
+    [pauseLayer_ release];
+    [resultLayer_ release];
     
 	[super dealloc];
 }	
@@ -162,7 +160,9 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
             }
         }
     }
-        
+    [resultLayer_ setResult:([characters_ count] == countOfMatch) ? @"WIN!" : @"LOSE"];
+    [self showResultLayer];
+    
     [GAME finishGameWithResult:@{RESULT_COUNT_CHARACTERS : [NSString stringWithFormat:@"%d",[characters_ count]], RESULT_COUNT_OF_MATCHES : [NSString stringWithFormat:@"%d", countOfMatch]}];
 }
 
@@ -229,6 +229,8 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
 #pragma mark ====  GAMEINFO LAYER DELEGATE  ====
 
 - (void) startButtonWasClicked; {
+    [pauseLayer_ setIsTouchEnabled:FALSE];
+    
     [self enablePhysics];
     [self drawPathLineWithPoints:[drawingLayer_ points]];
 }

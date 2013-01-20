@@ -22,6 +22,10 @@
 
 - (void) initDrawingLayer;
 - (void) initEntertainmentLayer;
--(void) initPauseMenu;
+- (void) initPauseLayer;
+
+- (void) initResultLayer;
+- (void) showResultLayer;
+- (void) hideResultLayer;
 
 @end
