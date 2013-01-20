@@ -11,6 +11,7 @@
 @implementation GameInfoLayer
 
 @synthesize delegate;
+@synthesize shown;
 
 - (id)init {
     
@@ -18,18 +19,15 @@
     
     [self setBackgroundImage:@"infolayer_bacground.png"];
     
+    [self setShown:FALSE];
+    
+    [self addElements];
+    
     return self;
 }
 
 
 - (void) addElements {
-    
-    [CCMenuItemFont setFontSize:22];
-	
-    CCMenuItemLabel *start = [CCMenuItemImage itemWithNormalImage:@"play-button.png" selectedImage:@"play-button.png" block:^(id sender) {
-        [[self delegate] startButtonWasClicked];
-        
-	}];
 	
     CCMenuItemLabel *reset = [CCMenuItemImage itemWithNormalImage:@"restart-button.png" selectedImage:@"restart-button.png" block:^(id sender) {
         [[self delegate] restartButtonWasClicked];
@@ -40,14 +38,41 @@
         [[self delegate] chooseLevelButtonWasClicked];
     }];
 	
-	CCMenu *menu = [CCMenu menuWithItems:start, reset, nil];
+    CCMenuItemLabel *hideMenu = [CCMenuItemImage itemWithNormalImage:@"start-button.png" selectedImage:@"start-button.png" block:^(id sender) {
+        [[self delegate] hidePauseMenuButtonClicked];
+    }];
+    
+	CCMenu *menu = [CCMenu menuWithItems:reset, chooseLevel, nil];
 	[menu alignItemsVerticallyWithPadding:40];
-	[menu setPosition:ccp(960,600)];
+	[menu setPosition:ccp(1120,600)];
 	[self addChild: menu z:1];
     
-    CCMenu *chooseLevelMenu = [CCMenu menuWithItems:chooseLevel, nil];
-	[chooseLevelMenu setPosition:ccp(960,100)];
+    CCMenu *chooseLevelMenu = [CCMenu menuWithItems:hideMenu, nil];
+	[chooseLevelMenu setPosition:ccp(1120,100)];
 	[self addChild: chooseLevelMenu z:1];
+    
+    [background_ setPosition:ccp(160,0)];
 }
+
+- (void) show {
+    if (![self shown]) {
+        [self setShown:TRUE];
+        for (CCSprite * sprite in [self children]) {
+            [sprite runAction:[CCMoveBy actionWithDuration:.1 position:ccp(-160,0)]];
+        }
+    }
+}
+
+- (void) hide {
+    
+    if ([self shown]) {
+        [self setShown:FALSE];
+        for (CCSprite * sprite in [self children]) {
+            [sprite runAction:[CCMoveBy actionWithDuration:.1 position:ccp(160,0)]];
+        }
+    }
+}
+
+
 
 @end

@@ -57,6 +57,10 @@ static NSString * DRAW_MORE_THAN_ONE_LINE_ERROR  =  @"Cannot draw more than one 
         if ([[self delegate] respondsToSelector:@selector(drawingLayer:drawingCanceledWithResoution:)]) {
             [[self delegate] drawingLayer:self drawingCanceledWithResoution:DRAW_MORE_THAN_ONE_LINE_ERROR];
         }
+    } else {
+        if ([[self delegate] respondsToSelector:@selector(drawingLayer:startDrawingWithResoution:)]) {
+            [[self delegate] drawingLayer:self startDrawingWithResoution:nil];
+        }
     }
 }
 

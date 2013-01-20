@@ -9,12 +9,12 @@
 #import "CCLayer.h"
 #import "cocos2d.h"
 
-@interface BaseLayer : CCLayer
+@interface BaseLayer : CCLayer {
+    CCSprite * background_;
+}
 
 + (CCScene *) scene;
-
 - (void) setBackgroundImage:(NSString *)imageName;
-
 - (void) addElements ;
 
 @end

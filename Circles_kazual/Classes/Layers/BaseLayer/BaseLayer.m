@@ -29,17 +29,15 @@ static NSInteger const TAG_BACKGROUND = 1;
     
     self = [super init];
     
-    [self addElements];
-    
     return self;
 }
 
 - (void) setBackgroundImage:(NSString *)imageName {
     
-    CCSprite * background = [CCSprite spriteWithFile:imageName];
-    [background setAnchorPoint:ccp(0,0)];
-    [background setPosition:ccp(0,0)];
-    [self addChild:background z:-1 tag:TAG_BACKGROUND];
+    background_ = [CCSprite spriteWithFile:imageName];
+    [background_ setAnchorPoint:ccp(0,0)];
+    [background_ setPosition:ccp(0,0)];
+    [self addChild:background_ z:-1 tag:TAG_BACKGROUND];
 }
 
 - (void) addElements {

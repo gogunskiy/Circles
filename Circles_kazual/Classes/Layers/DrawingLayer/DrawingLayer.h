@@ -13,6 +13,7 @@
 
 @protocol DrawingLayerDelegate <NSObject>
 
+- (void)drawingLayer:(DrawingLayer *)DrawingLayer startDrawingWithResoution:(NSString *)resolution;
 - (void)drawingLayer:(DrawingLayer *)DrawingLayer endDrawingWithPoints:(NSArray *)points;
 - (void)drawingLayer:(DrawingLayer *)DrawingLayer drawingCanceledWithResoution:(NSString *)resolution;
 

@@ -19,8 +19,6 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
 
 @interface MainGameLayer()
 
-
--(void) createMenu;
 -(void) drawPathLineWithPoints:(NSArray *) points;
 
 - (void) enablePhysics ;
@@ -45,7 +43,7 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
         
 		[self initPhysics];
 		
-		[self createMenu];
+		[self initPauseMenu];
         
         [self initInfoLayer];
         
@@ -82,11 +80,6 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
     
 	[super dealloc];
 }	
-
--(void) createMenu
-{
-
-}
 
 - (void) enablePhysics {
     
@@ -219,6 +212,10 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
 
 #pragma mark ====  DRAWING LAYER DELEGATE  ====
 
+- (void)drawingLayer:(DrawingLayer *)DrawingLayer startDrawingWithResoution:(NSString *)resolution {
+    [self hidePauseMenuButtonClicked];
+}
+
 -(void)drawingLayer:(DrawingLayer *)DrawingLayer endDrawingWithPoints:(NSArray *)points {
 
     
@@ -244,4 +241,11 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
     [GAME loadMainMenuScene];
 }
 
+- (void) showPauseMenuButtonClicked {
+    [infoLayer_ show];
+}
+
+- (void) hidePauseMenuButtonClicked {
+    [infoLayer_ hide];
+}
 @end

@@ -92,7 +92,26 @@
 - (void) initInfoLayer {
     infoLayer_ = [[GameInfoLayer alloc] init];
     [infoLayer_ setDelegate:self];
-    [self addChild:infoLayer_ z:2];
+    [self addChild:infoLayer_ z:4];
+}
+
+
+-(void) initPauseMenu
+{
+    CCMenuItemLabel *start = [CCMenuItemImage itemWithNormalImage:@"play-button.png" selectedImage:@"play-button.png" block:^(id sender) {
+        [self startButtonWasClicked];
+        
+	}];
+    
+    CCMenuItemLabel *pause = [CCMenuItemImage itemWithNormalImage:@"pause-button.png" selectedImage:@"pause-button.png" block:^(id sender) {
+        [self showPauseMenuButtonClicked];
+        
+	}];
+    
+    CCMenu *pauseMenu = [CCMenu menuWithItems:start, pause, nil];
+    [pauseMenu alignItemsVerticallyWithPadding:500];
+	[pauseMenu setPosition:ccp(960,384)];
+	[self addChild: pauseMenu z:2];
 }
 
 

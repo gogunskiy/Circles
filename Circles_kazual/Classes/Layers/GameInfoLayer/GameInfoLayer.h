@@ -14,6 +14,11 @@
 
 @property (nonatomic, assign) id <GameInfoLayerDelegate> delegate;
 
+@property (nonatomic, assign) BOOL shown;
+
+- (void) show;
+- (void) hide;
+
 @end
 
 
@@ -23,5 +28,7 @@
 - (void) startButtonWasClicked;
 - (void) restartButtonWasClicked;
 - (void) chooseLevelButtonWasClicked;
+- (void) showPauseMenuButtonClicked;
+- (void) hidePauseMenuButtonClicked;
 
 @end

@@ -178,6 +178,8 @@
 		634FCFE216AC153400E395DC /* resultlayer_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 634FCFE116AC153400E395DC /* resultlayer_background.png */; };
 		634FCFE516AC155000E395DC /* infolayer_bacground.png in Resources */ = {isa = PBXBuildFile; fileRef = 634FCFE416AC155000E395DC /* infolayer_bacground.png */; };
 		634FCFE816AC159300E395DC /* GameInfoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 634FCFE716AC159300E395DC /* GameInfoLayer.m */; };
+		634FCFEE16AC296E00E395DC /* pause-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 634FCFED16AC296E00E395DC /* pause-button.png */; };
+		634FCFF416AC2FD500E395DC /* start-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 634FCFF316AC2FD500E395DC /* start-button.png */; };
 		636A2AA7169CA2ED00299BAF /* DrawingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A2AA6169CA2ED00299BAF /* DrawingLayer.m */; };
 		63CCA21816A8A0EE009C89A2 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCA21716A8A0EE009C89A2 /* GameManager.m */; };
 		63CCA21C16A8A29E009C89A2 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCA21B16A8A29E009C89A2 /* MainMenuLayer.m */; };
@@ -571,6 +573,8 @@
 		634FCFE416AC155000E395DC /* infolayer_bacground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infolayer_bacground.png; sourceTree = "<group>"; };
 		634FCFE616AC159300E395DC /* GameInfoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInfoLayer.h; sourceTree = "<group>"; };
 		634FCFE716AC159300E395DC /* GameInfoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInfoLayer.m; sourceTree = "<group>"; };
+		634FCFED16AC296E00E395DC /* pause-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause-button.png"; sourceTree = "<group>"; };
+		634FCFF316AC2FD500E395DC /* start-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start-button.png"; sourceTree = "<group>"; };
 		636A2AA5169CA2ED00299BAF /* DrawingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingLayer.h; sourceTree = "<group>"; };
 		636A2AA6169CA2ED00299BAF /* DrawingLayer.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = DrawingLayer.m; sourceTree = "<group>"; };
 		63CCA21616A8A0EE009C89A2 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
@@ -1257,6 +1261,8 @@
 		634FCFD916AC127800E395DC /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				634FCFF316AC2FD500E395DC /* start-button.png */,
+				634FCFED16AC296E00E395DC /* pause-button.png */,
 				634FCFDA16AC127800E395DC /* chooselevel-button.png */,
 				634FCFDB16AC127800E395DC /* play-button.png */,
 				634FCFDC16AC127800E395DC /* restart-button.png */,
@@ -1611,6 +1617,8 @@
 				634FCFE016AC127800E395DC /* restart-button.png in Resources */,
 				634FCFE216AC153400E395DC /* resultlayer_background.png in Resources */,
 				634FCFE516AC155000E395DC /* infolayer_bacground.png in Resources */,
+				634FCFEE16AC296E00E395DC /* pause-button.png in Resources */,
+				634FCFF416AC2FD500E395DC /* start-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
