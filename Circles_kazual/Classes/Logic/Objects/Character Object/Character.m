@@ -92,10 +92,10 @@
 	
     b2Vec2 initialPosition = b2Vec2(CGPointFromString([[self data] objectForKey:CHARACTER_POSITION]).x, CGPointFromString([[self data] objectForKey:CHARACTER_POSITION]).y);
     
-    if (fabs(pos.x*PTM_RATIO - initialPosition.x) < 0.01 && fabs(pos.y*PTM_RATIO == initialPosition.y) < 0.01) {
+    if (fabs(pos.x*PTM_RATIO - initialPosition.x) < 0.01 && fabs(pos.y*PTM_RATIO == initialPosition.y) < 0.001) {
         [self setState:JUST_CREATED];
     } else {
-        [self setState:(ccpDistance(ccp(pos.x,pos.y), ccp(previousPosition_.x,previousPosition_.y)) < .01) ? SLEEPING : MOVING];
+        [self setState:(ccpDistance(ccp(pos.x,pos.y), ccp(previousPosition_.x,previousPosition_.y)) < .05) ? SLEEPING : MOVING];
     }
     
     if (OUT_THE_SCREEN(ccp(pos.x * PTM_RATIO, pos.y * PTM_RATIO))) {
