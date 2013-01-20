@@ -8,7 +8,15 @@
 
 #import "Character.h"
 
-#define OUT_THE_SCREEN(x) !CGRectContainsPoint(CGRectMake(-200, -200, 1224,968), x)
+#define CHARACTER_OUT_OF_THE_SCREEN(x)               (!CGRectContainsPoint(CGRectMake(-200, -200, 1224,968), x))
+
+#define CHARACTER_JUST_CREATED(pos, initialPosition) (fabs(pos.x*PTM_RATIO - initialPosition.x) < 0.01 && fabs(pos.y*PTM_RATIO == initialPosition.y) < 0.001)
+
+#define CHARACTER_NOT_MOVING(pos, previousPosition)  (ccpDistance(ccp(pos.x,pos.y), ccp(previousPosition.x,previousPosition.y)) < .05)
+
+#define CHARACTER_INTERSECT_CHARACTER(pos, pos2)     (CGRectIntersectsRect(CGRectMake((pos.x*PTM_RATIO)-55, (pos.y*PTM_RATIO)-55, 110, 110), CGRectMake((pos2.x*PTM_RATIO)-55, (pos2.y*PTM_RATIO)-55, 110, 110)))
+
+
 
 @implementation Character
 
@@ -27,10 +35,6 @@
     [self setName:[theData objectForKey:CHARACTER_NAME]];
     [self setRole:[theData objectForKey:CHARACTER_ROLE]];
     [self setGravityScale:CGPointFromString([theData objectForKey:CHARACTER_GRAVITYSCALE])];
-    
-    if ([[[[self data] objectForKey:CHARACTER_GEOMETRY] objectForKey:CHARACTER_GEOMETRY_TYPE] isEqualToString:CHARACTER_GEOMETRY_TYPE_POLYGON]) {
-        [self setAnchorPoint:ccp(0, 0)];
-    }
     
     return self;
 }
@@ -73,7 +77,7 @@
     b2Vec2 pos   = body_->GetPosition();
     b2Vec2 pos2  = [character body]->GetPosition();
 
-    return CGRectIntersectsRect(CGRectMake((pos.x*PTM_RATIO)-55, (pos.y*PTM_RATIO)-55, 110, 110), CGRectMake((pos2.x*PTM_RATIO)-55, (pos2.y*PTM_RATIO)-55, 110, 110));
+    return CHARACTER_INTERSECT_CHARACTER(pos,pos2);
 }
 
 
@@ -92,13 +96,13 @@
 	
     b2Vec2 initialPosition = b2Vec2(CGPointFromString([[self data] objectForKey:CHARACTER_POSITION]).x, CGPointFromString([[self data] objectForKey:CHARACTER_POSITION]).y);
     
-    if (fabs(pos.x*PTM_RATIO - initialPosition.x) < 0.01 && fabs(pos.y*PTM_RATIO == initialPosition.y) < 0.001) {
+    if (CHARACTER_JUST_CREATED(pos, initialPosition)) {
         [self setState:JUST_CREATED];
     } else {
-        [self setState:(ccpDistance(ccp(pos.x,pos.y), ccp(previousPosition_.x,previousPosition_.y)) < .05) ? SLEEPING : MOVING];
+        [self setState: CHARACTER_NOT_MOVING(pos,previousPosition_) ? SLEEPING : MOVING];
     }
     
-    if (OUT_THE_SCREEN(ccp(pos.x * PTM_RATIO, pos.y * PTM_RATIO))) {
+    if (CHARACTER_OUT_OF_THE_SCREEN(ccp(pos.x * PTM_RATIO, pos.y * PTM_RATIO))) {
         [self setState:OUT];
     }
     

@@ -52,6 +52,8 @@
         
         
         [self scheduleUpdate];
+        
+        [self schedule:@selector(update) interval:0.1];
 	}
     
 	return self;
@@ -119,29 +121,37 @@
 }
 
 - (void) updateObjects {
-    
-    int notInGameObjects = 0;
-    
+
     for (Character * character in characters_) {
         
         if ([character body] != NULL) {
             b2Vec2 customGravity = b2Vec2(character.gravityScale.x, character.gravityScale.y);
             [character body]->ApplyForce(customGravity , [character body]->GetPosition());
-
-            if (([character state] == SLEEPING ) || ([character state] ==  OUT)) {
-                notInGameObjects ++;
-            }
         }
     }
-        if (notInGameObjects == [characters_ count] && gameRunning_) {
-            [self performSelector:@selector(finishLevel) withObject:nil afterDelay:0.3];
-          }        
+      
+}
+
+- (void) update {
+    
+    int notInGameObjects = 0;
+    
+    for (Character * character in characters_) {
+        if (([character state] == SLEEPING ) || ([character state] ==  OUT)) {
+            notInGameObjects ++;
+        }
+    }
+    
+    if (notInGameObjects == [characters_ count] && gameRunning_) {
+        [self finishLevel];
+        [self unscheduleUpdate];
+        [self unschedule:@selector(update)];
+    }
 }
 
 - (void) finishLevel {
-    [self unscheduleUpdate];
+
     [self calculateLevelResult];
-    
 }
 
 - (void) calculateLevelResult {
@@ -149,8 +159,6 @@
     NSInteger countOfMatch = 0;
     
     for (Character * character in characters_) {
-        
-        NSLog(@"%@ %@ %d", [character name], [character role], [character state]);
         
         if ((([[character role] isEqualToString:CHARACTER_ROLE_POSITIVE]) && ([character state] == SLEEPING))) {
             countOfMatch ++;
