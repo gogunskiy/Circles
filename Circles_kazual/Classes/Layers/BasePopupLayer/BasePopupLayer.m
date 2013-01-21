@@ -24,10 +24,16 @@
     self = [super init];
     if (self) {
         
-        [self hideAllElements];
+      
     }
     
     return self;
+}
+
+- (void) addElements {
+    
+    [self setOpacity:0];
+    [super addElements];
 }
 
 - (void) show {
@@ -47,27 +53,16 @@
 }
 
 
-- (void) hideAllElements {
-    
-    for (CCSprite *sprite in [self children]) {
-        [sprite runAction:[CCFadeOut actionWithDuration:0.01]];
-    }
-}
 
 
 - (void) showAllElementsWithDuration:(CGFloat)duration {
     
-    for (CCSprite *sprite in [self children]) {
-        [sprite runAction:[CCFadeIn actionWithDuration:duration]];
-    }
+    [self  runAction:[CCFadeIn actionWithDuration:duration]];
 }
 
 - (void) hideAllElementsWithDuration:(CGFloat)duration {
-    
-    for (CCSprite *sprite in [self children]) {
-        [sprite runAction:[CCFadeOut actionWithDuration:duration]];
-    }
-    
+   
+    [self  runAction:[CCFadeOut actionWithDuration:duration]];
 }
 
 @end

@@ -65,6 +65,8 @@
 	[menu setPosition:ccp(512,340)];
 
 	[self addChild: menu z:1];
+    
+    [super addElements];
 }
 
 

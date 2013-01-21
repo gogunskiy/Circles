@@ -58,5 +58,15 @@ static NSInteger const TAG_BACKGROUND = 1;
     [super cleanup];
 }
 
+-(void) setOpacity: (GLubyte) opacity
+{
+    for( CCNode *node in [self children] )
+    {
+        if( [node conformsToProtocol:@protocol( CCRGBAProtocol)] )
+        {
+            [(id<CCRGBAProtocol>) node setOpacity: opacity];
+        }
+    }
+}
 
 @end

@@ -12,8 +12,6 @@
 
 @property (nonatomic, assign) CGFloat fadeDuration;
 
-- (void) hideAllElements;
-
 - (void) show;
 - (void) hide;
 

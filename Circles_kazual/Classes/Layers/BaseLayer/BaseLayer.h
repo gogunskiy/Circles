@@ -17,4 +17,6 @@
 - (void) setBackgroundImage:(NSString *)imageName;
 - (void) addElements ;
 
+-(void) setOpacity: (GLubyte) opacity;
+
 @end
