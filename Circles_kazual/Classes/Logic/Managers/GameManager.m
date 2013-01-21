@@ -8,13 +8,14 @@
 
 #import "GameManager.h"
 #import "LevelContainer.h"
+#import "LevelsLoader.h"
 
-#define RESOURCE_FILE(file) [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:(file)]
 
 static GameManager * shared = nil;
 
 @implementation GameManager
 
+@synthesize levelsLoader;
 @synthesize currentLevel;
 
 + (GameManager *) shared  {
@@ -30,22 +31,22 @@ static GameManager * shared = nil;
     self = [super init];
     
     [self setCurrentLevel:[[[LevelContainer alloc] init] autorelease]];
-    
+    [self setLevelsLoader:[[[LevelsLoader alloc] init] autorelease]];
+
     return self;
 }
 
 - (void)dealloc {
     
     [self setCurrentLevel:nil];
+    [self setLevelsLoader:nil];
     
     [super dealloc];
 }
 
 - (void) startGameWithInfo:(NSDictionary *)info {
-    
-    NSDictionary * levelData = [NSDictionary dictionaryWithContentsOfFile:RESOURCE_FILE([info objectForKey:@"Level"])];
-    
-    [[self currentLevel] setWithInfo:levelData];
+  
+    [[self currentLevel] setWithInfo:[[self levelsLoader] levelDataForLevel:[info objectForKey:LEVEL_FILE_INFO]]];
     
     [GAME loadMainGameLayer];
 }
@@ -54,5 +55,9 @@ static GameManager * shared = nil;
     NSLog(@"%@", result);
 }
 
+
+- (NSArray *) levelsInformation {
+    return [[self levelsLoader] levelsInformation];
+}
 
 @end

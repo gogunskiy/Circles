@@ -11,15 +11,19 @@
 #define GAME [GameManager shared]
 
 @class LevelContainer;
+@class LevelsLoader;
 
 @interface GameManager : NSObject
 
 + (GameManager *) shared ;
 
+@property (nonatomic, retain) LevelsLoader * levelsLoader;
 @property (nonatomic, retain) LevelContainer * currentLevel;
 
 - (void) startGameWithInfo:(NSDictionary *)info;
 
 - (void) finishGameWithResult:(NSDictionary *)result;
+
+- (NSArray *) levelsInformation;
 
 @end

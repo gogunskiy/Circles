@@ -34,6 +34,11 @@ static NSInteger const TAG_BACKGROUND = 1;
 
 - (void) setBackgroundImage:(NSString *)imageName {
     
+    if (![UIImage imageNamed:imageName]) {
+        NSLog(@"Image not found !");
+        return;
+    }
+    
     background_ = [CCSprite spriteWithFile:imageName];
     [background_ setAnchorPoint:ccp(0,0)];
     [background_ setPosition:ccp(0,0)];

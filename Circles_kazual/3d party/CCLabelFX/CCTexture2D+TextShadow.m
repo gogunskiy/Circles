@@ -189,7 +189,7 @@ float addedPixels = 0.0;
 
 		CGSize newDimensions = [self transformDimensions:dim offset:shadowSize blur:shadowBlur];
 
-		return [self	initWithString	:string dimensions:newDimensions alignment:CCTextAlignmentCenter font:font shadowOffset:shadowSize
+		return [self	initWithString	:string dimensions:newDimensions alignment:0 font:font shadowOffset:shadowSize
 						shadowBlur		:shadowBlur shadowColor:shadowColor fillColor:fillColor];
 
 #elif defined(__MAC_OS_X_VERSION_MAX_ALLOWED)

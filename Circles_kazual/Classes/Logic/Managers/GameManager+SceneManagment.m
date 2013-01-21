@@ -9,6 +9,7 @@
 #import "GameManager+SceneManagment.h"
 #import "MainMenuLayer.h"
 #import "MainGameLayer.h"
+#import "ChooseLevelLayer.h"
 
 @implementation GameManager (SceneManagment)
 
@@ -26,6 +27,11 @@
 - (void) loadMainGameLayer {
     [[CCDirector sharedDirector] replaceScene:[MainGameLayer scene]];
 }
+
+- (void) loadChooseLevelLayer {
+    [[CCDirector sharedDirector] replaceScene:[ChooseLevelLayer scene]];
+}
+
 
 
 @end

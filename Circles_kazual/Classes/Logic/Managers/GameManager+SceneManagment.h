@@ -14,5 +14,6 @@
 - (void) loadStartScene;
 - (void) loadMainMenuScene;
 - (void) loadMainGameLayer;
+- (void) loadChooseLevelLayer ;
 
 @end
