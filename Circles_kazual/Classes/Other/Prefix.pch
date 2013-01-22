@@ -17,5 +17,6 @@
 #import "GameManager.h"
 #import "GameManager+SceneManagment.h"
 #import "Settings.h"
+#import "Defines.h"
 
 #endif

@@ -29,6 +29,8 @@ static NSInteger const TAG_BACKGROUND = 1;
     
     self = [super init];
     
+    [self setIsTouchEnabled:TRUE];
+    
     return self;
 }
 

@@ -10,7 +10,14 @@
 #import "ChooseLevelPageLayer.h"
 
 @interface ChooseLevelLayer : BaseLayer <ChooseLevelPageLayerDelegate> {
-     NSMutableArray * pages_;
+    
+    NSMutableArray * pages_;
+    NSInteger currentPage_;
+    
+    CGPoint startLocation_;
 }
+
+- (void) leftSwipe:(id)sender;
+- (void) rightSwipe:(id)sender;
 
 @end

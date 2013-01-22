@@ -11,11 +11,11 @@
 @implementation Settings
 
 
-+ (void) setObject:(id<NSCoding>)object forKey:(NSString *)key {
++ (void) setObject:(NSString *)object forKey:(NSString *)key {
     [[NSUserDefaults standardUserDefaults] setObject:object forKey:key];
 }
 
-+ (id <NSCoding>) objectForKey:(NSString *)key {
++ (NSString *) objectForKey:(NSString *)key {
     return [[NSUserDefaults standardUserDefaults] objectForKey:key];
 }
 

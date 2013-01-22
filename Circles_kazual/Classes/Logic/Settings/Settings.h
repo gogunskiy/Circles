@@ -10,7 +10,7 @@
 
 @interface Settings : NSObject
 
-+ (void) setObject:(id<NSCoding>)object forKey:(NSString *)key;
-+ (id <NSCoding>) objectForKey:(NSString *)key;
++ (void) setObject:(NSString *)object forKey:(NSString *)key;
++ (NSString *) objectForKey:(NSString *)key;
 
 @end

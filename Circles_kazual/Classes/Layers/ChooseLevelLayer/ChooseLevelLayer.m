@@ -7,7 +7,8 @@
 //
 
 #import "ChooseLevelLayer.h"
-
+#import "CCNode+SFGestureRecognizers.h"
+#import "ChooseLevelLayer+Touches.h"
 
 @interface ChooseLevelLayer ()
 
@@ -21,7 +22,7 @@
     self = [super init];
     
     pages_ = [[NSMutableArray alloc] init];
-
+    
     [self initialize];
     
     return self;
@@ -32,6 +33,7 @@
     [pages_ release];
     [super dealloc];
 }
+
 
 - (void) initialize {
     NSArray * levelsInfo = [GAME levelsInformation];
@@ -47,9 +49,22 @@
         [page release];
     }
     
-    [self addChild:[pages_ objectAtIndex:0]];
+    currentPage_ = [[Settings objectForKey:SETTINGS_KEY_CHOOSE_LEVEL_ACTIVE_PAGE] intValue];
+    
+    [self addChild:[pages_ objectAtIndex:currentPage_]];
 }
 
+
+#pragma mark - GESTURE RECOGNIZERS METHODS -
+
+- (void) leftSwipe:(id)sender {
+    NSLog(@"LEFT SWIPE");
+}
+
+
+- (void) rightSwipe:(id)sender {
+    NSLog(@"RIGHT SWIPE");
+}
 
 
 @end

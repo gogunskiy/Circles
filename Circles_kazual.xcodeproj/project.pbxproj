@@ -19,6 +19,7 @@
 		63118D0216AF3C210041DE7C /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63118CF916AF3C210041DE7C /* GameManager.m */; };
 		63118D0316AF3C210041DE7C /* LevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 63118CFC16AF3C210041DE7C /* LevelsLoader.m */; };
 		63118D0416AF3C210041DE7C /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 63118CFF16AF3C210041DE7C /* Settings.m */; };
+		63118D1916AF478F0041DE7C /* ChooseLevelLayer+Touches.m in Sources */ = {isa = PBXBuildFile; fileRef = 63118D1816AF478F0041DE7C /* ChooseLevelLayer+Touches.m */; };
 		6313623116A1CBA90011795C /* BaseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6313623016A1CBA90011795C /* BaseLayer.m */; };
 		6313623416A1CBC20011795C /* EntertainmentLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6313623316A1CBC20011795C /* EntertainmentLayer.m */; };
 		63175230169F670400343EE9 /* MainGameLayer+Initialization.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6317522F169F670300343EE9 /* MainGameLayer+Initialization.mm */; };
@@ -246,6 +247,9 @@
 		63118CFC16AF3C210041DE7C /* LevelsLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelsLoader.m; sourceTree = "<group>"; };
 		63118CFE16AF3C210041DE7C /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		63118CFF16AF3C210041DE7C /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		63118D0616AF411B0041DE7C /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		63118D1716AF478F0041DE7C /* ChooseLevelLayer+Touches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ChooseLevelLayer+Touches.h"; sourceTree = "<group>"; };
+		63118D1816AF478F0041DE7C /* ChooseLevelLayer+Touches.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ChooseLevelLayer+Touches.m"; sourceTree = "<group>"; };
 		6313622F16A1CBA90011795C /* BaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLayer.h; sourceTree = "<group>"; };
 		6313623016A1CBA90011795C /* BaseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLayer.m; sourceTree = "<group>"; };
 		6313623216A1CBC20011795C /* EntertainmentLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntertainmentLayer.h; sourceTree = "<group>"; };
@@ -713,6 +717,14 @@
 				63118CFF16AF3C210041DE7C /* Settings.m */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		63118D0516AF41000041DE7C /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				63118D0616AF411B0041DE7C /* Defines.h */,
+			);
+			path = Defines;
 			sourceTree = "<group>";
 		};
 		6313622C16A1CB4A0011795C /* EntertainmentLayer */ = {
@@ -1405,6 +1417,8 @@
 			children = (
 				63C5142716ADEAE400834319 /* ChooseLevelLayer.h */,
 				63C5142816ADEAE400834319 /* ChooseLevelLayer.m */,
+				63118D1716AF478F0041DE7C /* ChooseLevelLayer+Touches.h */,
+				63118D1816AF478F0041DE7C /* ChooseLevelLayer+Touches.m */,
 			);
 			path = ChooseLevelLayer;
 			sourceTree = "<group>";
@@ -1560,6 +1574,7 @@
 		63EF8DD1164EF1CC00374B27 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				63118D0516AF41000041DE7C /* Defines */,
 				63118CF216AF3C210041DE7C /* FileManager */,
 				63118CF516AF3C210041DE7C /* GameManager */,
 				63118CFA16AF3C210041DE7C /* LevelsLoader */,
@@ -1932,6 +1947,7 @@
 				63118D0216AF3C210041DE7C /* GameManager.m in Sources */,
 				63118D0316AF3C210041DE7C /* LevelsLoader.m in Sources */,
 				63118D0416AF3C210041DE7C /* Settings.m in Sources */,
+				63118D1916AF478F0041DE7C /* ChooseLevelLayer+Touches.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
