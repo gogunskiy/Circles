@@ -14,6 +14,11 @@
 		63118CEC16AF37620041DE7C /* 1_3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63118CE816AF37610041DE7C /* 1_3.plist */; };
 		63118CED16AF37620041DE7C /* 1_4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63118CE916AF37610041DE7C /* 1_4.plist */; };
 		63118CEE16AF37620041DE7C /* 1_5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63118CEA16AF37620041DE7C /* 1_5.plist */; };
+		63118D0016AF3C210041DE7C /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63118CF416AF3C210041DE7C /* FileManager.m */; };
+		63118D0116AF3C210041DE7C /* GameManager+SceneManagment.m in Sources */ = {isa = PBXBuildFile; fileRef = 63118CF716AF3C210041DE7C /* GameManager+SceneManagment.m */; };
+		63118D0216AF3C210041DE7C /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63118CF916AF3C210041DE7C /* GameManager.m */; };
+		63118D0316AF3C210041DE7C /* LevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 63118CFC16AF3C210041DE7C /* LevelsLoader.m */; };
+		63118D0416AF3C210041DE7C /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 63118CFF16AF3C210041DE7C /* Settings.m */; };
 		6313623116A1CBA90011795C /* BaseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6313623016A1CBA90011795C /* BaseLayer.m */; };
 		6313623416A1CBC20011795C /* EntertainmentLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6313623316A1CBC20011795C /* EntertainmentLayer.m */; };
 		63175230169F670400343EE9 /* MainGameLayer+Initialization.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6317522F169F670300343EE9 /* MainGameLayer+Initialization.mm */; };
@@ -194,11 +199,7 @@
 		63C5142D16ADEC6000834319 /* ChooseLevelPageLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C5142C16ADEC6000834319 /* ChooseLevelPageLayer.m */; };
 		63C5143316ADF66D00834319 /* level.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C5143216ADF66D00834319 /* level.png */; };
 		63C5143516ADF7BC00834319 /* ChooseLevelPageBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C5143416ADF7BC00834319 /* ChooseLevelPageBackground.png */; };
-		63C5143816ADF7F800834319 /* LevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C5143716ADF7F800834319 /* LevelsLoader.m */; };
-		63C5143F16ADFACD00834319 /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C5143E16ADFACD00834319 /* FileManager.m */; };
-		63CCA21816A8A0EE009C89A2 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCA21716A8A0EE009C89A2 /* GameManager.m */; };
 		63CCA21C16A8A29E009C89A2 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCA21B16A8A29E009C89A2 /* MainMenuLayer.m */; };
-		63CCA21F16A8A320009C89A2 /* GameManager+SceneManagment.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CCA21E16A8A320009C89A2 /* GameManager+SceneManagment.m */; };
 		63CCA23316A8A882009C89A2 /* Foureyes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA22E16A8A882009C89A2 /* Foureyes.plist */; };
 		63CCA23416A8A882009C89A2 /* Foureyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA22F16A8A882009C89A2 /* Foureyes.png */; };
 		63CCA23516A8A882009C89A2 /* Magenta.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CCA23116A8A882009C89A2 /* Magenta.plist */; };
@@ -235,6 +236,16 @@
 		63118CE816AF37610041DE7C /* 1_3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1_3.plist; sourceTree = "<group>"; };
 		63118CE916AF37610041DE7C /* 1_4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1_4.plist; sourceTree = "<group>"; };
 		63118CEA16AF37620041DE7C /* 1_5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1_5.plist; sourceTree = "<group>"; };
+		63118CF316AF3C210041DE7C /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		63118CF416AF3C210041DE7C /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
+		63118CF616AF3C210041DE7C /* GameManager+SceneManagment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GameManager+SceneManagment.h"; sourceTree = "<group>"; };
+		63118CF716AF3C210041DE7C /* GameManager+SceneManagment.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = "GameManager+SceneManagment.m"; sourceTree = "<group>"; };
+		63118CF816AF3C210041DE7C /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
+		63118CF916AF3C210041DE7C /* GameManager.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GameManager.m; sourceTree = "<group>"; };
+		63118CFB16AF3C210041DE7C /* LevelsLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelsLoader.h; sourceTree = "<group>"; };
+		63118CFC16AF3C210041DE7C /* LevelsLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelsLoader.m; sourceTree = "<group>"; };
+		63118CFE16AF3C210041DE7C /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		63118CFF16AF3C210041DE7C /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		6313622F16A1CBA90011795C /* BaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLayer.h; sourceTree = "<group>"; };
 		6313623016A1CBA90011795C /* BaseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLayer.m; sourceTree = "<group>"; };
 		6313623216A1CBC20011795C /* EntertainmentLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntertainmentLayer.h; sourceTree = "<group>"; };
@@ -609,16 +620,8 @@
 		63C5142C16ADEC6000834319 /* ChooseLevelPageLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLevelPageLayer.m; sourceTree = "<group>"; };
 		63C5143216ADF66D00834319 /* level.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level.png; sourceTree = "<group>"; };
 		63C5143416ADF7BC00834319 /* ChooseLevelPageBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChooseLevelPageBackground.png; sourceTree = "<group>"; };
-		63C5143616ADF7F800834319 /* LevelsLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelsLoader.h; sourceTree = "<group>"; };
-		63C5143716ADF7F800834319 /* LevelsLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelsLoader.m; sourceTree = "<group>"; };
-		63C5143D16ADFACC00834319 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
-		63C5143E16ADFACD00834319 /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
-		63CCA21616A8A0EE009C89A2 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
-		63CCA21716A8A0EE009C89A2 /* GameManager.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GameManager.m; sourceTree = "<group>"; };
 		63CCA21A16A8A29E009C89A2 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
 		63CCA21B16A8A29E009C89A2 /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
-		63CCA21D16A8A320009C89A2 /* GameManager+SceneManagment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GameManager+SceneManagment.h"; sourceTree = "<group>"; };
-		63CCA21E16A8A320009C89A2 /* GameManager+SceneManagment.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = "GameManager+SceneManagment.m"; sourceTree = "<group>"; };
 		63CCA22E16A8A882009C89A2 /* Foureyes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Foureyes.plist; sourceTree = "<group>"; };
 		63CCA22F16A8A882009C89A2 /* Foureyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Foureyes.png; sourceTree = "<group>"; };
 		63CCA23116A8A882009C89A2 /* Magenta.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Magenta.plist; sourceTree = "<group>"; };
@@ -674,6 +677,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63118CF216AF3C210041DE7C /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				63118CF316AF3C210041DE7C /* FileManager.h */,
+				63118CF416AF3C210041DE7C /* FileManager.m */,
+			);
+			path = FileManager;
+			sourceTree = "<group>";
+		};
+		63118CF516AF3C210041DE7C /* GameManager */ = {
+			isa = PBXGroup;
+			children = (
+				63118CF616AF3C210041DE7C /* GameManager+SceneManagment.h */,
+				63118CF716AF3C210041DE7C /* GameManager+SceneManagment.m */,
+				63118CF816AF3C210041DE7C /* GameManager.h */,
+				63118CF916AF3C210041DE7C /* GameManager.m */,
+			);
+			path = GameManager;
+			sourceTree = "<group>";
+		};
+		63118CFA16AF3C210041DE7C /* LevelsLoader */ = {
+			isa = PBXGroup;
+			children = (
+				63118CFB16AF3C210041DE7C /* LevelsLoader.h */,
+				63118CFC16AF3C210041DE7C /* LevelsLoader.m */,
+			);
+			path = LevelsLoader;
+			sourceTree = "<group>";
+		};
+		63118CFD16AF3C210041DE7C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				63118CFE16AF3C210041DE7C /* Settings.h */,
+				63118CFF16AF3C210041DE7C /* Settings.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		6313622C16A1CB4A0011795C /* EntertainmentLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1377,21 +1418,6 @@
 			path = ChooseLevelPageLayer;
 			sourceTree = "<group>";
 		};
-		63CCA21416A8A0D9009C89A2 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				63CCA21616A8A0EE009C89A2 /* GameManager.h */,
-				63CCA21716A8A0EE009C89A2 /* GameManager.m */,
-				63CCA21D16A8A320009C89A2 /* GameManager+SceneManagment.h */,
-				63CCA21E16A8A320009C89A2 /* GameManager+SceneManagment.m */,
-				63C5143616ADF7F800834319 /* LevelsLoader.h */,
-				63C5143716ADF7F800834319 /* LevelsLoader.m */,
-				63C5143D16ADFACC00834319 /* FileManager.h */,
-				63C5143E16ADFACD00834319 /* FileManager.m */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		63CCA21916A8A28A009C89A2 /* MainMenuLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1534,7 +1560,10 @@
 		63EF8DD1164EF1CC00374B27 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				63CCA21416A8A0D9009C89A2 /* Managers */,
+				63118CF216AF3C210041DE7C /* FileManager */,
+				63118CF516AF3C210041DE7C /* GameManager */,
+				63118CFA16AF3C210041DE7C /* LevelsLoader */,
+				63118CFD16AF3C210041DE7C /* Settings */,
 				63260ED8169F69F1000383B0 /* Objects */,
 			);
 			path = Logic;
@@ -1888,9 +1917,7 @@
 				63260EE7169F6C21000383B0 /* Character.m in Sources */,
 				6313623116A1CBA90011795C /* BaseLayer.m in Sources */,
 				6313623416A1CBC20011795C /* EntertainmentLayer.m in Sources */,
-				63CCA21816A8A0EE009C89A2 /* GameManager.m in Sources */,
 				63CCA21C16A8A29E009C89A2 /* MainMenuLayer.m in Sources */,
-				63CCA21F16A8A320009C89A2 /* GameManager+SceneManagment.m in Sources */,
 				63CCA24116A8AB94009C89A2 /* LevelContainer.m in Sources */,
 				634FCFD016AC091000E395DC /* BasePopupLayer.m in Sources */,
 				634FCFD316AC105E00E395DC /* GameResultLayer.m in Sources */,
@@ -1900,8 +1927,11 @@
 				634FD00716AC4CD200E395DC /* CCTexture2D+TextShadow.m in Sources */,
 				63C5142916ADEAE400834319 /* ChooseLevelLayer.m in Sources */,
 				63C5142D16ADEC6000834319 /* ChooseLevelPageLayer.m in Sources */,
-				63C5143816ADF7F800834319 /* LevelsLoader.m in Sources */,
-				63C5143F16ADFACD00834319 /* FileManager.m in Sources */,
+				63118D0016AF3C210041DE7C /* FileManager.m in Sources */,
+				63118D0116AF3C210041DE7C /* GameManager+SceneManagment.m in Sources */,
+				63118D0216AF3C210041DE7C /* GameManager.m in Sources */,
+				63118D0316AF3C210041DE7C /* LevelsLoader.m in Sources */,
+				63118D0416AF3C210041DE7C /* Settings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

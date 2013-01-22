@@ -16,5 +16,6 @@
 #import "BaseLayer.h"
 #import "GameManager.h"
 #import "GameManager+SceneManagment.h"
+#import "Settings.h"
 
 #endif
