@@ -23,6 +23,11 @@ static CGFloat const DELTA_Y                  = 200.0;
 @synthesize delegate;
 @synthesize info;
 
+- (void)dealloc {
+    
+    [info release];
+    [super dealloc];
+}
 
 - (void) initialize {
     [self setBackgroundImage:[info objectForKey:PAGE_BACKGROUND]];

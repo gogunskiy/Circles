@@ -14,7 +14,7 @@
 @interface ChooseLevelPageLayer : BaseLayer
 
 @property (nonatomic, assign) id <ChooseLevelPageLayerDelegate> delegate;
-@property (nonatomic, assign) NSDictionary *info;
+@property (nonatomic, retain) NSDictionary *info;
 
 - (void) initialize;
 
