@@ -41,6 +41,7 @@
     for (NSDictionary *pagesInfo in levelsInfo) {
         
         ChooseLevelPageLayer * page =[[ChooseLevelPageLayer alloc] init];
+    
         [page setInfo:pagesInfo];
         [page setDelegate:self];
         [page initialize];
@@ -58,12 +59,23 @@
 #pragma mark - GESTURE RECOGNIZERS METHODS -
 
 - (void) leftSwipe:(id)sender {
-    NSLog(@"LEFT SWIPE");
+    
+    if (currentPage_ < [pages_ count]-1) {
+        [self removeChild:[pages_ objectAtIndex:currentPage_] cleanup:FALSE];
+        currentPage_ ++ ;
+        [self addChild:[pages_ objectAtIndex:currentPage_]];
+        
+    }
 }
 
 
 - (void) rightSwipe:(id)sender {
-    NSLog(@"RIGHT SWIPE");
+    
+    if (currentPage_ > 0) {
+        [self removeChild:[pages_ objectAtIndex:currentPage_] cleanup:FALSE];
+        currentPage_ -- ;
+        [self addChild:[pages_ objectAtIndex:currentPage_]];
+    }
 }
 
 
