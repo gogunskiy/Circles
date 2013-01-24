@@ -12,6 +12,7 @@
 
 @interface ChooseLevelLayer ()
 
+- (void) addGestures;
 - (void) initialize;
 
 @end
@@ -23,6 +24,7 @@
     
     pages_ = [[NSMutableArray alloc] init];
     
+    [self addGestures];
     [self initialize];
     
     return self;
@@ -34,6 +36,10 @@
     [super dealloc];
 }
 
+
+- (void) addGestures {
+    
+}
 
 - (void) initialize {
     NSArray * levelsInfo = [GAME levelsInformation];
