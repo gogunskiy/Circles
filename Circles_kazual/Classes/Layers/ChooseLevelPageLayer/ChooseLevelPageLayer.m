@@ -99,34 +99,44 @@ static CGFloat const TRANSITION_DELTA         = 1050;
 }
 
 - (void) leftIn {
+    
+    [delegate setLayerEnabled:FALSE];
     [self setPosition:ccp(-TRANSITION_DELTA,0)];
     [self setOpacity:255];
-    [self runAction:[CCMoveBy actionWithDuration:TRANSITION_SPEED position:ccp(TRANSITION_DELTA,0)]];
+    [self runAction:[CCSequence actions:[CCMoveBy actionWithDuration:TRANSITION_SPEED position:ccp(TRANSITION_DELTA,0)],[CCCallFunc actionWithTarget:self selector:@selector(show)], nil]];
 }
 
 - (void) leftOut {
-     [self runAction:[CCSequence actions:[CCMoveBy actionWithDuration:TRANSITION_SPEED position:ccp(-TRANSITION_DELTA,0)], [CCCallFunc actionWithTarget:self selector:@selector(remove)], nil]];
     
+    [delegate setLayerEnabled:FALSE];
+    [self runAction:[CCSequence actions:[CCMoveBy actionWithDuration:TRANSITION_SPEED position:ccp(-TRANSITION_DELTA,0)], [CCCallFunc actionWithTarget:self selector:@selector(remove)], nil]];
 }
 
 - (void) rightIn {
+    
+    [delegate setLayerEnabled:FALSE];
     [self setPosition:ccp(TRANSITION_DELTA,0)];
     [self setOpacity:255];
-    [self runAction:[CCMoveBy actionWithDuration:TRANSITION_SPEED position:ccp(-TRANSITION_DELTA,0)]];
+    [self runAction:[CCSequence actions:[CCMoveBy actionWithDuration:TRANSITION_SPEED position:ccp(-TRANSITION_DELTA,0)],[CCCallFunc actionWithTarget:self selector:@selector(show)], nil]];
 }
 
 - (void) rightOut {
+   
+    [delegate setLayerEnabled:FALSE];
     [self runAction:[CCSequence actions:[CCMoveBy actionWithDuration:TRANSITION_SPEED position:ccp(TRANSITION_DELTA,0)], [CCCallFunc actionWithTarget:self selector:@selector(remove)], nil]];
 }
 
 
 - (void) remove {
     [self setOpacity:0];
+    [delegate setLayerEnabled:TRUE];
     [self removeFromParentAndCleanup:FALSE];
 }
+        
 
 - (void) show {
     [self setOpacity:255];
+    [delegate setLayerEnabled:TRUE];
 }
 
 - (CCSprite *) addCharacterWithImage:(NSString *)imageName position:(CGPoint)position {

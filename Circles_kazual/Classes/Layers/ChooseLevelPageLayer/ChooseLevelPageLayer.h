@@ -34,6 +34,6 @@
 
 @protocol ChooseLevelPageLayerDelegate <NSObject>
 
-
+- (void) setLayerEnabled:(BOOL)endbled;
 
 @end

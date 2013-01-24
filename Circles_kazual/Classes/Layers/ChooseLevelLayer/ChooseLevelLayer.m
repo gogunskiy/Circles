@@ -99,5 +99,11 @@
     }
 }
 
+#pragma mark - CHOOSE LEVEL PAGE DELEGATE -
+
+- (void) setLayerEnabled:(BOOL)endbled {
+    [self setIsTouchEnabled:endbled];
+}
+
 
 @end
