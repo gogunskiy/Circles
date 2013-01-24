@@ -7,6 +7,8 @@
 //
 
 #import "Character.h"
+#import "CharacterDirectionArrow.h"
+
 
 #define CHARACTER_OUT_OF_THE_SCREEN(x)               (!CGRectContainsPoint(CGRectMake(-200, -200, 1224,968), x))
 
@@ -36,6 +38,10 @@
     [self setRole:[theData objectForKey:CHARACTER_ROLE]];
     [self setGravityScale:CGPointFromString([theData objectForKey:CHARACTER_GRAVITYSCALE])];
     
+    arrow_  = [[CharacterDirectionArrow alloc] initWithGravity:[self gravityScale]];
+    [arrow_ setAnchorPoint:ccp(0.5,0.5)];
+    [self addChild:arrow_ z:-1];
+    
     return self;
 }
 
@@ -53,8 +59,9 @@
         CGFloat radius =  [[[[self data] objectForKey:CHARACTER_GEOMETRY] objectForKey:CHARACTER_GEOMETRY_RADIUS] floatValue];
         
         [self generateCirlceBodyWithRadius:radius];
-        
     }
+    
+    [self removeChild:arrow_ cleanup:FALSE];
 }
 
 
@@ -65,6 +72,9 @@
         body_ = NULL;
         
         physicsBodyExist_ = FALSE;
+    }
+    if (![[self children] containsObject:arrow_]) {
+        [self addChild:arrow_ z:-1];
     }
 }
 

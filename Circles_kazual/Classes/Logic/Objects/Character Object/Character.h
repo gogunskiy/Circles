@@ -32,9 +32,11 @@ static NSString * const CHARACTER_GEOMETRY_RADIUS       = @"Radius";
 static NSString * const CHARACTER_FILE                  = @"File";
 static NSString * const CHARACTER_POSITION              = @"Position";
 
+@class CharacterDirectionArrow;
 
-
-@interface Character : PhysicsObject
+@interface Character : PhysicsObject {
+    CharacterDirectionArrow * arrow_;
+}
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * role;
