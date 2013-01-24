@@ -18,6 +18,20 @@ static CGFloat const INITIAL_OFFSET_Y         = 730.0;
 static CGFloat const DELTA_X                  = 200.0;
 static CGFloat const DELTA_Y                  = 200.0;
 
+static CGFloat const TRANSITION_SPEED               = 0.5;
+static CGFloat const CHARACTER_TRANSITION_SPEED     = 1.5;
+
+
+static CGFloat const TRANSITION_DELTA         = 1050;
+
+
+@interface ChooseLevelPageLayer ()
+
+- (CCSprite *) addCharacterWithImage:(NSString *)imageName position:(CGPoint)position;
+- (void) moveCharacter:(CCSprite *)character fromPoint:(CGPoint)fromPoint toPoint:(CGPoint)point;
+
+@end
+
 @implementation ChooseLevelPageLayer
 
 @synthesize delegate;
@@ -27,6 +41,19 @@ static CGFloat const DELTA_Y                  = 200.0;
     
     [info release];
     [super dealloc];
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        /*
+        leftPusher_  = [self addCharacterWithImage:@"Angry.png"    position:ccp(-150,384)];
+        rightPusher_ = [self addCharacterWithImage:@"BlackMan.png" position:ccp(1100,384)];
+    */
+      }
+    
+    return self;
 }
 
 - (void) initialize {
@@ -60,12 +87,60 @@ static CGFloat const DELTA_Y                  = 200.0;
 	[self addChild: menu z:-1];
 
     [levels release];
+    
+    [self setOpacity:0];
 }
 
 - (void) chooseLevelWithSender:(id)sender {
+    
     NSDictionary * levelInfo = [[[self info] objectForKey:LEVELS_INFO] objectAtIndex:[sender tag]];
     [GAME startGameWithInfo:levelInfo];
 
+}
+
+- (void) leftIn {
+    [self setPosition:ccp(-TRANSITION_DELTA,0)];
+    [self setOpacity:255];
+    [self runAction:[CCMoveBy actionWithDuration:TRANSITION_SPEED position:ccp(TRANSITION_DELTA,0)]];
+}
+
+- (void) leftOut {
+     [self runAction:[CCSequence actions:[CCMoveBy actionWithDuration:TRANSITION_SPEED position:ccp(-TRANSITION_DELTA,0)], [CCCallFunc actionWithTarget:self selector:@selector(remove)], nil]];
+    
+}
+
+- (void) rightIn {
+    [self setPosition:ccp(TRANSITION_DELTA,0)];
+    [self setOpacity:255];
+    [self runAction:[CCMoveBy actionWithDuration:TRANSITION_SPEED position:ccp(-TRANSITION_DELTA,0)]];
+}
+
+- (void) rightOut {
+    [self runAction:[CCSequence actions:[CCMoveBy actionWithDuration:TRANSITION_SPEED position:ccp(TRANSITION_DELTA,0)], [CCCallFunc actionWithTarget:self selector:@selector(remove)], nil]];
+}
+
+
+- (void) remove {
+    [self setOpacity:0];
+    [self removeFromParentAndCleanup:FALSE];
+}
+
+- (void) show {
+    [self setOpacity:255];
+}
+
+- (CCSprite *) addCharacterWithImage:(NSString *)imageName position:(CGPoint)position {
+    
+    CCSprite * sprite = [CCSprite spriteWithFile:imageName];
+    [sprite setPosition:position];
+    [self addChild:sprite z:1];
+    
+    return sprite;
+}
+
+- (void) moveCharacter:(CCSprite *)character fromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint {
+    [character setPosition:fromPoint];
+    [character runAction:[CCMoveTo actionWithDuration:CHARACTER_TRANSITION_SPEED position:toPoint]];
 }
 
 @end

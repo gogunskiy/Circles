@@ -8,7 +8,6 @@
 
 #import "ChooseLevelLayer.h"
 #import "CCNode+SFGestureRecognizers.h"
-#import "ChooseLevelLayer+Touches.h"
 
 @interface ChooseLevelLayer ()
 
@@ -38,7 +37,16 @@
 
 
 - (void) addGestures {
+ 
+    UISwipeGestureRecognizer *swipeLeftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipe:)];
+    [swipeLeftRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self addGestureRecognizer:swipeLeftRecognizer];
+    [swipeLeftRecognizer release];
     
+    UISwipeGestureRecognizer *swipeRighttRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipe:)];
+    [swipeRighttRecognizer setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self addGestureRecognizer:swipeRighttRecognizer];
+    [swipeRighttRecognizer release];
 }
 
 - (void) initialize {
@@ -59,6 +67,7 @@
     currentPage_ = [[Settings objectForKey:SETTINGS_KEY_CHOOSE_LEVEL_ACTIVE_PAGE] intValue];
     
     [self addChild:[pages_ objectAtIndex:currentPage_]];
+    [[pages_ objectAtIndex:currentPage_] show];
 }
 
 
@@ -67,10 +76,13 @@
 - (void) leftSwipe:(id)sender {
     
     if (currentPage_ < [pages_ count]-1) {
-        [self removeChild:[pages_ objectAtIndex:currentPage_] cleanup:FALSE];
-        currentPage_ ++ ;
-        [self addChild:[pages_ objectAtIndex:currentPage_]];
         
+        [[pages_ objectAtIndex:currentPage_] leftOut];
+        
+        currentPage_ ++ ;
+        
+        [self addChild:[pages_ objectAtIndex:currentPage_]];
+        [[pages_ objectAtIndex:currentPage_] leftIn];
     }
 }
 
@@ -78,9 +90,12 @@
 - (void) rightSwipe:(id)sender {
     
     if (currentPage_ > 0) {
-        [self removeChild:[pages_ objectAtIndex:currentPage_] cleanup:FALSE];
+        [[pages_ objectAtIndex:currentPage_] rightOut];
+      
         currentPage_ -- ;
+       
         [self addChild:[pages_ objectAtIndex:currentPage_]];
+        [[pages_ objectAtIndex:currentPage_] rightIn];
     }
 }
 
