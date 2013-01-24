@@ -26,5 +26,6 @@
 
 - (void) startButtonWasClicked;
 - (void) showPauseMenuButtonClicked;
+- (void) clearLineButtonClicked;
 
 @end;

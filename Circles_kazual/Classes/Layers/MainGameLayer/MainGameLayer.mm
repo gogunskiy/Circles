@@ -226,7 +226,7 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
 }
 
 
-#pragma mark ====  GAMEINFO LAYER DELEGATE  ====
+#pragma mark ====  GAME INFO & PAUSE LAYER DELEGATE  ====
 
 - (void) startButtonWasClicked; {
     [pauseLayer_ setIsTouchEnabled:FALSE];
@@ -250,4 +250,10 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
 - (void) hidePauseMenuButtonClicked {
     [infoLayer_ hide];
 }
+
+- (void) clearLineButtonClicked {
+    [drawingLayer_ reset];
+}
+
+
 @end

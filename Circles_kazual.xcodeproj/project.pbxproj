@@ -235,6 +235,7 @@
 		63F22A9C16B1D38300AF3CD1 /* arrow-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 63F22A9816B1D38300AF3CD1 /* arrow-right.png */; };
 		63F22A9D16B1D38300AF3CD1 /* arrow-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 63F22A9916B1D38300AF3CD1 /* arrow-up.png */; };
 		63F22AA116B1D48600AF3CD1 /* CharacterDirectionArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F22AA016B1D48600AF3CD1 /* CharacterDirectionArrow.m */; };
+		63F22AA316B1DC4B00AF3CD1 /* pencil-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 63F22AA216B1DC4B00AF3CD1 /* pencil-button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -675,6 +676,7 @@
 		63F22A9916B1D38300AF3CD1 /* arrow-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-up.png"; sourceTree = "<group>"; };
 		63F22A9F16B1D48600AF3CD1 /* CharacterDirectionArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterDirectionArrow.h; sourceTree = "<group>"; };
 		63F22AA016B1D48600AF3CD1 /* CharacterDirectionArrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterDirectionArrow.m; sourceTree = "<group>"; };
+		63F22AA216B1DC4B00AF3CD1 /* pencil-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pencil-button.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1367,6 +1369,7 @@
 		634FCFD916AC127800E395DC /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				63F22AA216B1DC4B00AF3CD1 /* pencil-button.png */,
 				634FCFF316AC2FD500E395DC /* start-button.png */,
 				634FCFED16AC296E00E395DC /* pause-button.png */,
 				634FCFDA16AC127800E395DC /* chooselevel-button.png */,
@@ -1830,6 +1833,7 @@
 				63F22A9B16B1D38300AF3CD1 /* arrow-left.png in Resources */,
 				63F22A9C16B1D38300AF3CD1 /* arrow-right.png in Resources */,
 				63F22A9D16B1D38300AF3CD1 /* arrow-up.png in Resources */,
+				63F22AA316B1DC4B00AF3CD1 /* pencil-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

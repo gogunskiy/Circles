@@ -32,14 +32,19 @@
         
 	}];
     
+    CCMenuItemLabel *pencil = [CCMenuItemImage itemWithNormalImage:@"pencil-button.png" selectedImage:@"pencil-button.png" block:^(id sender) {
+        [[self delegate] clearLineButtonClicked];
+        
+	}];
+    
     CCMenuItemLabel *pause = [CCMenuItemImage itemWithNormalImage:@"pause-button.png" selectedImage:@"pause-button.png" block:^(id sender) {
         [[self delegate] showPauseMenuButtonClicked];
         
 	}];
     
-     pauseMenu_ = [CCMenu menuWithItems:start, pause, nil];
-    [pauseMenu_ alignItemsVerticallyWithPadding:500];
-	[pauseMenu_ setPosition:ccp(960,384)];
+     pauseMenu_ = [CCMenu menuWithItems:start,pencil, pause, nil];
+    [pauseMenu_ alignItemsVerticallyWithPadding:220];
+	[pauseMenu_ setPosition:ccp(960,394)];
 	[self addChild: pauseMenu_ z:2];
 }
 
