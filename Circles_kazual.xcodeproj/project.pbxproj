@@ -199,6 +199,7 @@
 		63B85FA216B5703A00362EDF /* Level 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63B85F9F16B5703A00362EDF /* Level 1.plist */; };
 		63B85FA316B5703A00362EDF /* Level 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63B85FA016B5703A00362EDF /* Level 2.plist */; };
 		63B85FA416B5703A00362EDF /* Level 3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63B85FA116B5703A00362EDF /* Level 3.plist */; };
+		63B85FA616B5824100362EDF /* nextlevel-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 63B85FA516B5824000362EDF /* nextlevel-button.png */; };
 		63C5142916ADEAE400834319 /* ChooseLevelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C5142816ADEAE400834319 /* ChooseLevelLayer.m */; };
 		63C5142D16ADEC6000834319 /* ChooseLevelPageLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C5142C16ADEC6000834319 /* ChooseLevelPageLayer.m */; };
 		63C5143316ADF66D00834319 /* level.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C5143216ADF66D00834319 /* level.png */; };
@@ -634,6 +635,7 @@
 		63B85F9F16B5703A00362EDF /* Level 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Level 1.plist"; sourceTree = "<group>"; };
 		63B85FA016B5703A00362EDF /* Level 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Level 2.plist"; sourceTree = "<group>"; };
 		63B85FA116B5703A00362EDF /* Level 3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Level 3.plist"; sourceTree = "<group>"; };
+		63B85FA516B5824000362EDF /* nextlevel-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nextlevel-button.png"; sourceTree = "<group>"; };
 		63C5142716ADEAE400834319 /* ChooseLevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLevelLayer.h; sourceTree = "<group>"; };
 		63C5142816ADEAE400834319 /* ChooseLevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLevelLayer.m; sourceTree = "<group>"; };
 		63C5142B16ADEC6000834319 /* ChooseLevelPageLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLevelPageLayer.h; sourceTree = "<group>"; };
@@ -1378,6 +1380,7 @@
 		634FCFD916AC127800E395DC /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				63B85FA516B5824000362EDF /* nextlevel-button.png */,
 				63F22AA216B1DC4B00AF3CD1 /* pencil-button.png */,
 				634FCFF316AC2FD500E395DC /* start-button.png */,
 				634FCFED16AC296E00E395DC /* pause-button.png */,
@@ -1867,6 +1870,7 @@
 				63B85FA216B5703A00362EDF /* Level 1.plist in Resources */,
 				63B85FA316B5703A00362EDF /* Level 2.plist in Resources */,
 				63B85FA416B5703A00362EDF /* Level 3.plist in Resources */,
+				63B85FA616B5824100362EDF /* nextlevel-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

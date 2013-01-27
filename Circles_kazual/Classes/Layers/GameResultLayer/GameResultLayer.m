@@ -58,9 +58,16 @@
     CCMenuItemLabel *chooseLevel = [CCMenuItemImage itemWithNormalImage:@"chooselevel-button.png" selectedImage:@"chooselevel-button.png" block:^(id sender) {
         [[self delegate] chooseLevelButtonWasClicked];
     }];
-	
+
+    CCMenuItemLabel *nextLevel = nil;
     
-	CCMenu *menu = [CCMenu menuWithItems:reset, chooseLevel, nil];
+    if ([[self result] isEqualToString:WIN_RESULT]) {
+        nextLevel = [CCMenuItemImage itemWithNormalImage:@"nextlevel-button.png" selectedImage:@"nextlevel-button.png" block:^(id sender) {
+            [[self delegate] nextLevelButtonWasClicked];
+        }];
+    }
+	
+    CCMenu *menu = [CCMenu menuWithItems:reset, chooseLevel, nextLevel, nil];
 	[menu alignItemsHorizontallyWithPadding:50];
 	[menu setPosition:ccp(512,340)];
 

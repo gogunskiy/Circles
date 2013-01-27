@@ -8,7 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+static NSString * const TITLE               = @"Title";
+static NSString * const CHARACTERS          = @"Characters";
+static NSString * const PAGE_INDEX          = @"PageIndex";
+static NSString * const LEVEL_INDEX         = @"LevelIndex";
+
 @interface LevelContainer : NSObject
+
+@property (nonatomic, assign) NSInteger levelIndex;
+@property (nonatomic, assign) NSInteger pageIndex;
 
 @property (nonatomic, copy) NSString * title;
 @property (nonatomic, retain) NSArray * characters;

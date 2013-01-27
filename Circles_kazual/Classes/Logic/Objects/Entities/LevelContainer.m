@@ -8,11 +8,11 @@
 
 #import "LevelContainer.h"
 
-static NSString * const TITLE       = @"Title";
-static NSString * const CHARACTERS  = @"Characters";
 
 @implementation LevelContainer
 
+@synthesize levelIndex;
+@synthesize pageIndex;
 @synthesize title;
 @synthesize characters;
 

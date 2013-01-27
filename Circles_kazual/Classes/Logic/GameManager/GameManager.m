@@ -10,6 +10,7 @@
 #import "LevelContainer.h"
 #import "LevelsLoader.h"
 
+static NSString * const LEVELS_INFO         = @"Levels";
 
 static GameManager * shared = nil;
 
@@ -48,7 +49,27 @@ static GameManager * shared = nil;
   
     [[self currentLevel] setWithInfo:[[self levelsLoader] levelDataForLevel:[info objectForKey:LEVEL_FILE_INFO]]];
     
+    [[self currentLevel] setLevelIndex:[[info objectForKey:LEVEL_INDEX] integerValue]];
+    [[self currentLevel] setPageIndex:[[info objectForKey:PAGE_INDEX] integerValue]];
+    
     [GAME loadMainGameLayer];
+}
+
+- (void) startGameFromPrevoiusLevel {
+    
+    NSArray * levelsInfo = [self levelsInformation];
+    
+    NSInteger levelIndex = [[self currentLevel] levelIndex];
+    NSInteger pageIndex  = [[self currentLevel] pageIndex];
+    
+    levelIndex ++;
+    
+    if (levelIndex < [[[levelsInfo objectAtIndex:pageIndex] objectForKey:LEVELS_INFO] count]) {
+        NSDictionary * levelDescriptor = [[[levelsInfo objectAtIndex:pageIndex] objectForKey:LEVELS_INFO] objectAtIndex:levelIndex];
+        [self startGameWithInfo:levelDescriptor];
+    } else {
+        [self loadChooseLevelLayer];
+    }
 }
 
 - (void) finishGameWithResult:(NSDictionary *)result {

@@ -9,6 +9,10 @@
 #import "BasePopupLayer.h"
 #import "CCLabelFX.h"
 
+
+static NSString * const WIN_RESULT  = @"WIN !";
+static NSString * const LOSE_RESULT = @"LOSE !";
+
 @protocol GameResultLayerDelegate;
 
 @interface GameResultLayer : BasePopupLayer {
@@ -29,6 +33,7 @@
 
 - (void) restartButtonWasClicked;
 - (void) chooseLevelButtonWasClicked;
+- (void) nextLevelButtonWasClicked;
 - (void) hidePauseMenuButtonClicked;
 
 

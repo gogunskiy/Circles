@@ -162,7 +162,7 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
             }
         }
     }
-    [resultLayer_ setResult:([characters_ count] == countOfMatch) ? @"WIN!" : @"LOSE"];
+    [resultLayer_ setResult:([characters_ count] == countOfMatch) ? WIN_RESULT : LOSE_RESULT];
     [self showResultLayer];
     
     [GAME finishGameWithResult:@{RESULT_COUNT_CHARACTERS : [NSString stringWithFormat:@"%d",[characters_ count]], RESULT_COUNT_OF_MATCHES : [NSString stringWithFormat:@"%d", countOfMatch]}];
@@ -246,6 +246,10 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
 
 - (void) chooseLevelButtonWasClicked {
     [GAME loadMainMenuScene];
+}
+
+- (void) nextLevelButtonWasClicked {
+    [GAME startGameFromPrevoiusLevel];
 }
 
 - (void) showPauseMenuButtonClicked {

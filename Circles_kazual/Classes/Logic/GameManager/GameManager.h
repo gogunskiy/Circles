@@ -21,6 +21,7 @@
 @property (nonatomic, retain) LevelContainer * currentLevel;
 
 - (void) startGameWithInfo:(NSDictionary *)info;
+- (void) startGameFromPrevoiusLevel;
 
 - (void) finishGameWithResult:(NSDictionary *)result;
 
