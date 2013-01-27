@@ -30,6 +30,8 @@ static CGFloat const TRANSITION_DELTA         = 1050;
 - (CCSprite *) addCharacterWithImage:(NSString *)imageName position:(CGPoint)position;
 - (void) moveCharacter:(CCSprite *)character fromPoint:(CGPoint)fromPoint toPoint:(CGPoint)point;
 
+- (void) addArrows;
+
 @end
 
 @implementation ChooseLevelPageLayer
@@ -51,10 +53,37 @@ static CGFloat const TRANSITION_DELTA         = 1050;
         leftPusher_  = [self addCharacterWithImage:@"Angry.png"    position:ccp(-150,384)];
         rightPusher_ = [self addCharacterWithImage:@"BlackMan.png" position:ccp(1100,384)];
     */
+  
+        [self addArrows];
       }
     
     return self;
 }
+
+- (void) addArrows {
+    
+    leftArrow_= [CCMenuItemImage itemWithNormalImage:@"arrow-left.png" selectedImage:@"arrow-left.png" block:^(id sender) {
+        [delegate showPreviousPage];
+    }];
+    
+    
+    rightArrow_ = [CCMenuItemImage itemWithNormalImage:@"arrow-right.png" selectedImage:@"arrow-right.png" block:^(id sender) {
+        [delegate showNextPage];
+    }];
+    
+    [leftArrow_ setPosition:ccp(100,384)];
+    [rightArrow_ setPosition:ccp(900,384)];
+    
+    [leftArrow_  setVisible:FALSE];
+    [rightArrow_ setVisible:FALSE];
+    
+    CCMenu *menu = [CCMenu menuWithItems:leftArrow_, rightArrow_, nil];
+	[menu setPosition:ccp(0,0)];
+    [menu setAnchorPoint:ccp(0,0)];
+	[self addChild: menu z:100];
+
+}
+
 
 - (void) initialize {
     [self setBackgroundImage:[info objectForKey:PAGE_BACKGROUND]];
@@ -108,6 +137,8 @@ static CGFloat const TRANSITION_DELTA         = 1050;
 
 - (void) leftOut {
     
+    [leftArrow_  setVisible:FALSE];
+    [rightArrow_ setVisible:FALSE];
     [delegate setLayerEnabled:FALSE];
     [self runAction:[CCSequence actions:[CCMoveBy actionWithDuration:TRANSITION_SPEED position:ccp(-TRANSITION_DELTA,0)], [CCCallFunc actionWithTarget:self selector:@selector(remove)], nil]];
 }
@@ -122,6 +153,8 @@ static CGFloat const TRANSITION_DELTA         = 1050;
 
 - (void) rightOut {
    
+    [leftArrow_  setVisible:FALSE];
+    [rightArrow_ setVisible:FALSE];
     [delegate setLayerEnabled:FALSE];
     [self runAction:[CCSequence actions:[CCMoveBy actionWithDuration:TRANSITION_SPEED position:ccp(TRANSITION_DELTA,0)], [CCCallFunc actionWithTarget:self selector:@selector(remove)], nil]];
 }
@@ -137,6 +170,9 @@ static CGFloat const TRANSITION_DELTA         = 1050;
 - (void) show {
     [self setOpacity:255];
     [delegate setLayerEnabled:TRUE];
+    
+    [leftArrow_  setVisible:[delegate needLeftArrowForPage:self]];
+    [rightArrow_ setVisible:[delegate needRightArrowForPage:self]];
 }
 
 - (CCSprite *) addCharacterWithImage:(NSString *)imageName position:(CGPoint)position {

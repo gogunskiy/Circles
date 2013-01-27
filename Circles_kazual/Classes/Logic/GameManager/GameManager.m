@@ -53,6 +53,7 @@ static GameManager * shared = nil;
     [[self currentLevel] setPageIndex:[[info objectForKey:PAGE_INDEX] integerValue]];
     
     [GAME loadMainGameLayer];
+    
 }
 
 - (void) startGameFromPrevoiusLevel {
@@ -73,7 +74,8 @@ static GameManager * shared = nil;
 }
 
 - (void) finishGameWithResult:(NSDictionary *)result {
-    NSLog(@"%@", result);
+    
+    [[SimpleAudioEngine sharedEngine] playEffect:[[[result objectForKey:GAME_RESULT] lowercaseString] stringByAppendingString:@"Sound.wav"]];
 }
 
 

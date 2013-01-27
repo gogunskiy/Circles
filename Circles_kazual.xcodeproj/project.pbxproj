@@ -200,6 +200,9 @@
 		63B85FA316B5703A00362EDF /* Level 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63B85FA016B5703A00362EDF /* Level 2.plist */; };
 		63B85FA416B5703A00362EDF /* Level 3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63B85FA116B5703A00362EDF /* Level 3.plist */; };
 		63B85FA616B5824100362EDF /* nextlevel-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 63B85FA516B5824000362EDF /* nextlevel-button.png */; };
+		63B85FA816B5956200362EDF /* screen_transition_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 63B85FA716B5956200362EDF /* screen_transition_3.wav */; };
+		63B85FB316B5D69600362EDF /* loseSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 63B85FB116B5D69600362EDF /* loseSound.wav */; };
+		63B85FB416B5D69600362EDF /* winSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 63B85FB216B5D69600362EDF /* winSound.wav */; };
 		63C5142916ADEAE400834319 /* ChooseLevelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C5142816ADEAE400834319 /* ChooseLevelLayer.m */; };
 		63C5142D16ADEC6000834319 /* ChooseLevelPageLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C5142C16ADEC6000834319 /* ChooseLevelPageLayer.m */; };
 		63C5143316ADF66D00834319 /* level.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C5143216ADF66D00834319 /* level.png */; };
@@ -636,6 +639,9 @@
 		63B85FA016B5703A00362EDF /* Level 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Level 2.plist"; sourceTree = "<group>"; };
 		63B85FA116B5703A00362EDF /* Level 3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Level 3.plist"; sourceTree = "<group>"; };
 		63B85FA516B5824000362EDF /* nextlevel-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nextlevel-button.png"; sourceTree = "<group>"; };
+		63B85FA716B5956200362EDF /* screen_transition_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = screen_transition_3.wav; sourceTree = "<group>"; };
+		63B85FB116B5D69600362EDF /* loseSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = loseSound.wav; sourceTree = "<group>"; };
+		63B85FB216B5D69600362EDF /* winSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = winSound.wav; sourceTree = "<group>"; };
 		63C5142716ADEAE400834319 /* ChooseLevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLevelLayer.h; sourceTree = "<group>"; };
 		63C5142816ADEAE400834319 /* ChooseLevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLevelLayer.m; sourceTree = "<group>"; };
 		63C5142B16ADEC6000834319 /* ChooseLevelPageLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLevelPageLayer.h; sourceTree = "<group>"; };
@@ -1726,6 +1732,9 @@
 		63EF8DF1164EF24900374B27 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				63B85FB116B5D69600362EDF /* loseSound.wav */,
+				63B85FB216B5D69600362EDF /* winSound.wav */,
+				63B85FA716B5956200362EDF /* screen_transition_3.wav */,
 				630C433D16A4B62F0032DAE2 /* ErrorSound.wav */,
 			);
 			path = Sounds;
@@ -1871,6 +1880,9 @@
 				63B85FA316B5703A00362EDF /* Level 2.plist in Resources */,
 				63B85FA416B5703A00362EDF /* Level 3.plist in Resources */,
 				63B85FA616B5824100362EDF /* nextlevel-button.png in Resources */,
+				63B85FA816B5956200362EDF /* screen_transition_3.wav in Resources */,
+				63B85FB316B5D69600362EDF /* loseSound.wav in Resources */,
+				63B85FB416B5D69600362EDF /* winSound.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

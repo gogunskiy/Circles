@@ -14,8 +14,11 @@
 @interface ChooseLevelPageLayer : BaseLayer {
     CCSprite * leftPusher_;
     CCSprite * rightPusher_;
+    
+    CCMenuItemImage * leftArrow_;
+    CCMenuItemImage * rightArrow_;
 }
- 
+
 @property (nonatomic, assign) id <ChooseLevelPageLayerDelegate> delegate;
 @property (nonatomic, retain) NSDictionary *info;
 
@@ -35,5 +38,10 @@
 @protocol ChooseLevelPageLayerDelegate <NSObject>
 
 - (void) setLayerEnabled:(BOOL)endbled;
+- (BOOL) needLeftArrowForPage:(ChooseLevelPageLayer *) page;
+- (BOOL) needRightArrowForPage:(ChooseLevelPageLayer *) page;
+
+- (void) showPreviousPage;
+- (void) showNextPage;
 
 @end

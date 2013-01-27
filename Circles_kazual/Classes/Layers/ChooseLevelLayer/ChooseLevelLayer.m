@@ -83,6 +83,8 @@
         
         [self addChild:[pages_ objectAtIndex:currentPage_]];
         [[pages_ objectAtIndex:currentPage_] leftIn];
+        
+        [[SimpleAudioEngine sharedEngine] playEffect:@"screen_transition_3.wav"];
     }
 }
 
@@ -96,6 +98,8 @@
        
         [self addChild:[pages_ objectAtIndex:currentPage_]];
         [[pages_ objectAtIndex:currentPage_] rightIn];
+        
+        [[SimpleAudioEngine sharedEngine] playEffect:@"screen_transition_3.wav"];
     }
 }
 
@@ -105,5 +109,26 @@
     [self setIsTouchEnabled:endbled];
 }
 
+- (BOOL) needLeftArrowForPage:(ChooseLevelPageLayer *) page {
+    
+    NSInteger index = [pages_ indexOfObject:page];
+    
+    return index;
+}
+
+- (BOOL) needRightArrowForPage:(ChooseLevelPageLayer *) page {
+  
+    NSInteger index = [pages_ indexOfObject:page];
+    
+    return index < [pages_ count] - 1;
+}
+
+- (void) showPreviousPage {
+    [self rightSwipe:nil];
+}
+
+- (void) showNextPage {
+    [self leftSwipe:nil];
+}
 
 @end

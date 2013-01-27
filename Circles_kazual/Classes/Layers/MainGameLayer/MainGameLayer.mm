@@ -14,9 +14,6 @@
 #import "FileManager.h"
 
 
-static NSString * const RESULT_COUNT_OF_MATCHES = @"CountOfMatches";
-static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
-
 
 @interface MainGameLayer()
 
@@ -162,10 +159,13 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
             }
         }
     }
-    [resultLayer_ setResult:([characters_ count] == countOfMatch) ? WIN_RESULT : LOSE_RESULT];
+    
+    NSString * result = ([characters_ count] == countOfMatch) ? WIN_RESULT : LOSE_RESULT;
+    
+    [resultLayer_ setResult:result];
     [self showResultLayer];
     
-    [GAME finishGameWithResult:@{RESULT_COUNT_CHARACTERS : [NSString stringWithFormat:@"%d",[characters_ count]], RESULT_COUNT_OF_MATCHES : [NSString stringWithFormat:@"%d", countOfMatch]}];
+    [GAME finishGameWithResult:@{GAME_RESULT : result}];
 }
 
 -(void) draw
@@ -237,7 +237,10 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
     [self enablePhysics];
     [self drawPathLineWithPoints:[drawingLayer_ points]];
     
-    [[drawingLayer_ points] writeToFile:[FileManager checkAndCreateFile:[[currentLevel_ title] stringByAppendingString:@".plist"]] atomically:TRUE];
+    [self stopDrawHelpLayer];
+    
+    // TO DO : uncomment to save paths
+   // [[drawingLayer_ points] writeToFile:[FileManager checkAndCreateFile:[[currentLevel_ title] stringByAppendingString:@".plist"]] atomically:TRUE];
 }
 
 - (void) restartButtonWasClicked {
