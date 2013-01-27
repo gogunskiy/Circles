@@ -8,6 +8,7 @@
 
 #import "FileManager.h"
 
+
 @implementation FileManager
 
 + (NSString *)checkAndCreateFile:(NSString *)fileName
@@ -23,10 +24,8 @@
 	if (success) {
 		return [path autorelease];
 	}
-    
-	NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:fileName];
-    
-	[fileManager copyItemAtPath:filePath toPath:path error:nil];
+
+	[fileManager copyItemAtPath:RESOURCE_FILE(fileName) toPath:path error:nil];
     
 	[fileManager release];
     
@@ -39,5 +38,6 @@
     
 	return [paths objectAtIndex:0];
 }
+
 
 @end

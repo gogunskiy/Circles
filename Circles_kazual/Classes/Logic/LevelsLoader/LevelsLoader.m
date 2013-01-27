@@ -9,7 +9,6 @@
 #import "LevelsLoader.h"
 #import "FileManager.h"
 
-#define RESOURCE_FILE(file) [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:(file)]
 
 static NSString * const LEVELS_INFO_FILE = @"Levels_List.plist";
 

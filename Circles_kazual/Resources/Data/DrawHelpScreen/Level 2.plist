@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>{90, 466}</string>
+	<string>{82, 451}</string>
+	<string>{101, 481}</string>
+	<string>{90, 466}</string>
+	<string>{113, 498}</string>
+	<string>{101, 481}</string>
+	<string>{128, 515}</string>
+	<string>{113, 498}</string>
+	<string>{148, 533}</string>
+	<string>{128, 515}</string>
+	<string>{169, 549}</string>
+	<string>{148, 533}</string>
+	<string>{191, 559}</string>
+	<string>{169, 549}</string>
+	<string>{209, 565}</string>
+	<string>{191, 559}</string>
+	<string>{223, 567}</string>
+	<string>{209, 565}</string>
+	<string>{266, 557}</string>
+	<string>{223, 567}</string>
+	<string>{287, 550}</string>
+	<string>{266, 557}</string>
+	<string>{309, 539}</string>
+	<string>{287, 550}</string>
+	<string>{345, 517}</string>
+	<string>{309, 539}</string>
+	<string>{359, 506}</string>
+	<string>{345, 517}</string>
+	<string>{368, 497}</string>
+	<string>{359, 506}</string>
+	<string>{372, 490}</string>
+	<string>{368, 497}</string>
+</array>
+</plist>

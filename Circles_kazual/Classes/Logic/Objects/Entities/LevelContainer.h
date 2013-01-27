@@ -10,6 +10,7 @@
 
 @interface LevelContainer : NSObject
 
+@property (nonatomic, copy) NSString * title;
 @property (nonatomic, retain) NSArray * characters;
 
 - (void) setWithInfo:(NSDictionary *)info ;

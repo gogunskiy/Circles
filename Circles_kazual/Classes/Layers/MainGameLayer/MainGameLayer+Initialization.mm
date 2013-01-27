@@ -9,6 +9,7 @@
 #import "MainGameLayer+Initialization.h"
 #import "LevelContainer.h"
 #import "Character.h"
+#import "FileManager.h"
 
 
 @implementation MainGameLayer (Initialization)
@@ -41,6 +42,8 @@
     [self initBackground];
     [self initCharacters];
     [self initBonuses];
+    
+    [self startDrawHelpLayer];
 }
 
 - (void) initBackground {
@@ -101,6 +104,25 @@
     [self addChild:pauseLayer_ z:2];
 }
 
+- (void) initDrawHelpLayer {
+    drawHelpLayer_ = [[DrawHelperLayer alloc] init];
+    [self addChild:drawHelpLayer_ z:2];
+}
+
+- (void) startDrawHelpLayer {
+    //NSArray * points = [NSArray arrayWithContentsOfFile:[FileManager checkAndCreateFile:[[currentLevel_ title] stringByAppendingString:@".plist"]]];
+ 
+    NSArray * points = [NSArray arrayWithContentsOfFile:RESOURCE_FILE([[currentLevel_ title] stringByAppendingString:@".plist"])];
+    
+    if (points) {
+        [drawHelpLayer_ setupWithPoints:points];
+        [drawHelpLayer_ start];
+    }
+}
+
+- (void) stopDrawHelpLayer {
+    [drawHelpLayer_ stop];
+}
 
 - (void) initResultLayer {
     resultLayer_ = [[GameResultLayer alloc] init];

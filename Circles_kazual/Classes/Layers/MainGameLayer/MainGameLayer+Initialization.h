@@ -23,6 +23,10 @@
 - (void) initDrawingLayer;
 - (void) initEntertainmentLayer;
 - (void) initPauseLayer;
+- (void) initDrawHelpLayer;
+
+- (void) startDrawHelpLayer;
+- (void) stopDrawHelpLayer;
 
 - (void) initResultLayer;
 - (void) showResultLayer;

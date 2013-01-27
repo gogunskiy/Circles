@@ -8,10 +8,12 @@
 
 #import "LevelContainer.h"
 
-static NSString * const CHARACTERS = @"Characters";
+static NSString * const TITLE       = @"Title";
+static NSString * const CHARACTERS  = @"Characters";
 
 @implementation LevelContainer
 
+@synthesize title;
 @synthesize characters;
 
 - (id) init {
@@ -24,12 +26,14 @@ static NSString * const CHARACTERS = @"Characters";
 
 - (void)dealloc {
     
+    [self setTitle:nil];
     [self setCharacters:nil];
     [super dealloc];
 }
 
 - (void) setWithInfo:(NSDictionary *)info {
     
+    [self setTitle:[info objectForKey:TITLE]];
     [self setCharacters:[info objectForKey:CHARACTERS]];
 }
 

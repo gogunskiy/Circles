@@ -11,6 +11,7 @@
 #import "MainGameLayer+Initialization.h"
 #import "Character.h"
 #import "LevelContainer.h"
+#import "FileManager.h"
 
 
 static NSString * const RESULT_COUNT_OF_MATCHES = @"CountOfMatches";
@@ -46,6 +47,7 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
 		[self initPauseLayer];
         [self initInfoLayer];
         [self initDrawingLayer];
+        [self initDrawHelpLayer];
         [self initEntertainmentLayer];
 		[self initResultLayer];
         
@@ -214,6 +216,7 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
 
 - (void)drawingLayer:(DrawingLayer *)DrawingLayer startDrawingWithResoution:(NSString *)resolution {
     [self hidePauseMenuButtonClicked];
+    [self stopDrawHelpLayer];
 }
 
 -(void)drawingLayer:(DrawingLayer *)DrawingLayer endDrawingWithPoints:(NSArray *)points {
@@ -233,6 +236,8 @@ static NSString * const RESULT_COUNT_CHARACTERS = @"CountOfCharacters";
     
     [self enablePhysics];
     [self drawPathLineWithPoints:[drawingLayer_ points]];
+    
+    [[drawingLayer_ points] writeToFile:[FileManager checkAndCreateFile:[[currentLevel_ title] stringByAppendingString:@".plist"]] atomically:TRUE];
 }
 
 - (void) restartButtonWasClicked {
