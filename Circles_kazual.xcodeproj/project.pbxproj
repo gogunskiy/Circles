@@ -220,6 +220,11 @@
 		63D0A795169616A300C028D7 /* MainGameLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A794169616A300C028D7 /* MainGameLayer.mm */; };
 		63D0A797169627F000C028D7 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A796169627F000C028D7 /* mask.png */; };
 		63D0A7A116962DAB00C028D7 /* hero.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A7A016962DAB00C028D7 /* hero.png */; };
+		63D6294816B7109F007D4F8B /* DataFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63D6294616B7109F007D4F8B /* DataFile.plist */; };
+		63D6294916B7109F007D4F8B /* DataFile.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D6294716B7109F007D4F8B /* DataFile.png */; };
+		63D6295916B71872007D4F8B /* CCAnimate+SequenceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D6295516B71872007D4F8B /* CCAnimate+SequenceLoader.m */; };
+		63D6295A16B71872007D4F8B /* CCAnimation+SequenceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D6295716B71872007D4F8B /* CCAnimation+SequenceLoader.m */; };
+		63D6295B16B71872007D4F8B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 63D6295816B71872007D4F8B /* README.md */; };
 		63EF8DDA164EF1CC00374B27 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 63EF8DCC164EF1CC00374B27 /* AppDelegate.mm */; };
 		63EF8DDC164EF1CC00374B27 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 63EF8DD4164EF1CC00374B27 /* GLES-Render.mm */; };
 		63EF8DDD164EF1CC00374B27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF8DD5164EF1CC00374B27 /* main.m */; };
@@ -665,6 +670,13 @@
 		63D0A794169616A300C028D7 /* MainGameLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainGameLayer.mm; sourceTree = "<group>"; };
 		63D0A796169627F000C028D7 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
 		63D0A7A016962DAB00C028D7 /* hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero.png; sourceTree = "<group>"; };
+		63D6294616B7109F007D4F8B /* DataFile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DataFile.plist; sourceTree = "<group>"; };
+		63D6294716B7109F007D4F8B /* DataFile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DataFile.png; sourceTree = "<group>"; };
+		63D6295416B71872007D4F8B /* CCAnimate+SequenceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCAnimate+SequenceLoader.h"; sourceTree = "<group>"; };
+		63D6295516B71872007D4F8B /* CCAnimate+SequenceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCAnimate+SequenceLoader.m"; sourceTree = "<group>"; };
+		63D6295616B71872007D4F8B /* CCAnimation+SequenceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCAnimation+SequenceLoader.h"; sourceTree = "<group>"; };
+		63D6295716B71872007D4F8B /* CCAnimation+SequenceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCAnimation+SequenceLoader.m"; sourceTree = "<group>"; };
+		63D6295816B71872007D4F8B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		63EF8DCB164EF1CC00374B27 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63EF8DCC164EF1CC00374B27 /* AppDelegate.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = AppDelegate.mm; sourceTree = "<group>"; };
 		63EF8DD3164EF1CC00374B27 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
@@ -1425,6 +1437,7 @@
 		634FD00016AC4CD100E395DC /* 3d party */ = {
 			isa = PBXGroup;
 			children = (
+				63D6295316B71872007D4F8B /* CCAnimate+SpriteSequenceLoader */,
 				634FD00116AC4CD200E395DC /* CCLabelFX */,
 			);
 			path = "3d party";
@@ -1589,6 +1602,18 @@
 			path = MainGameLayer;
 			sourceTree = "<group>";
 		};
+		63D6295316B71872007D4F8B /* CCAnimate+SpriteSequenceLoader */ = {
+			isa = PBXGroup;
+			children = (
+				63D6295416B71872007D4F8B /* CCAnimate+SequenceLoader.h */,
+				63D6295516B71872007D4F8B /* CCAnimate+SequenceLoader.m */,
+				63D6295616B71872007D4F8B /* CCAnimation+SequenceLoader.h */,
+				63D6295716B71872007D4F8B /* CCAnimation+SequenceLoader.m */,
+				63D6295816B71872007D4F8B /* README.md */,
+			);
+			path = "CCAnimate+SpriteSequenceLoader";
+			sourceTree = "<group>";
+		};
 		63EF8DC9164EF1CC00374B27 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1675,6 +1700,8 @@
 		63EF8DE0164EF24900374B27 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				63D6294616B7109F007D4F8B /* DataFile.plist */,
+				63D6294716B7109F007D4F8B /* DataFile.png */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -1883,6 +1910,9 @@
 				63B85FA816B5956200362EDF /* screen_transition_3.wav in Resources */,
 				63B85FB316B5D69600362EDF /* loseSound.wav in Resources */,
 				63B85FB416B5D69600362EDF /* winSound.wav in Resources */,
+				63D6294816B7109F007D4F8B /* DataFile.plist in Resources */,
+				63D6294916B7109F007D4F8B /* DataFile.png in Resources */,
+				63D6295B16B71872007D4F8B /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2066,6 +2096,8 @@
 				63118D0416AF3C210041DE7C /* Settings.m in Sources */,
 				63F22AA116B1D48600AF3CD1 /* CharacterDirectionArrow.m in Sources */,
 				63B85F9D16B56BBA00362EDF /* DrawHelperLayer.m in Sources */,
+				63D6295916B71872007D4F8B /* CCAnimate+SequenceLoader.m in Sources */,
+				63D6295A16B71872007D4F8B /* CCAnimation+SequenceLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

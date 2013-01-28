@@ -53,7 +53,6 @@ static GameManager * shared = nil;
     [[self currentLevel] setPageIndex:[[info objectForKey:PAGE_INDEX] integerValue]];
     
     [GAME loadMainGameLayer];
-    
 }
 
 - (void) startGameFromPrevoiusLevel {
