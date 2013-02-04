@@ -203,6 +203,7 @@
 		63B85FA816B5956200362EDF /* screen_transition_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 63B85FA716B5956200362EDF /* screen_transition_3.wav */; };
 		63B85FB316B5D69600362EDF /* loseSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 63B85FB116B5D69600362EDF /* loseSound.wav */; };
 		63B85FB416B5D69600362EDF /* winSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 63B85FB216B5D69600362EDF /* winSound.wav */; };
+		63BAC49A16C0419B0059F883 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 63BAC49916C0419B0059F883 /* Background.png */; };
 		63C5142916ADEAE400834319 /* ChooseLevelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C5142816ADEAE400834319 /* ChooseLevelLayer.m */; };
 		63C5142D16ADEC6000834319 /* ChooseLevelPageLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C5142C16ADEC6000834319 /* ChooseLevelPageLayer.m */; };
 		63C5143316ADF66D00834319 /* level.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C5143216ADF66D00834319 /* level.png */; };
@@ -225,6 +226,8 @@
 		63D6295916B71872007D4F8B /* CCAnimate+SequenceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D6295516B71872007D4F8B /* CCAnimate+SequenceLoader.m */; };
 		63D6295A16B71872007D4F8B /* CCAnimation+SequenceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D6295716B71872007D4F8B /* CCAnimation+SequenceLoader.m */; };
 		63D6295B16B71872007D4F8B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 63D6295816B71872007D4F8B /* README.md */; };
+		63D6296E16B87FEF007D4F8B /* magentaAnim.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63D6296C16B87FEF007D4F8B /* magentaAnim.plist */; };
+		63D6296F16B87FEF007D4F8B /* magentaAnim.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D6296D16B87FEF007D4F8B /* magentaAnim.png */; };
 		63EF8DDA164EF1CC00374B27 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 63EF8DCC164EF1CC00374B27 /* AppDelegate.mm */; };
 		63EF8DDC164EF1CC00374B27 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 63EF8DD4164EF1CC00374B27 /* GLES-Render.mm */; };
 		63EF8DDD164EF1CC00374B27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF8DD5164EF1CC00374B27 /* main.m */; };
@@ -647,6 +650,7 @@
 		63B85FA716B5956200362EDF /* screen_transition_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = screen_transition_3.wav; sourceTree = "<group>"; };
 		63B85FB116B5D69600362EDF /* loseSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = loseSound.wav; sourceTree = "<group>"; };
 		63B85FB216B5D69600362EDF /* winSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = winSound.wav; sourceTree = "<group>"; };
+		63BAC49916C0419B0059F883 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		63C5142716ADEAE400834319 /* ChooseLevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLevelLayer.h; sourceTree = "<group>"; };
 		63C5142816ADEAE400834319 /* ChooseLevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLevelLayer.m; sourceTree = "<group>"; };
 		63C5142B16ADEC6000834319 /* ChooseLevelPageLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLevelPageLayer.h; sourceTree = "<group>"; };
@@ -677,6 +681,8 @@
 		63D6295616B71872007D4F8B /* CCAnimation+SequenceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCAnimation+SequenceLoader.h"; sourceTree = "<group>"; };
 		63D6295716B71872007D4F8B /* CCAnimation+SequenceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCAnimation+SequenceLoader.m"; sourceTree = "<group>"; };
 		63D6295816B71872007D4F8B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		63D6296C16B87FEF007D4F8B /* magentaAnim.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = magentaAnim.plist; sourceTree = "<group>"; };
+		63D6296D16B87FEF007D4F8B /* magentaAnim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magentaAnim.png; sourceTree = "<group>"; };
 		63EF8DCB164EF1CC00374B27 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63EF8DCC164EF1CC00374B27 /* AppDelegate.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = AppDelegate.mm; sourceTree = "<group>"; };
 		63EF8DD3164EF1CC00374B27 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
@@ -1700,6 +1706,8 @@
 		63EF8DE0164EF24900374B27 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				63D6296C16B87FEF007D4F8B /* magentaAnim.plist */,
+				63D6296D16B87FEF007D4F8B /* magentaAnim.png */,
 				63D6294616B7109F007D4F8B /* DataFile.plist */,
 				63D6294716B7109F007D4F8B /* DataFile.png */,
 			);
@@ -1719,6 +1727,7 @@
 		63EF8DE2164EF24900374B27 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				63BAC49916C0419B0059F883 /* Background.png */,
 				63F22A9516B1D38300AF3CD1 /* CharacterDirectionArrows */,
 				63C5143416ADF7BC00834319 /* ChooseLevelPageBackground.png */,
 				63C5143216ADF66D00834319 /* level.png */,
@@ -1913,6 +1922,9 @@
 				63D6294816B7109F007D4F8B /* DataFile.plist in Resources */,
 				63D6294916B7109F007D4F8B /* DataFile.png in Resources */,
 				63D6295B16B71872007D4F8B /* README.md in Resources */,
+				63D6296E16B87FEF007D4F8B /* magentaAnim.plist in Resources */,
+				63D6296F16B87FEF007D4F8B /* magentaAnim.png in Resources */,
+				63BAC49A16C0419B0059F883 /* Background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

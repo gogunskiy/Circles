@@ -60,7 +60,7 @@
 	navController_.navigationBarHidden = YES;
 	[window_ setRootViewController:navController_];
 	[window_ makeKeyAndVisible];
-	
+    
 	return YES;
 }
 

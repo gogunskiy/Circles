@@ -12,6 +12,7 @@ static NSString * const TITLE               = @"Title";
 static NSString * const CHARACTERS          = @"Characters";
 static NSString * const PAGE_INDEX          = @"PageIndex";
 static NSString * const LEVEL_INDEX         = @"LevelIndex";
+static NSString * const LEVEL_BACKGROUND    = @"Background";
 
 @interface LevelContainer : NSObject
 
@@ -19,6 +20,7 @@ static NSString * const LEVEL_INDEX         = @"LevelIndex";
 @property (nonatomic, assign) NSInteger pageIndex;
 
 @property (nonatomic, copy) NSString * title;
+@property (nonatomic, copy) NSString * backgroundImage;
 @property (nonatomic, retain) NSArray * characters;
 
 - (void) setWithInfo:(NSDictionary *)info ;

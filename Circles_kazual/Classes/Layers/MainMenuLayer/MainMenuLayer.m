@@ -40,7 +40,33 @@
                                                        delay:0.15
                                         restoreOriginalFrame:NO]]];
     
-    [character runAction:[CCRepeatForever actionWithAction:[CCSequence actions:[CCJumpBy actionWithDuration:3.0 position:ccp(400,0) height:200 jumps:2],[CCJumpBy actionWithDuration:3.0 position:ccp(-400,0) height:200 jumps:2], nil]]];
+  //  [character runAction:[CCRepeatForever actionWithAction:[CCSequence actions:[CCJumpBy actionWithDuration:3.0 position:ccp(400,0) height:200 jumps:2],[CCJumpBy actionWithDuration:3.0 position:ccp(-400,0) height:200 jumps:2], nil]]];
+    
+    
+    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"magentaAnim.plist"];
+    
+    CCSprite * character2 = [CCSprite spriteWithSpriteFrameName:@"magenta1.png"];
+    [character2 setPosition:ccp(500,500)];
+    [self addChild:character2 z:-2];
+    
+    [character2 runAction:[CCRepeatForever actionWithAction:[CCAnimate actionWithSpriteSequence:@"magenta%d.png"
+                                                                                     numFrames:3
+                                                                                         delay:0.1
+                                                                          restoreOriginalFrame:NO]]];
+
+    
+    CCSprite * character3 = [CCSprite spriteWithFile:@"Angry.png"];
+    [character3 setPosition:ccp(40,40)];
+    [character3 setScale:2.0];
+    [character3 setRotation:45];
+    [self addChild:character3 z:-2];
+    
+    CCSprite * character4 = [CCSprite spriteWithFile:@"GoodSoul.png"];
+    [character4 setPosition:ccp(984,40)];
+    [character4 setScale:2.0];
+    [character4 setRotation:-45];
+    [self addChild:character4 z:-2];
     
     return self;
 }
