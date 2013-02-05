@@ -18,6 +18,7 @@
 #import "GamePauseLayer.h"
 #import "GameResultLayer.h"
 #import "DrawHelperLayer.h"
+#import "LevelWorldLayer.h"
 
 @class Character;
 @class LevelContainer;
@@ -37,6 +38,7 @@
     GamePauseLayer      * pauseLayer_;
     GameResultLayer     * resultLayer_;
     DrawHelperLayer     * drawHelpLayer_;
+    LevelWorldLayer     * levelWorldLayer_;
     
     LevelContainer * currentLevel_;
     

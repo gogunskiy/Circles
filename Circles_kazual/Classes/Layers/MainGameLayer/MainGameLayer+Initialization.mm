@@ -39,24 +39,19 @@
 
 
 - (void) initLevel {
-    [self initBackground];
+    [self initLevelWorldLayer];
     [self initCharacters];
     [self initBonuses];
     
     [self startDrawHelpLayer];
 }
 
-- (void) initBackground {
+- (void) initLevelWorldLayer {
+    levelWorldLayer_ = [[LevelWorldLayer alloc] init];
+    [levelWorldLayer_ setInfo:[currentLevel_ worldInfo]];
+    [self addChild:levelWorldLayer_ z:0];
     
-    CCLayerColor * layer = [[CCLayerColor alloc] initWithColor:ccc4(255,255,255,255)];
-    [layer setAnchorPoint:ccp(0,0)];
-    [layer setPosition:ccp(0,0)];
-    [self addChild:layer];
-    
-    CCSprite * background = [CCSprite spriteWithFile:[currentLevel_ backgroundImage]];
-    [background setAnchorPoint:ccp(0,0)];
-    [background setPosition:ccp(0,0)];
-    [self addChild:background];
+    [levelWorldLayer_ initialize];
 }
 
 - (void) initCharacters {
@@ -90,7 +85,7 @@
     drawingLayer_ = [[DrawingLayer alloc] init];
     [drawingLayer_ setDelegate:self];
     [drawingLayer_ reset];
-    [self addChild:drawingLayer_ z:1];
+    [self addChild:drawingLayer_ z:2];
 }
 
 

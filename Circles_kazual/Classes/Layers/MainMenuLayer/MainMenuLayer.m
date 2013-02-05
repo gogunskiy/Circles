@@ -56,6 +56,18 @@
                                                                           restoreOriginalFrame:NO]]];
 
     
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"angryAnim.plist"];
+    
+    CCSprite * character5 = [CCSprite spriteWithSpriteFrameName:@"angry1.png"];
+    [character5 setPosition:ccp(700,400)];
+    [self addChild:character5 z:-2];
+    
+    [character5 runAction:[CCRepeatForever actionWithAction:[CCAnimate actionWithSpriteSequence:@"angry%d.png"
+                                                                                      numFrames:3
+                                                                                          delay:0.1
+                                                                           restoreOriginalFrame:NO]]];
+
+    
     CCSprite * character3 = [CCSprite spriteWithFile:@"Angry.png"];
     [character3 setPosition:ccp(40,40)];
     [character3 setScale:2.0];

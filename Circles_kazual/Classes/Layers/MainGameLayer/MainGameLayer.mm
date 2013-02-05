@@ -74,6 +74,7 @@
     [infoLayer_ release];
     [pauseLayer_ release];
     [resultLayer_ release];
+    [levelWorldLayer_ release];
     
 	[super dealloc];
 }	

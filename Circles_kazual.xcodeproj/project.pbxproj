@@ -26,6 +26,13 @@
 		63260EE7169F6C21000383B0 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 63260EE6169F6C21000383B0 /* Character.m */; };
 		6329FFE616A9E754009F068D /* Brain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6329FFE416A9E754009F068D /* Brain.plist */; };
 		6329FFE716A9E754009F068D /* Brain.png in Resources */ = {isa = PBXBuildFile; fileRef = 6329FFE516A9E754009F068D /* Brain.png */; };
+		632C640C16C1894300033029 /* angryAnim.plist in Resources */ = {isa = PBXBuildFile; fileRef = 632C640A16C1894300033029 /* angryAnim.plist */; };
+		632C640D16C1894300033029 /* angryAnim.png in Resources */ = {isa = PBXBuildFile; fileRef = 632C640B16C1894300033029 /* angryAnim.png */; };
+		632C641716C1A23600033029 /* bg_earth_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 632C641316C1A23600033029 /* bg_earth_1.png */; };
+		632C641816C1A23600033029 /* bg_sky_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 632C641416C1A23600033029 /* bg_sky_1.png */; };
+		632C641916C1A23600033029 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 632C641516C1A23600033029 /* sun.png */; };
+		632C641A16C1A23600033029 /* world.plist in Resources */ = {isa = PBXBuildFile; fileRef = 632C641616C1A23600033029 /* world.plist */; };
+		632C641E16C1A38300033029 /* LevelWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 632C641D16C1A38300033029 /* LevelWorldLayer.m */; };
 		63372BAE164588CA00BEF0FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63372BAD164588CA00BEF0FA /* QuartzCore.framework */; };
 		63372BB0164588CA00BEF0FA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63372BAF164588CA00BEF0FA /* OpenGLES.framework */; };
 		63372BB2164588CA00BEF0FA /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63372BB1164588CA00BEF0FA /* OpenAL.framework */; };
@@ -285,6 +292,14 @@
 		63260EE6169F6C21000383B0 /* Character.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Character.m; sourceTree = "<group>"; };
 		6329FFE416A9E754009F068D /* Brain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Brain.plist; sourceTree = "<group>"; };
 		6329FFE516A9E754009F068D /* Brain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brain.png; sourceTree = "<group>"; };
+		632C640A16C1894300033029 /* angryAnim.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = angryAnim.plist; sourceTree = "<group>"; };
+		632C640B16C1894300033029 /* angryAnim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = angryAnim.png; sourceTree = "<group>"; };
+		632C641316C1A23600033029 /* bg_earth_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_earth_1.png; sourceTree = "<group>"; };
+		632C641416C1A23600033029 /* bg_sky_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_sky_1.png; sourceTree = "<group>"; };
+		632C641516C1A23600033029 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
+		632C641616C1A23600033029 /* world.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = world.plist; sourceTree = "<group>"; };
+		632C641C16C1A38300033029 /* LevelWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelWorldLayer.h; sourceTree = "<group>"; };
+		632C641D16C1A38300033029 /* LevelWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelWorldLayer.m; sourceTree = "<group>"; };
 		63372BA9164588CA00BEF0FA /* Circles_kazual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circles_kazual.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63372BAD164588CA00BEF0FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		63372BAF164588CA00BEF0FA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -825,6 +840,34 @@
 				63260EE6169F6C21000383B0 /* Character.m */,
 			);
 			path = "Character Object";
+			sourceTree = "<group>";
+		};
+		632C640F16C19E0300033029 /* Worlds */ = {
+			isa = PBXGroup;
+			children = (
+				632C641216C1A23600033029 /* world */,
+			);
+			path = Worlds;
+			sourceTree = "<group>";
+		};
+		632C641216C1A23600033029 /* world */ = {
+			isa = PBXGroup;
+			children = (
+				632C641316C1A23600033029 /* bg_earth_1.png */,
+				632C641416C1A23600033029 /* bg_sky_1.png */,
+				632C641516C1A23600033029 /* sun.png */,
+				632C641616C1A23600033029 /* world.plist */,
+			);
+			path = world;
+			sourceTree = "<group>";
+		};
+		632C641B16C1A36800033029 /* LevelWorldLayer */ = {
+			isa = PBXGroup;
+			children = (
+				632C641C16C1A38300033029 /* LevelWorldLayer.h */,
+				632C641D16C1A38300033029 /* LevelWorldLayer.m */,
+			);
+			path = LevelWorldLayer;
 			sourceTree = "<group>";
 		};
 		63372B9E164588CA00BEF0FA = {
@@ -1644,6 +1687,7 @@
 		63EF8DCD164EF1CC00374B27 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				632C641B16C1A36800033029 /* LevelWorldLayer */,
 				63B85F9916B56B6A00362EDF /* DrawHelperLayer */,
 				63C5142A16ADEC4500834319 /* ChooseLevelPageLayer */,
 				63C5142516ADEAD200834319 /* ChooseLevelLayer */,
@@ -1706,6 +1750,8 @@
 		63EF8DE0164EF24900374B27 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				632C640A16C1894300033029 /* angryAnim.plist */,
+				632C640B16C1894300033029 /* angryAnim.png */,
 				63D6296C16B87FEF007D4F8B /* magentaAnim.plist */,
 				63D6296D16B87FEF007D4F8B /* magentaAnim.png */,
 				63D6294616B7109F007D4F8B /* DataFile.plist */,
@@ -1717,6 +1763,7 @@
 		63EF8DE1164EF24900374B27 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				632C640F16C19E0300033029 /* Worlds */,
 				63B85F9E16B5703A00362EDF /* DrawHelpScreen */,
 				63CCA22416A8A5D9009C89A2 /* Characters */,
 				63CCA22816A8A5D9009C89A2 /* Levels */,
@@ -1925,6 +1972,12 @@
 				63D6296E16B87FEF007D4F8B /* magentaAnim.plist in Resources */,
 				63D6296F16B87FEF007D4F8B /* magentaAnim.png in Resources */,
 				63BAC49A16C0419B0059F883 /* Background.png in Resources */,
+				632C640C16C1894300033029 /* angryAnim.plist in Resources */,
+				632C640D16C1894300033029 /* angryAnim.png in Resources */,
+				632C641716C1A23600033029 /* bg_earth_1.png in Resources */,
+				632C641816C1A23600033029 /* bg_sky_1.png in Resources */,
+				632C641916C1A23600033029 /* sun.png in Resources */,
+				632C641A16C1A23600033029 /* world.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2110,6 +2163,7 @@
 				63B85F9D16B56BBA00362EDF /* DrawHelperLayer.m in Sources */,
 				63D6295916B71872007D4F8B /* CCAnimate+SequenceLoader.m in Sources */,
 				63D6295A16B71872007D4F8B /* CCAnimation+SequenceLoader.m in Sources */,
+				632C641E16C1A38300033029 /* LevelWorldLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

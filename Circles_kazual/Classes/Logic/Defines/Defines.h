@@ -6,7 +6,7 @@
 //
 //
 
-
+#define RESOURCE_FILE(file) [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:(file)]
 
 #pragma mark - SETTINGS KEYS -
 
@@ -19,3 +19,16 @@ static NSString * const SETTINGS_KEY_CHOOSE_LEVEL_ACTIVE_PAGE = @"ChooseLevel_Ac
 static NSString * const GAME_RESULT     = @"GAME_RESULT";
 static NSString * const WIN_RESULT      = @"WIN";
 static NSString * const LOSE_RESULT     = @"LOSE";
+
+
+
+#pragma mark - WORLD LAYER KEYS -
+
+static NSString * const WORLD_LAYERS            = @"Layers";
+static NSString * const WORLD_LAYER_IMAGE       = @"imageName";
+static NSString * const WORLD_LAYER_ORDER       = @"order";
+
+static NSString * const WORLD_OBJECTS           = @"Objects";
+static NSString * const WORLD_OBJECT_IMAGE      = @"imageName";
+static NSString * const WORLD_OBJECT_ORDER      = @"order";
+static NSString * const WORLD_OBJECT_POSITION   = @"position";

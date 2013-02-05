@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>World</string>
+	<key>Layers</key>
+	<array>
+		<dict>
+			<key>imageName</key>
+			<string>bg_sky_1.png</string>
+			<key>order</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>bg_earth_1.png</string>
+			<key>order</key>
+			<string>2</string>
+		</dict>
+	</array>
+	<key>Objects</key>
+	<array>
+		<dict>
+			<key>imageName</key>
+			<string>sun.png</string>
+			<key>order</key>
+			<string>1</string>
+			<key>position</key>
+			<string>{712, 380}</string>
+			<key>actions</key>
+			<array>
+				<dict>
+					<key>type</key>
+					<string>moveBy</string>
+					<key>value</key>
+					<string>{0,600}</string>
+					<key>duration</key>
+					<string>10</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>moveBy</string>
+					<key>value</key>
+					<string>{0,-600}</string>
+					<key>duration</key>
+					<string>10</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -4,8 +4,8 @@
 <dict>
 	<key>Title</key>
 	<string>Level 4</string>
-	<key>Background</key>
-	<string>Background.png</string>
+	<key>World</key>
+	<string>world.plist</string>
 	<key>Characters</key>
 	<array>
 		<dict>

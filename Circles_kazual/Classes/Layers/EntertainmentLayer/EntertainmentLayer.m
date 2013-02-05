@@ -34,7 +34,7 @@ static CGFloat const ENTERTAIMENT_SHOWING_CHARACTER_HEIGHT = 90.0;
     
     self = [super init];
     
-    [self schedule:@selector(update) interval:ENTERTAIMENT_TIME_INTERVAL];
+  //  [self schedule:@selector(update) interval:ENTERTAIMENT_TIME_INTERVAL];
     
     self.isTouchEnabled = YES;
     

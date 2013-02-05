@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#define RESOURCE_FILE(file) [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:(file)]
-
-
 @interface FileManager : NSObject
 
 + (NSString *)checkAndCreateFile:(NSString *)fileName;

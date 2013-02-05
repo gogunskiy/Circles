@@ -15,7 +15,7 @@
 - (void) initPhysics;
 
 - (void) initLevel;
-- (void) initBackground;
+- (void) initLevelWorldLayer;
 - (void) initCharacters;
 - (void) initBonuses;
 - (void) initInfoLayer;

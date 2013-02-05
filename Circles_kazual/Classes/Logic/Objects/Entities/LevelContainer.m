@@ -14,7 +14,7 @@
 @synthesize levelIndex;
 @synthesize pageIndex;
 @synthesize title;
-@synthesize backgroundImage;
+@synthesize worldInfo;
 @synthesize characters;
 
 - (id) init {
@@ -35,7 +35,7 @@
 - (void) setWithInfo:(NSDictionary *)info {
     
     [self setTitle:[info objectForKey:TITLE]];
-    [self setBackgroundImage:[info objectForKey:LEVEL_BACKGROUND]];
+    [self setWorldInfo:[NSDictionary dictionaryWithContentsOfFile:RESOURCE_FILE([info objectForKey:LEVEL_WORLD])]];
     [self setCharacters:[info objectForKey:CHARACTERS]];
 }
 
