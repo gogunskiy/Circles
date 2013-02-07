@@ -47,7 +47,7 @@
 
 
 - (void) start {
-    [self schedule:@selector(update) interval:0.01];
+    [self schedule:@selector(update) interval:0.03];
 }
 
 - (void) stop {
