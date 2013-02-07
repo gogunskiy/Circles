@@ -27,25 +27,33 @@
 			<key>order</key>
 			<string>1</string>
 			<key>position</key>
-			<string>{712, 380}</string>
+			<string>{712, 600}</string>
 			<key>actions</key>
 			<array>
-				<dict>
-					<key>type</key>
-					<string>moveBy</string>
-					<key>value</key>
-					<string>{0,600}</string>
-					<key>duration</key>
-					<string>10</string>
-				</dict>
-				<dict>
-					<key>type</key>
-					<string>moveBy</string>
-					<key>value</key>
-					<string>{0,-600}</string>
-					<key>duration</key>
-					<string>10</string>
-				</dict>
+				<array>
+					<dict>
+						<key>type</key>
+						<string>moveBy</string>
+						<key>value</key>
+						<string>{0,-400}</string>
+						<key>duration</key>
+						<string>60</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>moveBy</string>
+						<key>value</key>
+						<string>{0,400}</string>
+						<key>duration</key>
+						<string>60</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>delay</string>
+						<key>duration</key>
+						<string>10</string>
+					</dict>
+				</array>
 			</array>
 		</dict>
 	</array>
