@@ -40,13 +40,11 @@
 
 - (void) addSubstrate {
     
-    CCLayerColor * layer = [[CCLayerColor alloc] initWithColor:ccc4(0,0,0,255)];
+    CCLayerColor * layer = [[CCLayerColor alloc] initWithColor:ccc4(255,255,255,255)];
     [layer setAnchorPoint:ccp(0,0)];
     [layer setPosition:ccp(0,0)];
-    [self addChild:layer z:10];
+    [self addChild:layer z:-1];
     [layer setOpacity:0];
-    
-    [layer runAction:[CCRepeatForever actionWithAction:[CCSequence actions:[CCFadeTo actionWithDuration:60 opacity:220],[CCDelayTime actionWithDuration:10], [CCFadeTo actionWithDuration:40 opacity:0],[CCDelayTime actionWithDuration:20], nil]]];
 }
 
 - (void) addLayers {
@@ -57,8 +55,10 @@
         CCSprite * layer = [CCSprite spriteWithFile:[layerInfo objectForKey:WORLD_LAYER_IMAGE]];
         [layer setPosition:ccp(0,0)];
         [layer setAnchorPoint:ccp(0,0)];
+        [layer setOpacity:[[layerInfo objectForKey:WORLD_LAYER_OPACITY] intValue]];
         [self addChild:layer z:[[layerInfo objectForKey:WORLD_LAYER_ORDER] intValue]];
 
+        [self addActions:[layerInfo objectForKey:WORLD_OBJECT_ACTIONS] forObject:layer];
     }
 }
 

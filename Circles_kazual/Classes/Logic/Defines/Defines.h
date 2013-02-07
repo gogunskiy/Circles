@@ -27,6 +27,7 @@ static NSString * const LOSE_RESULT     = @"LOSE";
 static NSString * const WORLD_LAYERS                    = @"Layers";
 static NSString * const WORLD_LAYER_IMAGE               = @"imageName";
 static NSString * const WORLD_LAYER_ORDER               = @"order";
+static NSString * const WORLD_LAYER_OPACITY             = @"opacity";
 
 static NSString * const WORLD_OBJECTS                   = @"Objects";
 static NSString * const WORLD_OBJECT_IMAGE              = @"imageName";

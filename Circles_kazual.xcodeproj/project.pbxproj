@@ -22,6 +22,7 @@
 		6313623116A1CBA90011795C /* BaseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6313623016A1CBA90011795C /* BaseLayer.m */; };
 		6313623416A1CBC20011795C /* EntertainmentLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6313623316A1CBC20011795C /* EntertainmentLayer.m */; };
 		63175230169F670400343EE9 /* MainGameLayer+Initialization.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6317522F169F670300343EE9 /* MainGameLayer+Initialization.mm */; };
+		631E538816C45878008B048E /* night.png in Resources */ = {isa = PBXBuildFile; fileRef = 631E538716C45878008B048E /* night.png */; };
 		63260EDD169F6A2A000383B0 /* PhysicsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63260EDC169F6A2A000383B0 /* PhysicsObject.m */; };
 		63260EE7169F6C21000383B0 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 63260EE6169F6C21000383B0 /* Character.m */; };
 		6329FFE616A9E754009F068D /* Brain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6329FFE416A9E754009F068D /* Brain.plist */; };
@@ -286,6 +287,7 @@
 		6313623316A1CBC20011795C /* EntertainmentLayer.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = EntertainmentLayer.m; sourceTree = "<group>"; };
 		6317522E169F670300343EE9 /* MainGameLayer+Initialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainGameLayer+Initialization.h"; sourceTree = "<group>"; };
 		6317522F169F670300343EE9 /* MainGameLayer+Initialization.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = "MainGameLayer+Initialization.mm"; sourceTree = "<group>"; };
+		631E538716C45878008B048E /* night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = night.png; sourceTree = "<group>"; };
 		63260EDB169F6A2A000383B0 /* PhysicsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsObject.h; sourceTree = "<group>"; };
 		63260EDC169F6A2A000383B0 /* PhysicsObject.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = PhysicsObject.m; sourceTree = "<group>"; };
 		63260EE5169F6C21000383B0 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
@@ -1774,6 +1776,7 @@
 		63EF8DE2164EF24900374B27 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				631E538716C45878008B048E /* night.png */,
 				63BAC49916C0419B0059F883 /* Background.png */,
 				63F22A9516B1D38300AF3CD1 /* CharacterDirectionArrows */,
 				63C5143416ADF7BC00834319 /* ChooseLevelPageBackground.png */,
@@ -1978,6 +1981,7 @@
 				632C641816C1A23600033029 /* bg_sky_1.png in Resources */,
 				632C641916C1A23600033029 /* sun.png in Resources */,
 				632C641A16C1A23600033029 /* world.plist in Resources */,
+				631E538816C45878008B048E /* night.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
