@@ -9,6 +9,7 @@
 #import "MainGameLayer+Initialization.h"
 #import "LevelContainer.h"
 #import "Character.h"
+#import "Bonus.h"
 #import "FileManager.h"
 
 
@@ -78,7 +79,21 @@
 }
 
 - (void) initBonuses {
+    bonuses_ = [[NSMutableArray alloc] init];
     
+    for (NSDictionary * bonusInfo in [currentLevel_ bonuses]) {
+        
+        NSMutableDictionary * bonusData = [Bonus bonusDataByType:[bonusInfo objectForKey:BONUS_FILE]];
+        [bonusData setObject:[bonusInfo objectForKey:BONUS_POSITION]     forKey:BONUS_POSITION];
+        Bonus * bonus = [[Bonus alloc] initWithDictionary:bonusData];
+        
+        [self addChild:bonus];
+        
+        [bonuses_ addObject:bonus];
+        
+        [bonus release];
+    }
+
 }
 
 - (void) initDrawingLayer {

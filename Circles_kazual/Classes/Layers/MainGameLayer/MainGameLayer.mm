@@ -10,6 +10,7 @@
 #import "PhysicsObject.h"
 #import "MainGameLayer+Initialization.h"
 #import "Character.h"
+#import "Bonus.h"
 #import "LevelContainer.h"
 #import "FileManager.h"
 
@@ -25,6 +26,9 @@
 - (void) finishLevel ;
 
 - (void) calculateLevelResult;
+
+- (void) checkLevelConditions;
+- (void) checkBonuses;
 
 @end
 
@@ -110,6 +114,11 @@
 }
 
 - (void) update {
+    [self checkBonuses];
+    [self checkLevelConditions];
+}
+
+- (void) checkLevelConditions {
     
     int notInGameObjects = 0;
     
@@ -123,6 +132,25 @@
         [self finishLevel];
         [self unscheduleUpdate];
         [self unschedule:@selector(update)];
+    }
+    
+}
+
+- (void) checkBonuses {
+    for (Bonus * bonus in bonuses_) {
+        for (Character * character in characters_) {
+
+            if ([bonus intersectWithPosition:[character previousPos] size:CGSizeMake(100,100)]) {
+                
+                [GAME addScores:[bonus value]];
+                [self removeChild:bonus cleanup:TRUE];
+                [bonuses_ removeObject:bonus];
+            
+                [[SimpleAudioEngine sharedEngine] playEffect:@"get_bonus_sound.wav"];
+                
+                break;
+            }
+        }
     }
 }
 

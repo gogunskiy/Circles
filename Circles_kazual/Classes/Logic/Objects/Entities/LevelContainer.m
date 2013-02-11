@@ -16,6 +16,7 @@
 @synthesize title;
 @synthesize worldInfo;
 @synthesize characters;
+@synthesize bonuses;
 
 - (id) init {
     
@@ -37,6 +38,7 @@
     [self setTitle:[info objectForKey:TITLE]];
     [self setWorldInfo:[NSDictionary dictionaryWithContentsOfFile:RESOURCE_FILE([info objectForKey:LEVEL_WORLD])]];
     [self setCharacters:[info objectForKey:CHARACTERS]];
+    [self setBonuses:[info objectForKey:BONUSES]];
 }
 
 @end

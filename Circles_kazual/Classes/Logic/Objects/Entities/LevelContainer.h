@@ -10,6 +10,7 @@
 
 static NSString * const TITLE               = @"Title";
 static NSString * const CHARACTERS          = @"Characters";
+static NSString * const BONUSES             = @"Bonuses";
 static NSString * const PAGE_INDEX          = @"PageIndex";
 static NSString * const LEVEL_INDEX         = @"LevelIndex";
 static NSString * const LEVEL_WORLD         = @"World";
@@ -22,6 +23,7 @@ static NSString * const LEVEL_WORLD         = @"World";
 @property (nonatomic, copy) NSString * title;
 @property (nonatomic, copy) NSDictionary * worldInfo;
 @property (nonatomic, retain) NSArray * characters;
+@property (nonatomic, retain) NSArray * bonuses;
 
 - (void) setWithInfo:(NSDictionary *)info ;
 

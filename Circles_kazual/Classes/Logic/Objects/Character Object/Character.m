@@ -27,6 +27,7 @@
 @synthesize name;
 @synthesize role;
 
+
 - (id) initWithPosition:(CGPoint)position indefiener:(int)indefiener data:(NSDictionary *)theData {
     
     self = [super initWithPosition:position filename:[theData objectForKey:CHARACTER_SPRITE] indefiener:indefiener];
@@ -117,7 +118,7 @@
     }
     
     previousPosition_ = pos;
-    
+    [self setPreviousPos:ccp(pos.x * PTM_RATIO, pos.y * PTM_RATIO)];
 	
 	return [super nodeToParentTransform];
 }

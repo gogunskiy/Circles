@@ -19,5 +19,16 @@
 			<string>{512,400}</string>
 		</dict>
 	</array>
+	<key>Bonuses</key>
+	<array>
+		<dict>
+			<key>File</key>
+			<string>Star.plist</string>
+			<key>Position</key>
+			<string>{512,200}</string>
+			<key>Value</key>
+			<string>100</string>
+		</dict>
+	</array>
 </dict>
 </plist>

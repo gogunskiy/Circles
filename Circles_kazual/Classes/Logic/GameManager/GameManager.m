@@ -82,4 +82,9 @@ static GameManager * shared = nil;
     return [[self levelsLoader] levelsInformation];
 }
 
+
+- (void) addScores:(CGFloat)theScore {
+    
+}
+
 @end

@@ -27,4 +27,6 @@
 
 - (NSArray *) levelsInformation;
 
+- (void) addScores:(CGFloat)theScore;
+
 @end

@@ -8,6 +8,7 @@
 
 @synthesize gravityScale;
 @synthesize state;
+@synthesize previousPos;
 
 - (b2Body *) body {
     return body_;

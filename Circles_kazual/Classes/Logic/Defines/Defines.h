@@ -40,3 +40,35 @@ static NSString * const WORLD_OBJECT_ACTION_VALUE       = @"value";
 static NSString * const WORLD_OBJECT_ACTION_MOVE_BY     = @"moveBy";
 static NSString * const WORLD_OBJECT_ACTION_DELAY       = @"delay";
 static NSString * const WORLD_OBJECT_ACTION_FADE_TO     = @"fadeTo";
+
+
+
+#pragma mark - CHARACTER KEYS -
+
+static NSString * const CHARACTER_TYPE                  = @"CharacterType";
+static NSString * const CHARACTER_NAME                  = @"Name";
+static NSString * const CHARACTER_ROLE                  = @"Role";
+static NSString * const CHARACTER_ROLE_POSITIVE         = @"Positive";
+static NSString * const CHARACTER_ROLE_NEGATIVE         = @"Negative";
+static NSString * const CHARACTER_ROLE_LONELY           = @"Lonely";
+static NSString * const CHARACTER_SPRITE                = @"SpriteName";
+static NSString * const CHARACTER_GEOMETRY              = @"Geometry";
+static NSString * const CHARACTER_GRAVITYSCALE          = @"Gravity";
+static NSString * const CHARACTER_GEOMETRY_TYPE         = @"Type";
+static NSString * const CHARACTER_GEOMETRY_TYPE_SQUARE  = @"Square";
+static NSString * const CHARACTER_GEOMETRY_TYPE_CIRCLE  = @"Circle";
+static NSString * const CHARACTER_GEOMETRY_TYPE_POLYGON = @"Polygon";
+static NSString * const CHARACTER_GEOMETRY_POINTS       = @"Points";
+static NSString * const CHARACTER_GEOMETRY_RADIUS       = @"Radius";
+static NSString * const CHARACTER_FILE                  = @"File";
+static NSString * const CHARACTER_POSITION              = @"Position";
+
+#pragma mark - BONUS KEYS -
+
+static NSString * const BONUS_FILE                      = @"File";
+static NSString * const BONUS_POSITION                  = @"Position";
+static NSString * const BONUS_NAME                      = @"Name";
+static NSString * const BONUS_SPRITE                    = @"SpriteName";
+static NSString * const BONUS_VALUE                     = @"Value";
+
+

@@ -29,6 +29,7 @@ typedef enum BODY_STATE {
 
 @property (nonatomic, assign) BODY_STATE state;
 @property (nonatomic, assign) CGPoint gravityScale;
+@property (nonatomic, assign) CGPoint previousPos;
 
 - (b2Body *) body ;
 

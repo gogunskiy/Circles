@@ -43,6 +43,7 @@
     LevelContainer * currentLevel_;
     
     NSMutableArray * characters_;
+    NSMutableArray * bonuses_;
     
     BOOL gameRunning_;
 }
