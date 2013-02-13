@@ -14,11 +14,14 @@ static NSString * const BONUSES             = @"Bonuses";
 static NSString * const PAGE_INDEX          = @"PageIndex";
 static NSString * const LEVEL_INDEX         = @"LevelIndex";
 static NSString * const LEVEL_WORLD         = @"World";
+static NSString * const LEVEL_HIGHSCORES    = @"HighScores";
 
 @interface LevelContainer : NSObject
 
 @property (nonatomic, assign) NSInteger levelIndex;
 @property (nonatomic, assign) NSInteger pageIndex;
+@property (nonatomic, assign) NSInteger scores;
+@property (nonatomic, assign) NSInteger highScores;
 
 @property (nonatomic, copy) NSString * title;
 @property (nonatomic, copy) NSDictionary * worldInfo;

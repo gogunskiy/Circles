@@ -8,18 +8,21 @@
 
 #import "GameResultLayer.h"
 
+static NSInteger const MOVE_BY = 150;
+
 @implementation GameResultLayer
 
 @synthesize result;
+@synthesize score;
+@synthesize highScore;
 @synthesize delegate;
 
 - (id)init {
     
     self = [super init];
     
-    [self setBackgroundImage:@"resultlayer_background.png"];
-    [self setFadeDuration:1.];
-
+    [self setPosition:ccp(0, -150)];
+    [self addElements];
     
     return self;
 }
@@ -29,8 +32,17 @@
 }
 
 - (void) show {
-    [self addElements];
-    [super show];
+    [resulLabel_ setString:[self result]];
+    [scoreLabel_ setString:[self score]];
+    [highScoreLabel_ setString:[self highScore]];
+    
+    [nextLevel_ setIsEnabled:[[self result] isEqualToString:WIN_RESULT]];
+    
+    [self runAction:[CCMoveBy actionWithDuration:0.3 position:ccp(0,MOVE_BY)]];
+}
+
+- (void) hide {
+    [self runAction:[CCMoveBy actionWithDuration:0.3 position:ccp(0,-MOVE_BY)]];
 }
 
 - (void) addElements {
@@ -44,34 +56,64 @@
                                 shadowColor		:ccc4(0, 0, 0, 255)
                                   fillColor		:ccc4(255, 255, 255, 255)];
   
-	resulLabel_.position = ccp(512, 500);
+	resulLabel_.position = ccp(512, 160);
 	[resulLabel_ setAnchorPoint:ccp(0.5, 0.5)];
     
 	[self addChild:resulLabel_];
 
     
-    CCMenuItemLabel *reset = [CCMenuItemImage itemWithNormalImage:@"restart-button.png" selectedImage:@"restart-button.png" block:^(id sender) {
+	scoreLabel_ = [CCLabelFX	labelWithString :[self score]
+                                   fontName		:@"Helvetica"
+                                   fontSize		:50
+                             shadowOffset    :CGSizeMake(-4, -4)
+                                 shadowBlur		:0.0f
+                                shadowColor		:ccc4(0, 0, 0, 255)
+                                  fillColor		:ccc4(255, 255, 255, 255)];
+    
+	scoreLabel_.position = ccp(412, 100);
+	[scoreLabel_ setAnchorPoint:ccp(0.5, 0.5)];
+    
+	[self addChild:scoreLabel_];
+    
+    highScoreLabel_ = [CCLabelFX	labelWithString :[self highScore]
+                              fontName		:@"Helvetica"
+                              fontSize		:50
+                        shadowOffset    :CGSizeMake(-4, -4)
+                            shadowBlur		:0.0f
+                           shadowColor		:ccc4(0, 0, 0, 255)
+                             fillColor		:ccc4(255, 255, 255, 255)];
+    
+	highScoreLabel_.position = ccp(612, 100);
+	[highScoreLabel_ setAnchorPoint:ccp(0.5, 0.5)];
+    
+	[self addChild:highScoreLabel_];
+    
+    CCMenuItemImage *reset = [CCMenuItemImage itemWithNormalImage:@"restart-button.png" selectedImage:@"restart-button.png" block:^(id sender) {
         [[self delegate] restartButtonWasClicked];
     }];
     
     
-    CCMenuItemLabel *chooseLevel = [CCMenuItemImage itemWithNormalImage:@"chooselevel-button.png" selectedImage:@"chooselevel-button.png" block:^(id sender) {
+    CCMenuItemImage *chooseLevel = [CCMenuItemImage itemWithNormalImage:@"chooselevel-button.png" selectedImage:@"chooselevel-button.png" block:^(id sender) {
         [[self delegate] chooseLevelButtonWasClicked];
     }];
 
-    CCMenuItemLabel *nextLevel = nil;
-    
-    if ([[self result] isEqualToString:WIN_RESULT]) {
-        nextLevel = [CCMenuItemImage itemWithNormalImage:@"nextlevel-button.png" selectedImage:@"nextlevel-button.png" block:^(id sender) {
-            [[self delegate] nextLevelButtonWasClicked];
-        }];
-    }
-	
-    CCMenu *menu = [CCMenu menuWithItems:reset, chooseLevel, nextLevel, nil];
-	[menu alignItemsHorizontallyWithPadding:50];
-	[menu setPosition:ccp(512,340)];
+  
+    CCMenu *menu = [CCMenu menuWithItems:reset, chooseLevel, nil];
+	[menu alignItemsHorizontallyWithPadding:30];
+	[menu setPosition:ccp(140,100)];
 
-	[self addChild: menu z:1];
+	[self addChild:menu z:1];
+    
+    nextLevel_ = [CCMenuItemImage itemWithNormalImage:@"nextlevel-button.png" selectedImage:@"nextlevel-button.png" block:^(id sender) {
+        [[self delegate] nextLevelButtonWasClicked];
+    }];
+    
+    CCMenu *menu2 = [CCMenu menuWithItems:nextLevel_, nil];
+    [menu2 alignItemsHorizontallyWithPadding:250];
+    [menu2 setPosition:ccp(960,100)];
+    
+    [self addChild:menu2 z:1];
+
     
     [super addElements];
 }

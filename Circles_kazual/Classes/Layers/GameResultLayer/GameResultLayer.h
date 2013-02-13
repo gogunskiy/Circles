@@ -11,13 +11,20 @@
 
 @protocol GameResultLayerDelegate;
 
-@interface GameResultLayer : BasePopupLayer {
+@interface GameResultLayer : BaseLayer {
     CCLabelFX * resulLabel_;
+    CCLabelFX * scoreLabel_;
+    CCLabelFX * highScoreLabel_;
+    CCMenuItemImage *nextLevel_;
 }
 
 @property (nonatomic, assign) id <GameResultLayerDelegate> delegate;
 @property (nonatomic, copy) NSString * result;
+@property (nonatomic, copy) NSString * score;
+@property (nonatomic, copy) NSString * highScore;
 
+- (void) show;
+- (void) hide;
 - (void) setResult:(NSString *)result ;
 
 @end

@@ -15,4 +15,7 @@ static NSString * const LEVEL_FILE_INFO = @"File";
 - (NSDictionary *) levelDataForLevel:(NSString *)level;
 - (NSArray *) levelsInformation;
 
+- (void) setScores:(NSInteger)scores levelPage:(NSInteger)levelPage levelIndex:(NSInteger)levelIndex;
+- (NSInteger) scoreForLevelPage:(NSInteger)levelPage levelIndex:(NSInteger)levelIndex;
+
 @end

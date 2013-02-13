@@ -33,7 +33,7 @@ static GameManager * shared = nil;
     
     [self setCurrentLevel:[[[LevelContainer alloc] init] autorelease]];
     [self setLevelsLoader:[[[LevelsLoader alloc] init] autorelease]];
-
+    
     return self;
 }
 
@@ -52,7 +52,16 @@ static GameManager * shared = nil;
     [[self currentLevel] setLevelIndex:[[info objectForKey:LEVEL_INDEX] integerValue]];
     [[self currentLevel] setPageIndex:[[info objectForKey:PAGE_INDEX] integerValue]];
     
+    [self setLevelScores:0];
+    
+    levelStartTime_ = [[NSDate date] timeIntervalSince1970];
+    
     [GAME loadMainGameLayer];
+}
+
+- (void) restartLevel {
+    [self setLevelScores:0];
+    [self loadMainGameLayer];
 }
 
 - (void) startGameFromPrevoiusLevel {
@@ -74,6 +83,16 @@ static GameManager * shared = nil;
 
 - (void) finishGameWithResult:(NSDictionary *)result {
     
+    levelEndTime_ = [[NSDate date] timeIntervalSince1970];
+    
+    CGFloat levelTime = levelEndTime_ - levelStartTime_;
+    
+    if ([[result objectForKey:GAME_RESULT] isEqualToString:WIN_RESULT]) {
+        [self addLevelScores:(1000 - levelTime) > 0 ? 1000 - levelTime : 0];
+    } else {
+        [self setLevelScores:0];
+    }
+    
     [[SimpleAudioEngine sharedEngine] playEffect:[[[result objectForKey:GAME_RESULT] lowercaseString] stringByAppendingString:@"Sound.wav"]];
 }
 
@@ -82,9 +101,33 @@ static GameManager * shared = nil;
     return [[self levelsLoader] levelsInformation];
 }
 
+#pragma mark - SCORING -
 
-- (void) addScores:(CGFloat)theScore {
-    
+- (NSInteger) levelScores {
+    return [currentLevel scores];
 }
+
+- (void) setLevelScores:(CGFloat)theScore {
+    [currentLevel setScores:theScore];
+}
+
+- (void) addLevelScores:(CGFloat)theScore {
+    [self setLevelScores:[self levelScores] + theScore];
+}
+
+- (void) setHighScores:(NSInteger)scores levelPage:(NSInteger)levelPage levelIndex:(NSInteger)levelIndex {
+    
+    NSInteger highScores = [self highScoreForLevelPage:levelPage levelIndex:levelIndex];
+    
+    if (scores > highScores) {
+        [levelsLoader setScores:scores levelPage:levelPage levelIndex:levelIndex];
+    }
+}
+
+
+- (NSInteger) highScoreForLevelPage:(NSInteger)levelPage levelIndex:(NSInteger)levelIndex {
+    return [levelsLoader scoreForLevelPage:levelPage levelIndex:levelIndex];
+}
+
 
 @end

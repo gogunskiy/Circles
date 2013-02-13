@@ -142,7 +142,7 @@
 
             if ([bonus intersectWithPosition:[character previousPos] size:CGSizeMake(100,100)]) {
                 
-                [GAME addScores:[bonus value]];
+                [GAME addLevelScores:[bonus value]];
                 [self removeChild:bonus cleanup:TRUE];
                 [bonuses_ removeObject:bonus];
             
@@ -191,10 +191,17 @@
     
     NSString * result = ([characters_ count] == countOfMatch) ? WIN_RESULT : LOSE_RESULT;
     
-    [resultLayer_ setResult:result];
-    [self showResultLayer];
-    
     [GAME finishGameWithResult:@{GAME_RESULT : result}];
+    
+    if ([result isEqualToString:WIN_RESULT]) {
+        [GAME setHighScores:[currentLevel_ scores] levelPage:[currentLevel_ pageIndex] levelIndex:[currentLevel_ levelIndex]];
+    }
+    
+    [resultLayer_ setResult:result];
+    [resultLayer_ setScore:[NSString stringWithFormat:@"%d", [currentLevel_ scores]]];
+    [resultLayer_ setHighScore:[NSString stringWithFormat:@"%d", [GAME highScoreForLevelPage:[currentLevel_ pageIndex] levelIndex:[currentLevel_ levelIndex]]]];
+    
+    [self showResultLayer];
 }
 
 -(void) draw
@@ -273,7 +280,7 @@
 }
 
 - (void) restartButtonWasClicked {
-    [GAME loadMainGameLayer];
+    [GAME restartLevel];
 }
 
 - (void) chooseLevelButtonWasClicked {

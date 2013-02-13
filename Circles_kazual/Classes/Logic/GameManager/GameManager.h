@@ -13,7 +13,10 @@
 @class LevelContainer;
 @class LevelsLoader;
 
-@interface GameManager : NSObject
+@interface GameManager : NSObject {
+    double levelStartTime_;
+    double levelEndTime_;
+}
 
 + (GameManager *) shared ;
 
@@ -22,11 +25,18 @@
 
 - (void) startGameWithInfo:(NSDictionary *)info;
 - (void) startGameFromPrevoiusLevel;
+- (void) restartLevel;
 
 - (void) finishGameWithResult:(NSDictionary *)result;
 
 - (NSArray *) levelsInformation;
 
-- (void) addScores:(CGFloat)theScore;
+- (NSInteger) levelScores;
+- (void) setLevelScores:(CGFloat)theScore;
+- (void) addLevelScores:(CGFloat)theScore;
+
+
+- (void) setHighScores:(NSInteger)scores levelPage:(NSInteger)levelPage levelIndex:(NSInteger)levelIndex;
+- (NSInteger) highScoreForLevelPage:(NSInteger)levelPage levelIndex:(NSInteger)levelIndex;
 
 @end

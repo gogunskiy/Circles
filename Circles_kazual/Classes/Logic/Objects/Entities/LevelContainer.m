@@ -14,6 +14,8 @@
 @synthesize levelIndex;
 @synthesize pageIndex;
 @synthesize title;
+@synthesize scores;
+@synthesize highScores;
 @synthesize worldInfo;
 @synthesize characters;
 @synthesize bonuses;
@@ -39,6 +41,8 @@
     [self setWorldInfo:[NSDictionary dictionaryWithContentsOfFile:RESOURCE_FILE([info objectForKey:LEVEL_WORLD])]];
     [self setCharacters:[info objectForKey:CHARACTERS]];
     [self setBonuses:[info objectForKey:BONUSES]];
+    [self setHighScores:[[info objectForKey:LEVEL_HIGHSCORES] intValue]];
 }
+
 
 @end

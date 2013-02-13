@@ -18,6 +18,9 @@
 
 - (void) setIsTouchEnabled:(BOOL)enabled  ;
 
+- (void) show;
+- (void) hide;
+
 @end
 
 
@@ -27,5 +30,6 @@
 - (void) startButtonWasClicked;
 - (void) showPauseMenuButtonClicked;
 - (void) clearLineButtonClicked;
+- (void) restartButtonWasClicked;
 
 @end;

@@ -75,7 +75,7 @@ float addedPixels = 0.0;
 
 		// normal fonts
 		if ([uifont isKindOfClass:[UIFont class]]) {
-			[string drawInRect:stringRect withFont:uifont lineBreakMode:UILineBreakModeWordWrap alignment:alignment];
+			[string drawInRect:stringRect withFont:uifont lineBreakMode:UILineBreakModeWordWrap alignment:(NSTextAlignment)alignment];
 		}
 
   #if CC_FONT_LABEL_SUPPORT

@@ -146,16 +146,18 @@
 - (void) initResultLayer {
     resultLayer_ = [[GameResultLayer alloc] init];
     [resultLayer_ setDelegate:self];
+    [self addChild:resultLayer_ z:5];
 }
 
 - (void) showResultLayer {
-    [self addChild:resultLayer_ z:5];
+    [pauseLayer_ hide];
     [resultLayer_ show];
 }
 
 
 - (void) hideResultLayer {
     [resultLayer_ hide];
+    [pauseLayer_ show];
 }
 
 @end
