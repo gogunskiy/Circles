@@ -33,6 +33,7 @@
 
 - (void) initialize {
     
+    [self addSubstrate];
     [self addLayers];
     [self addObjects];
 }
@@ -44,7 +45,6 @@
     [layer setAnchorPoint:ccp(0,0)];
     [layer setPosition:ccp(0,0)];
     [self addChild:layer z:-1];
-    [layer setOpacity:0];
 }
 
 - (void) addLayers {

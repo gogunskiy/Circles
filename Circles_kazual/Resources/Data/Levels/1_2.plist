@@ -5,7 +5,7 @@
 	<key>Title</key>
 	<string>Level 2</string>
 	<key>World</key>
-	<string>world.plist</string>
+	<string>Mountain.plist</string>
 	<key>Characters</key>
 	<array>
 		<dict>

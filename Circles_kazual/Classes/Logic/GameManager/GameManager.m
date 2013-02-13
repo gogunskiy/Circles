@@ -61,6 +61,9 @@ static GameManager * shared = nil;
 
 - (void) restartLevel {
     [self setLevelScores:0];
+  
+    levelStartTime_ = [[NSDate date] timeIntervalSince1970];
+  
     [self loadMainGameLayer];
 }
 

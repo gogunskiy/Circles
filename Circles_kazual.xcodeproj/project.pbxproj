@@ -190,6 +190,10 @@
 		63372DBF164588CD00BEF0FA /* b2WheelJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63372DBE164588CD00BEF0FA /* b2WheelJoint.cpp */; };
 		63372DC3164588CD00BEF0FA /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63372DC2164588CD00BEF0FA /* b2Rope.cpp */; };
 		634D05B216CC21DD009E9E6A /* HighScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = 634D05B116CC21DD009E9E6A /* HighScores.plist */; };
+		634D05B816CC4A27009E9E6A /* bg_earth_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 634D05B416CC4A27009E9E6A /* bg_earth_2.png */; };
+		634D05B916CC4A27009E9E6A /* bg_sky_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 634D05B516CC4A27009E9E6A /* bg_sky_2.png */; };
+		634D05BA16CC4A27009E9E6A /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 634D05B616CC4A27009E9E6A /* sun.png */; };
+		634D05BB16CC4A27009E9E6A /* Mountain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 634D05B716CC4A27009E9E6A /* Mountain.plist */; };
 		634FCFD016AC091000E395DC /* BasePopupLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 634FCFCF16AC091000E395DC /* BasePopupLayer.m */; };
 		634FCFD316AC105E00E395DC /* GameResultLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 634FCFD216AC105E00E395DC /* GameResultLayer.m */; };
 		634FCFDE16AC127800E395DC /* chooselevel-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 634FCFDA16AC127800E395DC /* chooselevel-button.png */; };
@@ -643,6 +647,10 @@
 		63372DC4164588CD00BEF0FA /* b2Rope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = b2Rope.h; path = libs/Box2D/Rope/b2Rope.h; sourceTree = "<group>"; };
 		63372DC5164588CD00BEF0FA /* LICENSE_Box2D.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Box2D.txt; path = libs/LICENSE_Box2D.txt; sourceTree = "<group>"; };
 		634D05B116CC21DD009E9E6A /* HighScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HighScores.plist; sourceTree = "<group>"; };
+		634D05B416CC4A27009E9E6A /* bg_earth_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_earth_2.png; sourceTree = "<group>"; };
+		634D05B516CC4A27009E9E6A /* bg_sky_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_sky_2.png; sourceTree = "<group>"; };
+		634D05B616CC4A27009E9E6A /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
+		634D05B716CC4A27009E9E6A /* Mountain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Mountain.plist; sourceTree = "<group>"; };
 		634FCFCE16AC091000E395DC /* BasePopupLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePopupLayer.h; sourceTree = "<group>"; };
 		634FCFCF16AC091000E395DC /* BasePopupLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePopupLayer.m; sourceTree = "<group>"; };
 		634FCFD116AC105E00E395DC /* GameResultLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResultLayer.h; sourceTree = "<group>"; };
@@ -859,6 +867,7 @@
 		632C640F16C19E0300033029 /* Worlds */ = {
 			isa = PBXGroup;
 			children = (
+				634D05B316CC4A27009E9E6A /* Mountain */,
 				632C641216C1A23600033029 /* world */,
 			);
 			path = Worlds;
@@ -1419,6 +1428,17 @@
 				63372DC4164588CD00BEF0FA /* b2Rope.h */,
 			);
 			name = Rope;
+			sourceTree = "<group>";
+		};
+		634D05B316CC4A27009E9E6A /* Mountain */ = {
+			isa = PBXGroup;
+			children = (
+				634D05B416CC4A27009E9E6A /* bg_earth_2.png */,
+				634D05B516CC4A27009E9E6A /* bg_sky_2.png */,
+				634D05B616CC4A27009E9E6A /* sun.png */,
+				634D05B716CC4A27009E9E6A /* Mountain.plist */,
+			);
+			path = Mountain;
 			sourceTree = "<group>";
 		};
 		634FCFCA16AC068000E395DC /* BasePopupLayer */ = {
@@ -2028,6 +2048,10 @@
 				63A7AC7016C98B95006249BA /* Star.png in Resources */,
 				63A7AC7216C9A709006249BA /* get_bonus_sound.wav in Resources */,
 				634D05B216CC21DD009E9E6A /* HighScores.plist in Resources */,
+				634D05B816CC4A27009E9E6A /* bg_earth_2.png in Resources */,
+				634D05B916CC4A27009E9E6A /* bg_sky_2.png in Resources */,
+				634D05BA16CC4A27009E9E6A /* sun.png in Resources */,
+				634D05BB16CC4A27009E9E6A /* Mountain.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
