@@ -17,6 +17,7 @@
     [[SimpleAudioEngine sharedEngine] preloadEffect:SOUND_LOSE];
     [[SimpleAudioEngine sharedEngine] preloadEffect:SOUND_WIN];
     [[SimpleAudioEngine sharedEngine] preloadEffect:SOUND_TRANSITION];
+    [[SimpleAudioEngine sharedEngine] preloadEffect:SOUND_COUNTER];
 }
 
 

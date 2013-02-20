@@ -7,14 +7,16 @@
 //
 
 #import "BasePopupLayer.h"
-#import "CCLabelFX.h"
+
+
+@class CCAnimatedLabel;
 
 @protocol GameResultLayerDelegate;
 
 @interface GameResultLayer : BaseLayer {
-    CCLabelFX * resulLabel_;
-    CCLabelFX * scoreLabel_;
-    CCLabelFX * highScoreLabel_;
+    CCAnimatedLabel * resulLabel_;
+    CCAnimatedLabel * scoreLabel_;
+    CCAnimatedLabel * highScoreLabel_;
     CCMenuItemImage *nextLevel_;
 }
 

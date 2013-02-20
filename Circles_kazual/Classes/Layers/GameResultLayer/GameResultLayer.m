@@ -7,6 +7,7 @@
 //
 
 #import "GameResultLayer.h"
+#import "CCAnimatedLabel.h"
 
 static NSInteger const MOVE_BY = 150;
 
@@ -32,9 +33,9 @@ static NSInteger const MOVE_BY = 150;
 }
 
 - (void) show {
-    [resulLabel_ setString:[self result]];
-    [scoreLabel_ setString:[self score]];
-    [highScoreLabel_ setString:[self highScore]];
+    [resulLabel_ setString:[self result]        animated:FALSE];
+    [scoreLabel_ setString:[self score]         animated:TRUE];
+    [highScoreLabel_ setString:[self highScore] animated:FALSE];
     
     [nextLevel_ setIsEnabled:[[self result] isEqualToString:WIN_RESULT]];
     
@@ -48,21 +49,20 @@ static NSInteger const MOVE_BY = 150;
 - (void) addElements {
 	
     
-	resulLabel_ = [CCLabelFX	labelWithString :[self result]
+	resulLabel_ = [CCAnimatedLabel	labelWithString :[self result]
                                    fontName		:@"Helvetica"
                                    fontSize		:50
                                 shadowOffset    :CGSizeMake(-4, -4)
                                  shadowBlur		:0.0f
                                 shadowColor		:ccc4(0, 0, 0, 255)
                                   fillColor		:ccc4(255, 255, 255, 255)];
-  
 	resulLabel_.position = ccp(512, 160);
 	[resulLabel_ setAnchorPoint:ccp(0.5, 0.5)];
     
 	[self addChild:resulLabel_];
 
     
-	scoreLabel_ = [CCLabelFX	labelWithString :[self score]
+	scoreLabel_ = [CCAnimatedLabel	labelWithString :[self score]
                                    fontName		:@"Helvetica"
                                    fontSize		:50
                              shadowOffset    :CGSizeMake(-4, -4)
@@ -71,11 +71,13 @@ static NSInteger const MOVE_BY = 150;
                                   fillColor		:ccc4(255, 255, 255, 255)];
     
 	scoreLabel_.position = ccp(412, 100);
+    [scoreLabel_ setDelay:0.02];
+    [scoreLabel_ setDelta:10];
 	[scoreLabel_ setAnchorPoint:ccp(0.5, 0.5)];
     
 	[self addChild:scoreLabel_];
     
-    highScoreLabel_ = [CCLabelFX	labelWithString :[self highScore]
+    highScoreLabel_ = [CCAnimatedLabel	labelWithString :[self highScore]
                               fontName		:@"Helvetica"
                               fontSize		:50
                         shadowOffset    :CGSizeMake(-4, -4)

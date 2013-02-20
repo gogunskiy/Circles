@@ -93,7 +93,11 @@ static GameManager * shared = nil;
     CGFloat levelTime = levelEndTime_ - levelStartTime_;
     
     if ([[result objectForKey:GAME_RESULT] isEqualToString:WIN_RESULT]) {
-        [self addLevelScores:(1000 - levelTime) > 0 ? 1000 - levelTime : 0];
+        
+        NSInteger result = (1000 - levelTime) > 0 ? (1000 - levelTime) : 0;
+        result = result / 10 * 10;
+        
+        [self addLevelScores:result];
         
         [GAME playEffect:SOUND_WIN];
     } else {
