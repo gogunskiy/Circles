@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		630C433E16A4B62F0032DAE2 /* ErrorSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 630C433D16A4B62F0032DAE2 /* ErrorSound.wav */; };
+		63021B7316D571E100C0AE1D /* GameManager+Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 63021B7216D571E100C0AE1D /* GameManager+Sound.m */; };
 		63118CE516AF371D0041DE7C /* 1_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63118CE316AF371D0041DE7C /* 1_1.plist */; };
 		63118CE616AF371D0041DE7C /* 1_6.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63118CE416AF371D0041DE7C /* 1_6.plist */; };
 		63118CEB16AF37620041DE7C /* 1_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63118CE716AF37610041DE7C /* 1_2.plist */; };
@@ -192,7 +192,6 @@
 		634D05B216CC21DD009E9E6A /* HighScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = 634D05B116CC21DD009E9E6A /* HighScores.plist */; };
 		634D05B816CC4A27009E9E6A /* bg_earth_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 634D05B416CC4A27009E9E6A /* bg_earth_2.png */; };
 		634D05B916CC4A27009E9E6A /* bg_sky_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 634D05B516CC4A27009E9E6A /* bg_sky_2.png */; };
-		634D05BA16CC4A27009E9E6A /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 634D05B616CC4A27009E9E6A /* sun.png */; };
 		634D05BB16CC4A27009E9E6A /* Mountain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 634D05B716CC4A27009E9E6A /* Mountain.plist */; };
 		634FCFD016AC091000E395DC /* BasePopupLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 634FCFCF16AC091000E395DC /* BasePopupLayer.m */; };
 		634FCFD316AC105E00E395DC /* GameResultLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 634FCFD216AC105E00E395DC /* GameResultLayer.m */; };
@@ -272,7 +271,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		630C433D16A4B62F0032DAE2 /* ErrorSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ErrorSound.wav; sourceTree = "<group>"; };
+		63021B7116D571E100C0AE1D /* GameManager+Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GameManager+Sound.h"; sourceTree = "<group>"; };
+		63021B7216D571E100C0AE1D /* GameManager+Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GameManager+Sound.m"; sourceTree = "<group>"; };
 		63118CE316AF371D0041DE7C /* 1_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1_1.plist; sourceTree = "<group>"; };
 		63118CE416AF371D0041DE7C /* 1_6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1_6.plist; sourceTree = "<group>"; };
 		63118CE716AF37610041DE7C /* 1_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1_2.plist; sourceTree = "<group>"; };
@@ -649,7 +649,6 @@
 		634D05B116CC21DD009E9E6A /* HighScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HighScores.plist; sourceTree = "<group>"; };
 		634D05B416CC4A27009E9E6A /* bg_earth_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_earth_2.png; sourceTree = "<group>"; };
 		634D05B516CC4A27009E9E6A /* bg_sky_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_sky_2.png; sourceTree = "<group>"; };
-		634D05B616CC4A27009E9E6A /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
 		634D05B716CC4A27009E9E6A /* Mountain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Mountain.plist; sourceTree = "<group>"; };
 		634FCFCE16AC091000E395DC /* BasePopupLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePopupLayer.h; sourceTree = "<group>"; };
 		634FCFCF16AC091000E395DC /* BasePopupLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePopupLayer.m; sourceTree = "<group>"; };
@@ -786,6 +785,8 @@
 				63118CF716AF3C210041DE7C /* GameManager+SceneManagment.m */,
 				63118CF816AF3C210041DE7C /* GameManager.h */,
 				63118CF916AF3C210041DE7C /* GameManager.m */,
+				63021B7116D571E100C0AE1D /* GameManager+Sound.h */,
+				63021B7216D571E100C0AE1D /* GameManager+Sound.m */,
 			);
 			path = GameManager;
 			sourceTree = "<group>";
@@ -1435,7 +1436,6 @@
 			children = (
 				634D05B416CC4A27009E9E6A /* bg_earth_2.png */,
 				634D05B516CC4A27009E9E6A /* bg_sky_2.png */,
-				634D05B616CC4A27009E9E6A /* sun.png */,
 				634D05B716CC4A27009E9E6A /* Mountain.plist */,
 			);
 			path = Mountain;
@@ -1883,7 +1883,6 @@
 				63B85FB116B5D69600362EDF /* loseSound.wav */,
 				63B85FB216B5D69600362EDF /* winSound.wav */,
 				63B85FA716B5956200362EDF /* screen_transition_3.wav */,
-				630C433D16A4B62F0032DAE2 /* ErrorSound.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -1990,7 +1989,6 @@
 				63EF8DFC164EF24900374B27 /* Icon@2x.png in Resources */,
 				63D0A797169627F000C028D7 /* mask.png in Resources */,
 				63D0A7A116962DAB00C028D7 /* hero.png in Resources */,
-				630C433E16A4B62F0032DAE2 /* ErrorSound.wav in Resources */,
 				63CCA23316A8A882009C89A2 /* Foureyes.plist in Resources */,
 				63CCA23416A8A882009C89A2 /* Foureyes.png in Resources */,
 				63CCA23516A8A882009C89A2 /* Magenta.plist in Resources */,
@@ -2050,7 +2048,6 @@
 				634D05B216CC21DD009E9E6A /* HighScores.plist in Resources */,
 				634D05B816CC4A27009E9E6A /* bg_earth_2.png in Resources */,
 				634D05B916CC4A27009E9E6A /* bg_sky_2.png in Resources */,
-				634D05BA16CC4A27009E9E6A /* sun.png in Resources */,
 				634D05BB16CC4A27009E9E6A /* Mountain.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2239,6 +2236,7 @@
 				63D6295A16B71872007D4F8B /* CCAnimation+SequenceLoader.m in Sources */,
 				632C641E16C1A38300033029 /* LevelWorldLayer.m in Sources */,
 				63A7AC6816C983AD006249BA /* Bonus.m in Sources */,
+				63021B7316D571E100C0AE1D /* GameManager+Sound.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

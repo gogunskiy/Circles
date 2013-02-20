@@ -72,3 +72,11 @@ static NSString * const BONUS_SPRITE                    = @"SpriteName";
 static NSString * const BONUS_VALUE                     = @"Value";
 
 
+#pragma mark - GAME KEYS -
+
+static NSString * const LEVELS_INFO         = @"Levels";
+
+#pragma mark - SELECT LEVEL KEYS -
+
+static NSString * const PAGE_BACKGROUND     = @"Background";
+static NSString * const PAGE_COLS           = @"Cols";

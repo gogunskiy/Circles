@@ -84,7 +84,7 @@
         [self addChild:[pages_ objectAtIndex:currentPage_]];
         [[pages_ objectAtIndex:currentPage_] leftIn];
         
-        [[SimpleAudioEngine sharedEngine] playEffect:@"screen_transition_3.wav"];
+        [GAME playEffect:SOUND_TRANSITION];
     }
 }
 
@@ -99,7 +99,7 @@
         [self addChild:[pages_ objectAtIndex:currentPage_]];
         [[pages_ objectAtIndex:currentPage_] rightIn];
         
-        [[SimpleAudioEngine sharedEngine] playEffect:@"screen_transition_3.wav"];
+        [GAME playEffect:SOUND_TRANSITION];
     }
 }
 

@@ -146,7 +146,7 @@
                 [self removeChild:bonus cleanup:TRUE];
                 [bonuses_ removeObject:bonus];
             
-                [[SimpleAudioEngine sharedEngine] playEffect:@"get_bonus_sound.wav"];
+                [GAME playEffect:SOUND_GET_BONUS];
                 
                 break;
             }
@@ -261,7 +261,7 @@
 }
 
 - (void)drawingLayer:(DrawingLayer *)DrawingLayer drawingCanceledWithResoution:(NSString *)resolution {
-    [[SimpleAudioEngine sharedEngine] playEffect:@"ErrorSound.wav"];
+
 }
 
 
@@ -300,7 +300,7 @@
 }
 
 - (void) clearLineButtonClicked {
-    [drawingLayer_ reset];
+   // [drawingLayer_ reset];
 }
 
 

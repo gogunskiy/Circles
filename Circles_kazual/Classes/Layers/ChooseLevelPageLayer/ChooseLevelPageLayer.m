@@ -8,10 +8,6 @@
 
 #import "ChooseLevelPageLayer.h"
 
-static NSString * const PAGE_BACKGROUND     = @"Background";
-static NSString * const LEVELS_INFO         = @"Levels";
-static NSString * const PAGE_COLS           = @"Cols";
-
 static CGFloat const INITIAL_OFFSET_X         = 290.0;
 static CGFloat const INITIAL_OFFSET_Y         = 730.0;
 

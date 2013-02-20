@@ -37,8 +37,6 @@
 
 - (BOOL) intersectWithPosition:(CGPoint)position size:(CGSize)size {
     
-    NSLog(@"%@", NSStringFromCGPoint(position));
-    
     CGRect bonusRect  = CGRectMake(self.position.x - size.width/2, self.position.y + size.height/2, size.width, size.height) ;
     CGRect objectRect = CGRectMake(position.x - size.width/2, position.y + size.height/2, size.width, size.height) ;
     

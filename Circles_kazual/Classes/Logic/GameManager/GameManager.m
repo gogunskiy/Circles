@@ -10,7 +10,6 @@
 #import "LevelContainer.h"
 #import "LevelsLoader.h"
 
-static NSString * const LEVELS_INFO         = @"Levels";
 
 static GameManager * shared = nil;
 
@@ -30,6 +29,8 @@ static GameManager * shared = nil;
 - (id)init {
     
     self = [super init];
+    
+    [self preloadEffects];
     
     [self setCurrentLevel:[[[LevelContainer alloc] init] autorelease]];
     [self setLevelsLoader:[[[LevelsLoader alloc] init] autorelease]];
@@ -93,11 +94,13 @@ static GameManager * shared = nil;
     
     if ([[result objectForKey:GAME_RESULT] isEqualToString:WIN_RESULT]) {
         [self addLevelScores:(1000 - levelTime) > 0 ? 1000 - levelTime : 0];
+        
+        [GAME playEffect:SOUND_WIN];
     } else {
         [self setLevelScores:0];
+        
+        [GAME playEffect:SOUND_LOSE];
     }
-    
-    [[SimpleAudioEngine sharedEngine] playEffect:[[[result objectForKey:GAME_RESULT] lowercaseString] stringByAppendingString:@"Sound.wav"]];
 }
 
 

@@ -65,6 +65,10 @@
     [touchesArray_ removeAllObjects];
 }
 
+- (NSArray *) points {
+    return touchesArray_;
+}
+
 
 
 @end
