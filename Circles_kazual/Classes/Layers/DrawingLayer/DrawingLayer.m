@@ -100,7 +100,7 @@ static NSString * DRAW_MORE_THAN_ONE_LINE_ERROR  =  @"Cannot draw more than one 
 -(void)draw
 {
     ccColor4F color = {255, 255, 255, 255};
-    float width = 4.0;
+    float width = 2.0;
     
     for(int i = 0; i < [touchesArray_ count] / 2 * 2; i+=2)
     {

@@ -3,20 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>Title</key>
-	<string>Mountain</string>
+	<string>World</string>
 	<key>Layers</key>
 	<array>
 		<dict>
 			<key>opacity</key>
 			<string>255</string>
 			<key>imageName</key>
-			<string>bg_earth_2.png</string>
+			<string>bg_earth_1.png</string>
 			<key>order</key>
 			<string>2</string>
 		</dict>
 		<dict>
 			<key>imageName</key>
-			<string>bg_sky_2.png</string>
+			<string>bg_sky_1.png</string>
 			<key>opacity</key>
 			<string>255</string>
 			<key>order</key>
@@ -34,23 +34,17 @@
 				<array>
 					<dict>
 						<key>type</key>
-						<string>delay</string>
-						<key>duration</key>
-						<string>20</string>
-					</dict>
-					<dict>
-						<key>type</key>
 						<string>fadeTo</string>
 						<key>value</key>
 						<string>180</string>
 						<key>duration</key>
-						<string>2</string>
+						<string>60</string>
 					</dict>
 					<dict>
 						<key>type</key>
 						<string>delay</string>
 						<key>duration</key>
-						<string>20</string>
+						<string>10</string>
 					</dict>
 					<dict>
 						<key>type</key>
@@ -58,7 +52,13 @@
 						<key>value</key>
 						<string>0</string>
 						<key>duration</key>
-						<string>2</string>
+						<string>40</string>
+					</dict>
+					<dict>
+						<key>type</key>
+						<string>delay</string>
+						<key>duration</key>
+						<string>20</string>
 					</dict>
 				</array>
 			</array>
@@ -78,38 +78,32 @@
 				<array>
 					<dict>
 						<key>type</key>
-						<string>delay</string>
+						<string>moveBy</string>
+						<key>value</key>
+						<string>{0,-400}</string>
 						<key>duration</key>
-						<string>20</string>
+						<string>60</string>
 					</dict>
 					<dict>
 						<key>type</key>
 						<string>moveBy</string>
 						<key>value</key>
-						<string>{0,-450}</string>
+						<string>{0,400}</string>
 						<key>duration</key>
-						<string>2</string>
+						<string>60</string>
 					</dict>
 					<dict>
 						<key>type</key>
 						<string>delay</string>
 						<key>duration</key>
-						<string>20</string>
-					</dict>
-					<dict>
-						<key>type</key>
-						<string>moveBy</string>
-						<key>value</key>
-						<string>{0,450}</string>
-						<key>duration</key>
-						<string>2</string>
+						<string>10</string>
 					</dict>
 				</array>
 			</array>
 		</dict>
 		<dict>
 			<key>imageName</key>
-			<string>cloud2_2.png</string>
+			<string>cloud1_2.png</string>
 			<key>order</key>
 			<string>1</string>
 			<key>position</key>
@@ -138,7 +132,7 @@
 		</dict>
 		<dict>
 			<key>imageName</key>
-			<string>cloud2_3.png</string>
+			<string>cloud1_3.png</string>
 			<key>order</key>
 			<string>1</string>
 			<key>position</key>
@@ -167,7 +161,7 @@
 		</dict>
 		<dict>
 			<key>imageName</key>
-			<string>cloud2_1.png</string>
+			<string>cloud1_1.png</string>
 			<key>order</key>
 			<string>1</string>
 			<key>position</key>
@@ -196,7 +190,7 @@
 		</dict>
 		<dict>
 			<key>imageName</key>
-			<string>cloud2_4.png</string>
+			<string>cloud1_4.png</string>
 			<key>order</key>
 			<string>1</string>
 			<key>position</key>

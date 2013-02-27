@@ -94,7 +94,7 @@ static GameManager * shared = nil;
     
     if ([[result objectForKey:GAME_RESULT] isEqualToString:WIN_RESULT]) {
         
-        NSInteger result = (1000 - levelTime) > 0 ? (1000 - levelTime) : 0;
+        NSInteger result = (1000 - levelTime) > 0 ? (1000 - (levelTime * 10)) : 0;
         result = result / 10 * 10;
         
         [self addLevelScores:result];

@@ -85,6 +85,8 @@
         
         NSMutableDictionary * bonusData = [Bonus bonusDataByType:[bonusInfo objectForKey:BONUS_FILE]];
         [bonusData setObject:[bonusInfo objectForKey:BONUS_POSITION]     forKey:BONUS_POSITION];
+        [bonusData setObject:[bonusInfo objectForKey:BONUS_VALUE]       forKey:BONUS_VALUE];
+        
         Bonus * bonus = [[Bonus alloc] initWithDictionary:bonusData];
         
         [self addChild:bonus];

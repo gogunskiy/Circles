@@ -14,7 +14,7 @@
 
 #define CHARACTER_JUST_CREATED(pos, initialPosition) (fabs(pos.x*PTM_RATIO - initialPosition.x) < 0.01 && fabs(pos.y*PTM_RATIO == initialPosition.y) < 0.001)
 
-#define CHARACTER_NOT_MOVING(pos, previousPosition)  (ccpDistance(ccp(pos.x,pos.y), ccp(previousPosition.x,previousPosition.y)) < .05)
+#define CHARACTER_NOT_MOVING(pos, previousPosition)  (ccpDistance(ccp(pos.x,pos.y), ccp(previousPosition.x,previousPosition.y)) < .1)
 
 #define CHARACTER_INTERSECT_CHARACTER(pos, pos2)     (CGRectIntersectsRect(CGRectMake((pos.x*PTM_RATIO)-55, (pos.y*PTM_RATIO)-55, 110, 110), CGRectMake((pos2.x*PTM_RATIO)-55, (pos2.y*PTM_RATIO)-55, 110, 110)))
 

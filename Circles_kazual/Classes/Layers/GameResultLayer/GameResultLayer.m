@@ -71,7 +71,7 @@ static NSInteger const MOVE_BY = 150;
                                   fillColor		:ccc4(255, 255, 255, 255)];
     
 	scoreLabel_.position = ccp(412, 100);
-    [scoreLabel_ setDelay:0.02];
+    [scoreLabel_ setDelay:0.01];
     [scoreLabel_ setDelta:10];
 	[scoreLabel_ setAnchorPoint:ccp(0.5, 0.5)];
     

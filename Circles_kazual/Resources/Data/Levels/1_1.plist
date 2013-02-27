@@ -5,7 +5,7 @@
 	<key>Title</key>
 	<string>Level 1</string>
 	<key>World</key>
-	<string>world.plist</string>
+	<string>Walkway.plist</string>
 	<key>Characters</key>
 	<array>
 		<dict>
@@ -25,7 +25,7 @@
 			<key>File</key>
 			<string>Star.plist</string>
 			<key>Position</key>
-			<string>{512,200}</string>
+			<string>{712,200}</string>
 			<key>Value</key>
 			<string>100</string>
 		</dict>

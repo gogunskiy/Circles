@@ -5,16 +5,36 @@
 	<key>Title</key>
 	<string>Level 4</string>
 	<key>World</key>
-	<string>world.plist</string>
+	<string>Walkway.plist</string>
 	<key>Characters</key>
 	<array>
 		<dict>
 			<key>File</key>
+			<string>Angry.plist</string>
+			<key>Gravity</key>
+			<string>{0,-100}</string>
+			<key>Role</key>
+			<string>Negative</string>
+			<key>Position</key>
+			<string>{512,650}</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>Brain.plist</string>
 			<key>Gravity</key>
-			<string>{0,100}</string>
+			<string>{0,-100}</string>
 			<key>Role</key>
 			<string>Positive</string>
+			<key>Position</key>
+			<string>{512,500}</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>Angry.plist</string>
+			<key>Gravity</key>
+			<string>{0,-100}</string>
+			<key>Role</key>
+			<string>Negative</string>
 			<key>Position</key>
 			<string>{312,400}</string>
 		</dict>
@@ -22,21 +42,31 @@
 			<key>File</key>
 			<string>Angry.plist</string>
 			<key>Gravity</key>
-			<string>{0,100}</string>
+			<string>{0,-100}</string>
 			<key>Role</key>
 			<string>Negative</string>
 			<key>Position</key>
-			<string>{450,400}</string>
+			<string>{712,400}</string>
 		</dict>
 		<dict>
 			<key>File</key>
 			<string>Brain.plist</string>
 			<key>Gravity</key>
-			<string>{0,100}</string>
+			<string>{0,-100}</string>
 			<key>Role</key>
 			<string>Positive</string>
 			<key>Position</key>
-			<string>{672,400}</string>
+			<string>{212,250}</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>Brain.plist</string>
+			<key>Gravity</key>
+			<string>{0,-100}</string>
+			<key>Role</key>
+			<string>Positive</string>
+			<key>Position</key>
+			<string>{812,250}</string>
 		</dict>
 	</array>
 </dict>

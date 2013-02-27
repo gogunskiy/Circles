@@ -9,7 +9,8 @@
 
 @interface Bonus : CCSprite
 
-@property (nonatomic, assign) CGFloat value;
+@property (nonatomic, assign) CGFloat   value;
+@property (nonatomic, assign) BOOL      active;
 
 - (id)initWithDictionary:(NSDictionary *)dict;
 

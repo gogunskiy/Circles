@@ -12,6 +12,7 @@
 @implementation Bonus
 
 @synthesize value;
+@synthesize active;
 
 - (id)initWithDictionary:(NSDictionary *)dict
 {
@@ -20,6 +21,7 @@
         
         [self setValue:[[dict objectForKey:BONUS_VALUE] floatValue]];
         [self setAnchorPoint:ccp(0.5,0.5)];
+        [self setActive:TRUE];
         [self setPosition:CGPointFromString([dict objectForKey:BONUS_POSITION])];
         [self runAction:[CCRepeatForever actionWithAction:[CCSequence actions:[CCFadeTo actionWithDuration:.3 opacity:125],[CCFadeTo actionWithDuration:.3 opacity:255], nil]]];
         

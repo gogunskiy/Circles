@@ -57,7 +57,6 @@
         [self initLevel];
         
         [self scheduleUpdate];
-        [self schedule:@selector(update) interval:0.1];
 	}
     
 	return self;
@@ -113,10 +112,7 @@
       
 }
 
-- (void) update {
-    [self checkBonuses];
-    [self checkLevelConditions];
-}
+
 
 - (void) checkLevelConditions {
     
@@ -131,24 +127,26 @@
     if (notInGameObjects == [characters_ count] && gameRunning_) {
         [self finishLevel];
         [self unscheduleUpdate];
-        [self unschedule:@selector(update)];
     }
     
 }
 
 - (void) checkBonuses {
     for (Bonus * bonus in bonuses_) {
-        for (Character * character in characters_) {
-
-            if ([bonus intersectWithPosition:[character previousPos] size:CGSizeMake(100,100)]) {
+        if ([bonus active]) {
+            for (Character * character in characters_) {
                 
-                [GAME addLevelScores:[bonus value]];
-                [self removeChild:bonus cleanup:TRUE];
-                [bonuses_ removeObject:bonus];
-            
-                [GAME playEffect:SOUND_GET_BONUS];
-                
-                break;
+                if (![[character role] isEqualToString:CHARACTER_ROLE_NEGATIVE] && [bonus intersectWithPosition:[character previousPos] size:CGSizeMake(100,100)]) {
+                    
+                    [bonus setActive:FALSE];
+                    
+                    [self removeChild:bonus cleanup:TRUE];
+                    
+                    [GAME addLevelScores:[bonus value]];
+                    [GAME playEffect:SOUND_GET_BONUS];
+                    
+                    break;
+                }
             }
         }
     }
@@ -193,13 +191,13 @@
     
     [GAME finishGameWithResult:@{GAME_RESULT : result}];
     
-    if ([result isEqualToString:WIN_RESULT]) {
-        [GAME setHighScores:[currentLevel_ scores] levelPage:[currentLevel_ pageIndex] levelIndex:[currentLevel_ levelIndex]];
-    }
-    
     [resultLayer_ setResult:result];
     [resultLayer_ setScore:[NSString stringWithFormat:@"%d", [currentLevel_ scores]]];
     [resultLayer_ setHighScore:[NSString stringWithFormat:@"%d", [GAME highScoreForLevelPage:[currentLevel_ pageIndex] levelIndex:[currentLevel_ levelIndex]]]];
+    
+    if ([result isEqualToString:WIN_RESULT]) {
+        [GAME setHighScores:[currentLevel_ scores] levelPage:[currentLevel_ pageIndex] levelIndex:[currentLevel_ levelIndex]];
+    }
     
     [self showResultLayer];
 }
@@ -223,6 +221,8 @@
 	int32 positionIterations = 1;
     
     [self updateObjects];
+    [self checkBonuses];
+    [self checkLevelConditions];
 
 	world_->Step(dt, velocityIterations, positionIterations);
 }
