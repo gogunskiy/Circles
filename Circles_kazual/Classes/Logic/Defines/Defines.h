@@ -63,6 +63,12 @@ static NSString * const CHARACTER_GEOMETRY_RADIUS       = @"Radius";
 static NSString * const CHARACTER_FILE                  = @"File";
 static NSString * const CHARACTER_POSITION              = @"Position";
 
+static NSString * const CHARACTER_ANIMATION_FRAMES_FILE = @"AnimationFramesFile";
+static NSString * const CHARACTER_ANIMATION_FRAMES_MASK = @"AnimationFramesMask";
+static NSString * const CHARACTER_ANIMATION_START_FRAME = @"AnimationStartFrame";
+
+
+
 #pragma mark - BONUS KEYS -
 
 static NSString * const BONUS_FILE                      = @"File";

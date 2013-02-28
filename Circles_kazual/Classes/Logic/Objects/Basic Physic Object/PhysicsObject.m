@@ -24,13 +24,21 @@
 	self = [super init];
 
     physicsBodyExist_ = FALSE;
-
+    
+	restitution_ = .5 ;
+	density_ = 0.2 ;
+	friction_ = 0.1 ;
+    
 	return self;
 }
 
 - (id) initWithFileName:(NSString*) filename
 {
 	self = [super initWithFile:filename];
+    
+    restitution_ = .5 ;
+	density_ = 0.2 ;
+	friction_ = 0.1 ;
     
     physicsBodyExist_ = FALSE;
     
@@ -42,15 +50,12 @@
     if (filename && ![filename isEqualToString:@""]) {
         self = [self initWithFileName:filename];
     } else {
-        self = [super init];
+        self = [self init];
     }
-	restitution_ = .5 ;
-	density_ = 0.2 ;
-	friction_ = 0.1 ;
-	position_ = position ;
 	
 	[self setTag:indefiener];
-	
+    position_ = position ;
+    
 	return self;
 }
 

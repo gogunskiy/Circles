@@ -8,6 +8,7 @@
 
 #import "Character.h"
 #import "CharacterDirectionArrow.h"
+#import "CCAnimate+SequenceLoader.h"
 
 
 #define CHARACTER_OUT_OF_THE_SCREEN(x)               (!CGRectContainsPoint(CGRectMake(-200, -200, 1224,968), x))
@@ -23,18 +24,23 @@
 @implementation Character
 
 
-@synthesize data;
-@synthesize name;
-@synthesize role;
-
-
 - (id) initWithPosition:(CGPoint)position indefiener:(int)indefiener data:(NSDictionary *)theData {
     
-    self = [super initWithPosition:position filename:[theData objectForKey:CHARACTER_SPRITE] indefiener:indefiener];
-
+    if ([theData objectForKey:CHARACTER_ANIMATION_FRAMES_FILE]) {
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[theData objectForKey:CHARACTER_ANIMATION_START_FRAME]];
+        
+        self = [self initWithPosition:position frameName:[theData objectForKey:CHARACTER_ANIMATION_START_FRAME] indefiener:indefiener];
+        
+        [self setAnimationFramesFile:[theData objectForKey:CHARACTER_ANIMATION_FRAMES_FILE]];
+        [self setAnimationFramesMask:[theData objectForKey:CHARACTER_ANIMATION_FRAMES_MASK]];
+        [self setAnimationStartFrame:[theData objectForKey:CHARACTER_ANIMATION_START_FRAME]];
+    } else {
+        self = [super initWithPosition:position filename:[theData objectForKey:CHARACTER_SPRITE] indefiener:indefiener];
+    }
+   
     [self setData:theData];
     [self setState:JUST_CREATED];
-    
+   
     [self setName:[theData objectForKey:CHARACTER_NAME]];
     [self setRole:[theData objectForKey:CHARACTER_ROLE]];
     [self setGravityScale:CGPointFromString([theData objectForKey:CHARACTER_GRAVITYSCALE])];
@@ -42,8 +48,29 @@
     arrow_  = [[CharacterDirectionArrow alloc] initWithGravity:[self gravityScale]];
     [arrow_ setAnchorPoint:ccp(0.5,0.5)];
     [self addChild:arrow_ z:-1];
+
+    return self;
+}
+
+- (id) initWithPosition:(CGPoint) position frameName:(NSString*)frameName indefiener:(int)indefiener {
+   
+    self = [super initWithSpriteFrameName:frameName];
+    
+    [self setTag:indefiener];
+    position_ = position ;
     
     return self;
+}
+
+- (void) startAnimation {
+    
+    if ([self animationFramesMask] != nil) {
+        [self runAction:[CCRepeatForever actionWithAction:[CCAnimate actionWithSpriteSequence:[self animationFramesMask]
+                                                                                    numFrames:3
+                                                                                        delay:0.1
+                                                                         restoreOriginalFrame:NO]]];
+
+    }
 }
 
 - (void) enablePhysics {

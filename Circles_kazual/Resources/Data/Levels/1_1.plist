@@ -10,7 +10,7 @@
 	<array>
 		<dict>
 			<key>File</key>
-			<string>Brain.plist</string>
+			<string>Magenta.plist</string>
 			<key>Gravity</key>
 			<string>{0,-100}</string>
 			<key>Role</key>

@@ -19,12 +19,20 @@
 @property (nonatomic, retain) NSString * role;
 @property (nonatomic, retain) NSDictionary * data;
 
+@property (nonatomic , retain) NSString *animationFramesFile;
+@property (nonatomic , retain) NSString *animationFramesMask;
+@property (nonatomic , retain) NSString *animationStartFrame;
+
+
 - (id) initWithPosition:(CGPoint)position indefiener:(int)indefiener data:(NSDictionary *)theData;
+- (id) initWithPosition:(CGPoint) position frameName:(NSString*)frameName indefiener:(int)indefiener;
 
 - (void) enablePhysics;
 - (void) disablePhysics;
 
 - (BOOL) intersectWithCharacter:(Character *) character;
+
+- (void) startAnimation;
 
 + (NSMutableDictionary *) characterDataByType:(NSString *)characterType;
 

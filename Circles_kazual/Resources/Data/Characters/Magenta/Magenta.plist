@@ -6,6 +6,12 @@
 	<string>Magenta</string>
 	<key>SpriteName</key>
 	<string>Magenta.png</string>
+	<key>AnimationFramesFile</key>
+	<string>magentaAnim.plist</string>
+	<key>AnimationFramesMask</key>
+	<string>magenta%d.png</string>
+	<key>AnimationStartFrame</key>
+	<string>magenta1.png</string>
 	<key>Geometry</key>
 	<dict>
 		<key>Type</key>

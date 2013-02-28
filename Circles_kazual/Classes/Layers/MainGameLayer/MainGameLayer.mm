@@ -29,6 +29,7 @@
 
 - (void) checkLevelConditions;
 - (void) checkBonuses;
+- (void) startObjectsAnimation;
 
 @end
 
@@ -125,10 +126,18 @@
     }
     
     if (notInGameObjects == [characters_ count] && gameRunning_) {
-        [self finishLevel];
+        [self performSelector:@selector(finishLevel) withObject:nil afterDelay:2.];
+        [self startObjectsAnimation];
         [self unscheduleUpdate];
     }
     
+}
+
+
+- (void) startObjectsAnimation {
+    for (Character * character in characters_) {
+        [character startAnimation];
+    }
 }
 
 - (void) checkBonuses {
