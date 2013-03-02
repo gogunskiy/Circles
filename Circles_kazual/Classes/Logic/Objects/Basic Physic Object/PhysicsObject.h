@@ -37,6 +37,7 @@ typedef enum BODY_STATE {
 
 
 - (id) initWithPosition:(CGPoint) position filename:(NSString*)filename indefiener:(int)indefiener;
+- (id) initWithPosition:(CGPoint) position frameName:(NSString*)frameName indefiener:(int)indefiener;
 
 - (id) initWithFileName:(NSString*) filename ;
 

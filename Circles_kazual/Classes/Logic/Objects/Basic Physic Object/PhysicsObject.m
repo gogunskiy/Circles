@@ -59,6 +59,27 @@
 	return self;
 }
 
+- (id) initWithPosition:(CGPoint) position frameName:(NSString*)frameName indefiener:(int)indefiener {
+    
+    if (frameName && ![frameName isEqualToString:@""]) {
+        self = [super initWithSpriteFrameName:frameName];
+    } else {
+        self = [self init];
+    }
+    
+    [self setTag:indefiener];
+    position_ = position ;
+    
+    
+    restitution_ = .5 ;
+	density_ = 0.2 ;
+	friction_ = 0.1 ;
+    
+    physicsBodyExist_ = FALSE;
+
+    
+    return self;
+}
 
 - (void) generateCirlceBodyWithRadius:(float) radius
 {

@@ -29,7 +29,7 @@
     if ([theData objectForKey:CHARACTER_ANIMATION_FRAMES_FILE]) {
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[theData objectForKey:CHARACTER_ANIMATION_START_FRAME]];
         
-        self = [self initWithPosition:position frameName:[theData objectForKey:CHARACTER_ANIMATION_START_FRAME] indefiener:indefiener];
+        self = [super initWithPosition:position frameName:[theData objectForKey:CHARACTER_ANIMATION_START_FRAME] indefiener:indefiener];
         
         [self setAnimationFramesFile:[theData objectForKey:CHARACTER_ANIMATION_FRAMES_FILE]];
         [self setAnimationFramesMask:[theData objectForKey:CHARACTER_ANIMATION_FRAMES_MASK]];
@@ -52,15 +52,6 @@
     return self;
 }
 
-- (id) initWithPosition:(CGPoint) position frameName:(NSString*)frameName indefiener:(int)indefiener {
-   
-    self = [super initWithSpriteFrameName:frameName];
-    
-    [self setTag:indefiener];
-    position_ = position ;
-    
-    return self;
-}
 
 - (void) startAnimation {
     

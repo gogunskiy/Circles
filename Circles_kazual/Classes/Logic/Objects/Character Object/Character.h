@@ -25,7 +25,6 @@
 
 
 - (id) initWithPosition:(CGPoint)position indefiener:(int)indefiener data:(NSDictionary *)theData;
-- (id) initWithPosition:(CGPoint) position frameName:(NSString*)frameName indefiener:(int)indefiener;
 
 - (void) enablePhysics;
 - (void) disablePhysics;
