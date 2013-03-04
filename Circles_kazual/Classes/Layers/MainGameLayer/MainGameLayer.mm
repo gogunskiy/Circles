@@ -27,10 +27,11 @@
 
 - (void) calculateLevelResult;
 
-- (void) checkLevelConditions;
+- (void) startCheckingLevelConditions;
 - (void) checkBonuses;
-- (void) startObjectsAnimation;
 
+- (void) startObjectsAnimation;
+- (void) stopObjectsAnimation;
 @end
 
 @implementation MainGameLayer
@@ -115,23 +116,13 @@
 
 
 
-- (void) checkLevelConditions {
+- (void) startCheckingLevelConditions {
     
-    int notInGameObjects = 0;
+    [self startObjectsAnimation];
+    [self unscheduleUpdate];
     
-    for (Character * character in characters_) {
-        if (([character state] == SLEEPING ) || ([character state] ==  OUT)) {
-            notInGameObjects ++;
-        }
-    }
-    
-    if (notInGameObjects == [characters_ count] && gameRunning_) {
-        [self performSelector:@selector(finishLevel) withObject:nil afterDelay:2.];
-        [self startObjectsAnimation];
-        [self unscheduleUpdate];
-    }
-    
-}
+    [self performSelector:@selector(finishLevel) withObject:nil afterDelay:1.5];
+ }
 
 
 - (void) startObjectsAnimation {
@@ -140,7 +131,14 @@
     }
 }
 
+- (void) stopObjectsAnimation {
+    for (Character * character in characters_) {
+        [character stopAnimation];
+    }
+}
+
 - (void) checkBonuses {
+    
     for (Bonus * bonus in bonuses_) {
         if ([bonus active]) {
             for (Character * character in characters_) {
@@ -162,7 +160,9 @@
 }
 
 - (void) finishLevel {
-
+    
+    [levelWorldLayer_ removeAllActions];
+    [self stopObjectsAnimation];
     [self calculateLevelResult];
 }
 
@@ -231,7 +231,6 @@
     
     [self updateObjects];
     [self checkBonuses];
-    [self checkLevelConditions];
 
 	world_->Step(dt, velocityIterations, positionIterations);
 }
@@ -277,11 +276,14 @@
 #pragma mark ====  GAME INFO & PAUSE LAYER DELEGATE  ====
 
 - (void) startButtonWasClicked; {
-    [pauseLayer_ setIsTouchEnabled:FALSE];
+    
+    [pauseLayer_ setStartButtonhEnabled:FALSE];
     
     [self enablePhysics];
     [self drawPathLineWithPoints:[drawingLayer_ points]];
     
+    [self performSelector:@selector(startCheckingLevelConditions) withObject:nil afterDelay:3.5];
+
     [self stopDrawHelpLayer];
     
     // TO DO : uncomment to save paths

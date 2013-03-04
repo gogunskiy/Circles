@@ -97,7 +97,12 @@
         [object runAction:[CCRepeatForever actionWithAction:[CCSequence actionWithArray:actionsInSequence]]];
         [actionsInSequence release];
     }
-    
+}
+
+- (void) removeAllActions {
+    for (CCSprite * child in [self children]) {
+        [child stopAllActions];
+    }
 }
 
 @end

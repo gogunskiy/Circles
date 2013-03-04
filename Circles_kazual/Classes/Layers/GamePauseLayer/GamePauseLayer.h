@@ -11,12 +11,14 @@
 @protocol GamePauseLayerDelegate;
 
 @interface GamePauseLayer : BaseLayer {
-    CCMenu *pauseMenu_;
+    
+    CCMenu *startMenu_;
+    CCMenu *resetMenu_;
 }
 
 @property (nonatomic, assign) id <GamePauseLayerDelegate> delegate;
 
-- (void) setIsTouchEnabled:(BOOL)enabled  ;
+- (void) setStartButtonhEnabled:(BOOL)enabled  ;
 
 - (void) show;
 - (void) hide;

@@ -32,6 +32,7 @@
 - (BOOL) intersectWithCharacter:(Character *) character;
 
 - (void) startAnimation;
+- (void) stopAnimation;
 
 + (NSMutableDictionary *) characterDataByType:(NSString *)characterType;
 

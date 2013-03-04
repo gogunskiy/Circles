@@ -64,6 +64,13 @@
     }
 }
 
+
+- (void) stopAnimation {
+    [self stopAllActions];
+}
+
+
+
 - (void) enablePhysics {
     
     [self disablePhysics];

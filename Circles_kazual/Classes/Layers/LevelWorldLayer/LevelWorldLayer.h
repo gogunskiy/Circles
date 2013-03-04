@@ -13,5 +13,6 @@
 @property (nonatomic, retain) NSDictionary * info;
 
 - (void) initialize;
+- (void) removeAllActions;
 
 @end

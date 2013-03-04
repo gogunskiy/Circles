@@ -32,8 +32,8 @@ static NSInteger const MOVE_BY = 150;
     [self runAction:[CCMoveBy actionWithDuration:0.3 position:ccp(0,MOVE_BY)]];
 }
 
-- (void) setIsTouchEnabled:(BOOL)enabled  {
-    [pauseMenu_ setIsTouchEnabled:enabled];
+- (void) setStartButtonhEnabled:(BOOL)enabled  {
+    [startMenu_ setIsTouchEnabled:enabled];
 }
 
 - (void) addElements {
@@ -47,12 +47,16 @@ static NSInteger const MOVE_BY = 150;
         
 	}];
     
+    resetMenu_ = [CCMenu menuWithItems:reset, nil];
+	[resetMenu_ setPosition:ccp(70,700)];
+	[self addChild:resetMenu_ z:2];
     
-     pauseMenu_ = [CCMenu menuWithItems:reset, start, nil];
-    [pauseMenu_ alignItemsHorizontallyWithPadding:800];
-	[pauseMenu_ setPosition:ccp(512,700)];
-	[self addChild: pauseMenu_ z:2];
+    startMenu_ = [CCMenu menuWithItems:start, nil];
+	[startMenu_ setPosition:ccp(954,700)];
+	[self addChild:startMenu_ z:2];
+    
 }
+
 
 
 @end
