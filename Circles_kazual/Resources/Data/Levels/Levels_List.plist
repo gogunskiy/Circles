@@ -90,7 +90,128 @@
 				<key>PageIndex</key>
 				<string>1</string>
 				<key>File</key>
-				<string>1_2.plist</string>
+				<string>2_1.plist</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Level 8</string>
+				<key>LevelIndex</key>
+				<string>0</string>
+				<key>PageIndex</key>
+				<string>1</string>
+				<key>File</key>
+				<string>2_2.plist</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Level 9</string>
+				<key>LevelIndex</key>
+				<string>0</string>
+				<key>PageIndex</key>
+				<string>1</string>
+				<key>File</key>
+				<string>2_3.plist</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Level 10</string>
+				<key>LevelIndex</key>
+				<string>0</string>
+				<key>PageIndex</key>
+				<string>1</string>
+				<key>File</key>
+				<string>2_4.plist</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Level 11</string>
+				<key>LevelIndex</key>
+				<string>0</string>
+				<key>PageIndex</key>
+				<string>1</string>
+				<key>File</key>
+				<string>2_5.plist</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Level 12</string>
+				<key>LevelIndex</key>
+				<string>0</string>
+				<key>PageIndex</key>
+				<string>1</string>
+				<key>File</key>
+				<string>2_6.plist</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Background</key>
+		<string>ChooseLevelPageBackground.png</string>
+		<key>Rows</key>
+		<string>2</string>
+		<key>Cols</key>
+		<string>3</string>
+		<key>Levels</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>Level 13</string>
+				<key>LevelIndex</key>
+				<string>0</string>
+				<key>PageIndex</key>
+				<string>1</string>
+				<key>File</key>
+				<string>3_1.plist</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Level 14</string>
+				<key>LevelIndex</key>
+				<string>0</string>
+				<key>PageIndex</key>
+				<string>1</string>
+				<key>File</key>
+				<string>3_2.plist</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Level 15</string>
+				<key>LevelIndex</key>
+				<string>0</string>
+				<key>PageIndex</key>
+				<string>1</string>
+				<key>File</key>
+				<string>3_3.plist</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Level 16</string>
+				<key>LevelIndex</key>
+				<string>0</string>
+				<key>PageIndex</key>
+				<string>1</string>
+				<key>File</key>
+				<string>3_4.plist</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Level 17</string>
+				<key>LevelIndex</key>
+				<string>0</string>
+				<key>PageIndex</key>
+				<string>1</string>
+				<key>File</key>
+				<string>3_5.plist</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Level 18</string>
+				<key>LevelIndex</key>
+				<string>0</string>
+				<key>PageIndex</key>
+				<string>1</string>
+				<key>File</key>
+				<string>3_6.plist</string>
 			</dict>
 		</array>
 	</dict>

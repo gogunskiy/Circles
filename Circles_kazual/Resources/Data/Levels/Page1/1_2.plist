@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>Level 2</string>
+	<key>World</key>
+	<string>Walkway.plist</string>
+	<key>Characters</key>
+	<array>
+		<dict>
+			<key>File</key>
+			<string>Brain.plist</string>
+			<key>Gravity</key>
+			<string>{0,100}</string>
+			<key>Role</key>
+			<string>Positive</string>
+			<key>Position</key>
+			<string>{212,400}</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>Angry.plist</string>
+			<key>Gravity</key>
+			<string>{0,100}</string>
+			<key>Role</key>
+			<string>Negative</string>
+			<key>Position</key>
+			<string>{412,400}</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>Brain.plist</string>
+			<key>Gravity</key>
+			<string>{0,100}</string>
+			<key>Role</key>
+			<string>Positive</string>
+			<key>Position</key>
+			<string>{612,400}</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>Angry.plist</string>
+			<key>Gravity</key>
+			<string>{0,100}</string>
+			<key>Role</key>
+			<string>Negative</string>
+			<key>Position</key>
+			<string>{812,400}</string>
+		</dict>
+	</array>
+</dict>
+</plist>
